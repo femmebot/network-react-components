@@ -1,7 +1,7 @@
-import CheckboxGroupField from '~shared/molecules/CheckboxGroupField'
-import InputAdapter from '~shared/molecules/InputAdapter'
-import SelectField from '~shared/molecules/SelectField'
-import TextField from '~shared/molecules/TextField'
+import CheckboxGroupField from '~shared-components/molecules/CheckboxGroupField'
+import InputAdapter from '~shared-components/molecules/InputAdapter'
+import SelectField from '~shared-components/molecules/SelectField'
+import TextField from '~shared-components/molecules/TextField'
 
 export const MaterialTextField = InputAdapter(TextField)
 export const MaterialSelectField = InputAdapter(SelectField)

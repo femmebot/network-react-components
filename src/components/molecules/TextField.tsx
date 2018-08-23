@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 import BaseFormControl, {FormControlProps} from '@material-ui/core/FormControl'
-import FieldError from '~shared/atoms/FieldError'
-import FieldLabel from '~shared/atoms/FieldLabel'
-import TextInput from '~shared/atoms/TextInput'
-import {colors, sizeStyles, spaceStyles, typography} from '~styles'
-import {SizeProps} from '~styles/props/size'
-import {SpaceProps} from '~styles/props/space'
-import {pxToRem} from '~styles/utils'
+import FieldError from '~shared-components/atoms/FieldError'
+import FieldLabel from '~shared-components/atoms/FieldLabel'
+import TextInput from '~shared-components/atoms/TextInput'
+import {colors, sizeStyles, spaceStyles, typography} from '~shared-styles/index'
+import {SizeProps} from '~shared-styles/props/size'
+import {SpaceProps} from '~shared-styles/props/space'
+import {pxToRem} from '~shared-styles/utils'
 
 interface StyleProps extends SpaceProps, SizeProps {
   inheritFont?: boolean

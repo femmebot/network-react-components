@@ -1,10 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import {flexboxStyles, sizeStyles, spaceStyles} from '~styles'
-import {FlexBoxProps} from '~styles/props/flexbox'
-import {SizeProps} from '~styles/props/size'
-import {SpaceProps} from '~styles/props/space'
+import {flexboxStyles, sizeStyles, spaceStyles} from '~shared-styles/index'
+import {FlexBoxProps} from '~shared-styles/props/flexbox'
+import {SizeProps} from '~shared-styles/props/size'
+import {SpaceProps} from '~shared-styles/props/space'
 
 export interface BoxProps extends SizeProps, FlexBoxProps, SpaceProps {
   auto?: boolean

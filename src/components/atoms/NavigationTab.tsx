@@ -1,9 +1,9 @@
 import * as React from 'react'
 import {NavLink, NavLinkProps} from 'react-router-dom'
 import styled from 'styled-components'
-import Typography from '~shared/atoms/Typography'
-import {colors} from '~styles'
-import {pxToRem} from '~styles/utils'
+import Typography from '~shared-components/atoms/Typography'
+import {colors} from '~shared-styles/index'
+import {pxToRem} from '~shared-styles/utils'
 
 const StyledLink = styled(NavLink)`
   text-decoration: none;

@@ -2,15 +2,15 @@ import {Paper} from '@material-ui/core'
 import * as React from 'react'
 import styled from 'styled-components'
 
-import Box from '~shared/atoms/Box'
-import Button from '~shared/atoms/Button'
-import Flex from '~shared/atoms/Flex'
-import IconButton from '~shared/atoms/IconButton'
-import Typography from '~shared/atoms/Typography'
-import Modal, {Props as ModalProps} from '~shared/molecules/Modal'
+import Box from '~shared-components/atoms/Box'
+import Button from '~shared-components/atoms/Button'
+import Flex from '~shared-components/atoms/Flex'
+import IconButton from '~shared-components/atoms/IconButton'
+import Typography from '~shared-components/atoms/Typography'
+import Modal, {Props as ModalProps} from '~shared-components/molecules/Modal'
 import CloseIcon from '~images/icon-close.svg'
-import {colors} from '~styles'
-import {pxToRem} from '~styles/utils'
+import {colors} from '~shared-styles/index'
+import {pxToRem} from '~shared-styles/utils'
 
 interface Props extends Pick<ModalProps, 'trigger' | 'open' | 'onClose'> {
   onConfirmed: (closeModal: () => void) => void

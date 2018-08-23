@@ -7,15 +7,15 @@ import {
   withStyles,
 } from '@material-ui/core'
 import {MenuItemProps} from '@material-ui/core/MenuItem'
-import Box from '~shared/atoms/Box'
-import FieldError from '~shared/atoms/FieldError'
-import FieldLabel from '~shared/atoms/FieldLabel'
+import Box from '~shared-components/atoms/Box'
+import FieldError from '~shared-components/atoms/FieldError'
+import FieldLabel from '~shared-components/atoms/FieldLabel'
 import {ObjectifiableFormOption} from '~data'
-import {colors, sizeStyles, spaceStyles, typography} from '~styles'
-import {SizeProps} from '~styles/props/size'
-import {SpaceProps} from '~styles/props/space'
-import {pxToRem, styleObjectToTemplate} from '~styles/utils'
-import objectifyOptions from '~utils/objectifyOptions'
+import {colors, sizeStyles, spaceStyles, typography} from '~shared-styles/index'
+import {SizeProps} from '~shared-styles/props/size'
+import {SpaceProps} from '~shared-styles/props/space'
+import {pxToRem, styleObjectToTemplate} from '~shared-styles/utils'
+import objectifyOptions from '~shared-utils/objectifyOptions'
 
 interface Props extends SpaceProps, SizeProps {
   label?: string

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import Button, {ButtonProps} from '~shared/atoms/Button'
+import Button, {ButtonProps} from '~shared-components/atoms/Button'
 
 interface Props extends ButtonProps {
   onClick: (event: any) => Promise<void>

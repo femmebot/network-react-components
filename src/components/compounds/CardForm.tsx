@@ -11,15 +11,15 @@ import {
   StripeProvider,
 } from 'react-stripe-elements'
 import {Brand} from '~api.nt.v1'
-import Box from '~shared/atoms/Box'
-import Flex from '~shared/atoms/Flex'
-import Typography from '~shared/atoms/Typography'
-import TextField from '~shared/molecules/TextField'
-import TypeAheadSelectField from '~shared/molecules/TypeAheadSelectField'
-import CardBrandIcon from '~payment/pages/PaymentForm/CardBrandIcon'
-import FormElement from '~payment/pages/PaymentForm/FormElement'
-import countryOptions from '~utils/countryOptions'
-import handleError from '~utils/handleError'
+import Box from '~shared-components/atoms/Box'
+import Flex from '~shared-components/atoms/Flex'
+import Typography from '~shared-components/atoms/Typography'
+import TextField from '~shared-components/molecules/TextField'
+import TypeAheadSelectField from '~shared-components/molecules/TypeAheadSelectField'
+import CardBrandIcon from '~shared-components/atoms/CardBrandIcon'
+import CardFormField from '~shared-components/atoms/CardFormField'
+import countryOptions from '~shared-utils/countryOptions'
+import handleError from '~shared-utils/handleError'
 
 interface Props {
   onTokenCreated: (token: stripe.Token) => Promise<void>
@@ -167,7 +167,7 @@ class CardForm extends React.Component<
         <form onSubmit={this.handleSubmit}>
           <Grid container spacing={32}>
             <Grid item xs={12}>
-              <FormElement label="Card number" error={errors.card} hr>
+              <CardFormField label="Card number" error={errors.card} hr>
                 <Flex alignItems="center">
                   <CardBrandIcon brand={this.state.brand} />
                   <Box width="100%">
@@ -181,10 +181,10 @@ class CardForm extends React.Component<
                     />
                   </Box>
                 </Flex>
-              </FormElement>
+              </CardFormField>
             </Grid>
             <Grid item xs={12}>
-              <FormElement label="Name on card">
+              <CardFormField label="Name on card">
                 <Typography>
                   <TextField
                     required
@@ -197,18 +197,18 @@ class CardForm extends React.Component<
                     }}
                   />
                 </Typography>
-              </FormElement>
+              </CardFormField>
             </Grid>
             <Grid item sm={6} xs={12}>
-              <FormElement label="Expiry" hr error={errors.expiry}>
+              <CardFormField label="Expiry" hr error={errors.expiry}>
                 <CardExpiryElement
                   onChange={event => this.onChange('expiry', event)}
                   {...createOptions()}
                 />
-              </FormElement>
+              </CardFormField>
             </Grid>
             <Grid item sm={6} xs={12}>
-              <FormElement
+              <CardFormField
                 label="CVV"
                 tooltip="The CVV Number on you credit card or debit card
                       is a 3 digit number located on the back of the card"
@@ -220,10 +220,10 @@ class CardForm extends React.Component<
                   onChange={event => this.onChange('cvv', event)}
                   {...createOptions()}
                 />
-              </FormElement>
+              </CardFormField>
             </Grid>
             <Grid item sm={6} xs={12}>
-              <FormElement label="Country">
+              <CardFormField label="Country">
                 <Typography>
                   <TypeAheadSelectField
                     id="country"
@@ -232,16 +232,16 @@ class CardForm extends React.Component<
                     options={countryOptions}
                   />
                 </Typography>
-              </FormElement>
+              </CardFormField>
             </Grid>
             <Grid item sm={6} xs={12}>
-              <FormElement label="Zip code" error={errors.zip} hr>
+              <CardFormField label="Zip code" error={errors.zip} hr>
                 <PostalCodeElement
                   placeholder=""
                   onChange={event => this.onChange('zip', event)}
                   {...createOptions()}
                 />
-              </FormElement>
+              </CardFormField>
             </Grid>
           </Grid>
           {this.props.children(this.state.processing)}

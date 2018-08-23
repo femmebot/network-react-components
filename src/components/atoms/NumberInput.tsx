@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import {colors, typography} from '~styles'
-import {pxToRem} from '~styles/utils'
+import {colors, typography} from '~shared-styles/index'
+import {pxToRem} from '~shared-styles/utils'
 
 const StyledNumberInput = styled.input`
   width: ${pxToRem(88)};

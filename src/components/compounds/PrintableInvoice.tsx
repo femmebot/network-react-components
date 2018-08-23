@@ -5,15 +5,14 @@ import {partition, sortBy, sumBy} from 'lodash'
 import styled from 'styled-components'
 import {Invoice, Subscription} from '~api.nt.v1'
 import {InvoiceItem} from '~api.nt.v1/InvoiceItem'
-import {Organization} from '~api.v3'
-import Box from '~shared/atoms/Box'
-import Center from '~shared/atoms/Center'
-import HorizontalDivider from '~shared/atoms/HorizontalDivider'
-import Typography from '~shared/atoms/Typography'
+import Box from '~shared-components/atoms/Box'
+import Center from '~shared-components/atoms/Center'
+import HorizontalDivider from '~shared-components/atoms/HorizontalDivider'
+import Typography from '~shared-components/atoms/Typography'
 import logo from '~images/logo.png'
-import {colors} from '~styles'
-import {pxToRem} from '~styles/utils'
-import {formatAsDollarAmount, formatDate} from '~utils/formatters'
+import {colors} from '~shared-styles/index'
+import {pxToRem} from '~shared-styles/utils'
+import {formatAsDollarAmount, formatDate} from '~shared-utils/formatters'
 
 const Wrapper = styled.div`
   padding: ${pxToRem(90)} ${pxToRem(20)};
@@ -60,7 +59,9 @@ const guardedDivide = (amount: number, quantity: number) =>
 
 interface Props {
   invoice: Invoice
-  organization: Organization
+  organization: {
+    name_display: string
+  }
   subscription: Subscription
 }
 

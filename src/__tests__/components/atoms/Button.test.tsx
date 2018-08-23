@@ -1,7 +1,7 @@
 import React from 'react'
-import itRenders from '~helpers/itRenders'
+import itRenders from '~shared-helpers/itRenders'
 
-import Button from '~shared/atoms/Button'
+import Button from '~shared-components/atoms/Button'
 
 itRenders({
   default: () => <Button onClick={jest.fn()}>Content</Button>,

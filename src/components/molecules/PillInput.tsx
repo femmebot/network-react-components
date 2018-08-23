@@ -3,12 +3,14 @@ import {uniq} from 'lodash'
 import * as React from 'react'
 import styled from 'styled-components'
 
-import Flex from '~shared/atoms/Flex'
-import TextField, {Props as TextFieldProps} from '~shared/molecules/TextField'
+import Flex from '~shared-components/atoms/Flex'
+import TextField, {
+  Props as TextFieldProps,
+} from '~shared-components/molecules/TextField'
 import CloseIcon from '~images/icon-close.svg'
-import {colors} from '~styles'
-import {withTheme, WithTheme} from '~styles/themes'
-import {serif} from '~styles/typography'
+import {colors} from '~shared-styles/index'
+import {withTheme, WithTheme} from '~shared-styles/themes'
+import {serif} from '~shared-styles/typography'
 
 const Pills = styled.div`
   font-family: ${serif};

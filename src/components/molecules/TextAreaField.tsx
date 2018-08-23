@@ -1,10 +1,12 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import {withTheme, WithTheme} from '~styles/themes'
-import {serif} from '~styles/typography'
+import {withTheme, WithTheme} from '~shared-styles/themes'
+import {serif} from '~shared-styles/typography'
 
-import TextField, {Props as TextFieldProps} from '~shared/molecules/TextField'
-import {pxToRem} from '~styles/utils'
+import TextField, {
+  Props as TextFieldProps,
+} from '~shared-components/molecules/TextField'
+import {pxToRem} from '~shared-styles/utils'
 
 const StyledTextField = withTheme(styled(TextField)`
   && {

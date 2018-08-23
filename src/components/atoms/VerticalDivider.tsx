@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import {withTheme, WithTheme} from '~styles/themes'
+import {withTheme, WithTheme} from '~shared-styles/themes'
 
 interface Props {
   height?: string

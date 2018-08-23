@@ -27,7 +27,10 @@
       "alias": {
         "~images": "./assets/images",
         "~fonts": "./assets/fonts",
-        "~shared": "./src/components",
+        "~shared-components": "./src/components",
+        "~shared-helpers": "./src/__test__/helpers",
+        "~shared-styles": "./src/styles",
+        "~shared-utils": "./src/utils",
         "^~(.+)": "./src/\\1",
       }
     }],

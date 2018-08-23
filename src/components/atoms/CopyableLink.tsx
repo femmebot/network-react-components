@@ -1,6 +1,6 @@
 import * as React from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import Button from '~shared/atoms/Button'
+import Button from '~shared-components/atoms/Button'
 import LinkIcon from '~images/icon-link.svg'
 
 interface Props {

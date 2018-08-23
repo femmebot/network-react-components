@@ -25,7 +25,11 @@
       }
     ],
     "paths": {
-      "~*": ["src/*", "types/*"]
+      "~*": ["src/*", "types/*"],
+      "~shared-components/*": ["./src/components/*"],
+      "~shared-helpers/*": ["./src/__tests__/helpers/*"],
+      "~shared-styles/*": ["./src/styles/*"],
+      "~shared-utils/*": ["./src/utils/*"],
     }
   },
   "include": [

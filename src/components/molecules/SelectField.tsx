@@ -10,14 +10,14 @@ import {
 import {MenuItemProps} from '@material-ui/core/MenuItem'
 import {SelectProps} from '@material-ui/core/Select/Select'
 import {find, isArray} from 'lodash'
-import FieldError from '~shared/atoms/FieldError'
-import FieldLabel from '~shared/atoms/FieldLabel'
+import FieldError from '~shared-components/atoms/FieldError'
+import FieldLabel from '~shared-components/atoms/FieldLabel'
 import {FormOption, ObjectifiableFormOption} from '~data'
-import {colors, sizeStyles, spaceStyles, typography} from '~styles'
-import {SizeProps} from '~styles/props/size'
-import {SpaceProps} from '~styles/props/space'
-import {pxToRem, styleObjectToTemplate} from '~styles/utils'
-import objectifyOptions from '~utils/objectifyOptions'
+import {colors, sizeStyles, spaceStyles, typography} from '~shared-styles/index'
+import {SizeProps} from '~shared-styles/props/size'
+import {SpaceProps} from '~shared-styles/props/space'
+import {pxToRem, styleObjectToTemplate} from '~shared-styles/utils'
+import objectifyOptions from '~shared-utils/objectifyOptions'
 
 interface BaseProps extends SpaceProps, SizeProps {
   label?: string
