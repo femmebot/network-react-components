@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import Flex from '~components/atoms/Flex'
+import Flex from '~shared/atoms/Flex'
 import {colors} from '~styles'
 import {getContrastRatio} from '../../src/styles/utils'
 

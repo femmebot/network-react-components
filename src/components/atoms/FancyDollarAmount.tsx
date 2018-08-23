@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Typography from '~components/atoms/Typography'
+import Typography from '~shared/atoms/Typography'
 import {pxToRem} from '~styles/utils'
 import {formatAsDollarAmount} from '~utils/formatters'
 

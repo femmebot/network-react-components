@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {NavLink, NavLinkProps} from 'react-router-dom'
 import styled from 'styled-components'
-import Typography from '~components/atoms/Typography'
+import Typography from '~shared/atoms/Typography'
 import {colors} from '~styles'
 import {pxToRem} from '~styles/utils'
 

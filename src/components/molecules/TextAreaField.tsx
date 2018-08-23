@@ -3,9 +3,7 @@ import styled from 'styled-components'
 import {withTheme, WithTheme} from '~styles/themes'
 import {serif} from '~styles/typography'
 
-import TextField, {
-  Props as TextFieldProps,
-} from '~components/molecules/TextField'
+import TextField, {Props as TextFieldProps} from '~shared/molecules/TextField'
 import {pxToRem} from '~styles/utils'
 
 const StyledTextField = withTheme(styled(TextField)`

@@ -1,12 +1,10 @@
 import * as React from 'react'
-import PillInput, {
-  Props as PillInputProps,
-} from '~components/molecules/PillInput'
+import PillInput, {Props as PillInputProps} from '~shared/molecules/PillInput'
 
 import FormControl from '@material-ui/core/FormControl/FormControl'
 import {FieldProps} from 'formik'
-import Box from '~components/atoms/Box'
-import FieldLabel from '~components/atoms/FieldLabel'
+import Box from '~shared/atoms/Box'
+import FieldLabel from '~shared/atoms/FieldLabel'
 
 interface Props extends PillInputProps, FieldProps {
   error?: string

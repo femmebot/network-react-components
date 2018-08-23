@@ -1,7 +1,7 @@
 import {Paper} from '@material-ui/core'
 import * as React from 'react'
-import Box from '~components/atoms/Box'
-import Typography from '~components/atoms/Typography'
+import Box from '~shared/atoms/Box'
+import Typography from '~shared/atoms/Typography'
 
 export interface Props {
   title?: string

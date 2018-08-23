@@ -7,9 +7,9 @@ import {
   withStyles,
 } from '@material-ui/core'
 import {MenuItemProps} from '@material-ui/core/MenuItem'
-import Box from '~components/atoms/Box'
-import FieldError from '~components/atoms/FieldError'
-import FieldLabel from '~components/atoms/FieldLabel'
+import Box from '~shared/atoms/Box'
+import FieldError from '~shared/atoms/FieldError'
+import FieldLabel from '~shared/atoms/FieldLabel'
 import {ObjectifiableFormOption} from '~data'
 import {colors, sizeStyles, spaceStyles, typography} from '~styles'
 import {SizeProps} from '~styles/props/size'

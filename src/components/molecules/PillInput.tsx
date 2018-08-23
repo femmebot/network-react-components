@@ -3,10 +3,8 @@ import {uniq} from 'lodash'
 import * as React from 'react'
 import styled from 'styled-components'
 
-import Flex from '~components/atoms/Flex'
-import TextField, {
-  Props as TextFieldProps,
-} from '~components/molecules/TextField'
+import Flex from '~shared/atoms/Flex'
+import TextField, {Props as TextFieldProps} from '~shared/molecules/TextField'
 import CloseIcon from '~images/icon-close.svg'
 import {colors} from '~styles'
 import {withTheme, WithTheme} from '~styles/themes'

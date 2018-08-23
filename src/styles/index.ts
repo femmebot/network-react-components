@@ -1,4 +1,4 @@
-import {BoxProps} from '~components/atoms/Box'
+import {BoxProps} from '~shared/atoms/Box'
 import {styleObjectToTemplate} from '~styles/utils'
 import * as colors from './constants/color'
 import * as creativeQualityColors from './constants/createQualityColor'

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import itRenders from '~__tests__/helpers/itRenders'
-import SelectField from '~components/molecules/SelectField'
+import SelectField from '~shared/molecules/SelectField'
+import itRenders from '~helpers/itRenders'
 
 const options = [
   {value: 'option1', label: 'Option 1'},

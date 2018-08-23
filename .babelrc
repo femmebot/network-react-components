@@ -27,6 +27,7 @@
       "alias": {
         "~images": "./assets/images",
         "~fonts": "./assets/fonts",
+        "~shared": "./src/components",
         "^~(.+)": "./src/\\1",
       }
     }],
