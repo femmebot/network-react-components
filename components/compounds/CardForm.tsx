@@ -10,7 +10,7 @@ import {
   ReactStripeElements,
   StripeProvider,
 } from 'react-stripe-elements'
-import {Brand} from '~api.nt.v1'
+import {Brand} from '~shared/api.nt.v1'
 import Box from '~shared/components/atoms/Box'
 import Flex from '~shared/components/atoms/Flex'
 import Typography from '~shared/components/atoms/Typography'

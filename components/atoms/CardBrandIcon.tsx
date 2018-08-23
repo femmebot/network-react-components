@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as colors from '~/styles/constants/color'
-import {Brand} from '~api.nt.v1'
+import {Brand} from '~shared/api.nt.v1'
 import AmexIcon from '~images/icon-card-amex.svg'
 import DiscoverIcon from '~images/icon-card-discover.svg'
 import MastercardIcon from '~images/icon-card-mastercard.svg'
