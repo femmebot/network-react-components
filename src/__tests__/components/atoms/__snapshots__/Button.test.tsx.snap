@@ -1,0 +1,320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders as a link 1`] = `
+.c0.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: gray;
+  padding: 0.5rem;
+}
+
+.c0.c0 svg {
+  margin-right: 0.5rem;
+}
+
+<a
+  className="MuiButtonBase-root-27 MuiButtonBase-disabled-28 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 MuiButton-disabled-21 c0"
+  href="#"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="button"
+  tabIndex="-1"
+>
+  <span
+    className="MuiButton-label-2"
+  >
+    Link
+  </span>
+</a>
+`;
+
+exports[`renders commit variant 1`] = `
+.c0.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: black;
+  padding: 0.5rem;
+  background: #EED950;
+}
+
+.c0.c0 svg {
+  margin-right: 0.5rem;
+}
+
+.c0.c0:hover {
+  background: #F6ECA8;
+}
+
+<button
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
+  disabled={false}
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex="0"
+  type="button"
+>
+  <span
+    className="MuiButton-label-2"
+  >
+    Commit
+  </span>
+  <span
+    className="MuiTouchRipple-root-30"
+  />
+</button>
+`;
+
+exports[`renders default 1`] = `
+.c0.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: black;
+  padding: 0.5rem;
+}
+
+.c0.c0 svg {
+  margin-right: 0.5rem;
+}
+
+<button
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
+  disabled={false}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex="0"
+  type="button"
+>
+  <span
+    className="MuiButton-label-2"
+  >
+    Content
+  </span>
+  <span
+    className="MuiTouchRipple-root-30"
+  />
+</button>
+`;
+
+exports[`renders disabled 1`] = `
+.c0.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: gray;
+  padding: 0.5rem;
+}
+
+.c0.c0 svg {
+  margin-right: 0.5rem;
+}
+
+<button
+  className="MuiButtonBase-root-27 MuiButtonBase-disabled-28 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 MuiButton-disabled-21 c0"
+  disabled={true}
+  onBlur={[Function]}
+  onClick={[MockFunction]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex="-1"
+  type="button"
+>
+  <span
+    className="MuiButton-label-2"
+  >
+    Disabled
+  </span>
+</button>
+`;
+
+exports[`renders outline variant 1`] = `
+.c0.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: black;
+  padding: 0.5rem;
+  border: solid 0.125rem currentColor;
+  border-radius: 0.125rem;
+}
+
+.c0.c0 svg {
+  margin-right: 0.5rem;
+}
+
+<a
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
+  href="#"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <span
+    className="MuiButton-label-2"
+  >
+    Link
+  </span>
+  <span
+    className="MuiTouchRipple-root-30"
+  />
+</a>
+`;
+
+exports[`renders submit type 1`] = `
+.c0.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: black;
+  padding: 0.5rem;
+}
+
+.c0.c0 svg {
+  margin-right: 0.5rem;
+}
+
+<button
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
+  disabled={false}
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex="0"
+  type="submit"
+>
+  <span
+    className="MuiButton-label-2"
+  >
+    Submit
+  </span>
+  <span
+    className="MuiTouchRipple-root-30"
+  />
+</button>
+`;
+
+exports[`renders wide 1`] = `
+.c0.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: black;
+  padding: 0.5rem;
+  min-width: 13.75rem;
+}
+
+.c0.c0 svg {
+  margin-right: 0.5rem;
+}
+
+<a
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
+  href="#"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="button"
+  tabIndex="0"
+>
+  <span
+    className="MuiButton-label-2"
+  >
+    Link
+  </span>
+  <span
+    className="MuiTouchRipple-root-30"
+  />
+</a>
+`;

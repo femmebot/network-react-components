@@ -1,0 +1,58 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": [
+          "> 1%",
+          "last 2 firefox versions",
+          "last 2 chrome versions",
+          "last 2 safari versions",
+          "edge 15-16",
+          "ie 11",
+        ],
+        "uglify": true
+      },
+      "useBuiltIns": true
+    }],
+    "react"
+  ],
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-object-rest-spread",
+    "transform-class-properties",
+    ["styled-components"],
+    ["module-resolver", {
+      "extensions": [".js", ".jsx", ".ts", ".tsx"],
+      "alias": {
+        "~images": "./assets/images",
+        "~fonts": "./assets/fonts",
+        "^~(.+)": "./src/\\1",
+      }
+    }],
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": [["env", {
+        "node": "current",
+        "modules": "commonjs"
+      }]],
+    },
+    "production": {
+      "plugins": [
+        "lodash",
+        ["styled-components", {
+          "displayName": false,
+        }]
+      ]
+    }
+  }
+}

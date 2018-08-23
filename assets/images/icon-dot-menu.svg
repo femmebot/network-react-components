@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" xml:space="preserve">
+	<g fill="currentColor" transform="translate(-1354.000000, -156.000000)">
+		<g transform="translate(28.000000, 30.000000)">
+			<g transform="translate(1102.000000, 120.000000)">
+					<g transform="translate(226.500000, 15.000000) rotate(-270.000000) translate(-226.500000, -15.000000) translate(216.000000, 11.000000)">
+					<g transform="translate(1.750000, 2.000000)">
+						<g>
+								<ellipse transform="matrix(2.535182e-06 1 -1 2.535182e-06 -13.2308 -27.6692)" class="st0" cx="7.2" cy="-20.5" rx="5" ry="4.5"/>
+								<ellipse transform="matrix(2.535182e-06 1 -1 2.535182e-06 4.2999 -45.1999)" class="st0" cx="24.8" cy="-20.4" rx="5" ry="4.5"/>
+								<ellipse transform="matrix(2.535182e-06 1 -1 2.535182e-06 21.8307 -62.7307)" class="st0" cx="42.3" cy="-20.5" rx="5" ry="4.5"/>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
