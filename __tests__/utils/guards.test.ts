@@ -1,4 +1,4 @@
-import {isPromise} from '~utils/guards'
+import {isPromise} from '~shared/utils/guards'
 
 it('checks value is promise', () => {
   expect(isPromise(5)).toBeFalsy()

@@ -1,6 +1,6 @@
 import {config} from 'datx-jsonapi'
 import IdeoSSO from 'ideo-sso'
-import ensureTrailingSlash from '~utils/ensureTrailingSlash'
+import ensureTrailingSlash from '~shared/utils/ensureTrailingSlash'
 
 config.baseUrl = ensureTrailingSlash(IdeoSSO.baseApiUrl)
 config.defaultFetchOptions = {

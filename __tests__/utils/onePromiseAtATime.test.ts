@@ -1,4 +1,4 @@
-import onePromiseAtATime from '~utils/onePromiseAtAtTime'
+import onePromiseAtATime from '~shared/utils/onePromiseAtAtTime'
 
 it('only caches a promise that is currently beign executed', async () => {
   let count = 0
