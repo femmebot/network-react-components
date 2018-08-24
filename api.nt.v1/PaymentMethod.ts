@@ -1,7 +1,7 @@
 import {Model, prop} from 'datx'
 import {jsonapi} from 'datx-jsonapi'
-import {Brand} from '~shared/api.nt.v1'
 import {DateTimeString, PaymentMethodId} from '~data'
+import {Brand} from '~shared/api.nt.v1'
 
 export class PaymentMethod extends jsonapi(Model) {
   public static type = 'payment_methods'

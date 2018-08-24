@@ -1,11 +1,11 @@
 import {InputAdornment} from '@material-ui/core'
 import * as React from 'react'
 import styled from 'styled-components'
+import CloseIcon from '~images/icon-close.svg'
+import MagnifyingGlassIcon from '~images/icon-magnifying-glass.svg'
 import TextField, {
   Props as TextFieldProps,
 } from '~shared/components/molecules/TextField'
-import CloseIcon from '~images/icon-close.svg'
-import MagnifyingGlassIcon from '~images/icon-magnifying-glass.svg'
 import {colors} from '~shared/styles/index'
 
 interface Props extends TextFieldProps {

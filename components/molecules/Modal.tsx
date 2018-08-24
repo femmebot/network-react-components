@@ -2,10 +2,10 @@ import {Grid, Modal as MUIModal, Paper} from '@material-ui/core'
 import * as React from 'react'
 import styled from 'styled-components'
 
+import CloseIcon from '~images/icon-close.svg'
 import Box from '~shared/components/atoms/Box'
 import IconButton from '~shared/components/atoms/IconButton'
 import Typography from '~shared/components/atoms/Typography'
-import CloseIcon from '~images/icon-close.svg'
 import {colors} from '~shared/styles/index'
 import {pxToRem} from '~shared/styles/utils'
 

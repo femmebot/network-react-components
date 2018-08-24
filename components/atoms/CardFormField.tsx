@@ -1,10 +1,10 @@
 import {Grid, Tooltip} from '@material-ui/core'
 import * as React from 'react'
+import HelpIcon from '~images/icon-questionmark.svg'
 import Box from '~shared/components/atoms/Box'
 import FieldError from '~shared/components/atoms/FieldError'
 import FieldLabel from '~shared/components/atoms/FieldLabel'
 import HorizontalDivider from '~shared/components/atoms/HorizontalDivider'
-import HelpIcon from '~images/icon-questionmark.svg'
 import {colors} from '~styles'
 import {pxToRem} from '~styles/utils'
 

@@ -1,12 +1,12 @@
 import * as React from 'react'
 import * as colors from '~/styles/constants/color'
-import {Brand} from '~shared/api.nt.v1'
 import AmexIcon from '~images/icon-card-amex.svg'
 import DiscoverIcon from '~images/icon-card-discover.svg'
 import MastercardIcon from '~images/icon-card-mastercard.svg'
 import PaypalIcon from '~images/icon-card-paypal.svg'
 import PlaceholderIcon from '~images/icon-card-placeholder.svg'
 import VisaIcon from '~images/icon-card-visa.svg'
+import {Brand} from '~shared/api.nt.v1'
 
 interface Props {
   brand: Brand
