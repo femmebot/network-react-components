@@ -1,8 +1,6 @@
-import { SupportedLanguage } from "~shared/config";
-
 export default window.CONFIG.supportedLanguages.map(
-  (language: SupportedLanguage) => ({
+  (language: {handle: string; string: string}) => ({
     value: language.handle,
-    label: language.string
+    label: language.string,
   })
-);
+)
