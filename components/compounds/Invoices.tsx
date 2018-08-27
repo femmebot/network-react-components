@@ -6,7 +6,7 @@ import { Invoice } from "~shared/api.nt.v1";
 import Typography from "~shared/components/atoms/Typography";
 import Section from "~shared/components/molecules/Section";
 import { formatAsDollarAmount, formatDate } from "~shared/utils/formatters";
-import { colors } from "~styles";
+import { colors } from "~shared/styles";
 
 const Link = styled.a`
   text-decoration: none;

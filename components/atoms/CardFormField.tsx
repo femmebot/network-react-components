@@ -5,8 +5,8 @@ import Box from "~shared/components/atoms/Box";
 import FieldError from "~shared/components/atoms/FieldError";
 import FieldLabel from "~shared/components/atoms/FieldLabel";
 import HorizontalDivider from "~shared/components/atoms/HorizontalDivider";
-import { colors } from "~styles";
-import { pxToRem } from "~styles/utils";
+import { colors } from "~shared/styles";
+import { pxToRem } from "~shared/styles/utils";
 
 interface Props {
   label: string;

@@ -9,7 +9,7 @@ import Typography from "~shared/components/atoms/Typography";
 import UpdateCardInfoModal from "~shared/components/compounds/UpdateCardInfoModal";
 import ConfirmationModal from "~shared/components/molecules/ConfirmationModal";
 import Dropdown, { RenderMenu } from "~shared/components/molecules/Dropdown";
-import * as colors from "~styles/constants/color";
+import * as colors from "~shared/styles/constants/color";
 
 interface Props {
   paymentMethod: PaymentMethod;

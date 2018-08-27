@@ -8,7 +8,7 @@ import Button from "~shared/components/atoms/Button";
 import PaymentMethodList from "~shared/components/compounds/PaymentMethodList";
 import Modal from "~shared/components/molecules/Modal";
 import Section from "~shared/components/molecules/Section";
-import * as colors from "~styles/constants/color";
+import * as colors from "~shared/styles/constants/color";
 
 interface Props {
   updatePaymentMethod: (paymentMethod: PaymentMethod) => Promise<void>;
