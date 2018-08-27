@@ -1,7 +1,5 @@
-import {ClickAwayListener, Grow, Paper} from '@material-ui/core'
-import * as PopperJS from 'popper.js'
 import * as React from 'react'
-import {Manager, Popper, Target} from 'react-popper'
+import {ClickAwayListener, Grow, Paper, Popper} from '@material-ui/core'
 
 export interface RenderMenu {
   closeMenu: () => void
@@ -13,7 +11,19 @@ interface ChildrenOptions {
 }
 
 interface Props {
-  placement?: PopperJS.Placement
+  placement?:
+    | 'bottom-end'
+    | 'bottom-start'
+    | 'bottom'
+    | 'left-end'
+    | 'left-start'
+    | 'left'
+    | 'right-end'
+    | 'right-start'
+    | 'right'
+    | 'top-end'
+    | 'top-start'
+    | 'top'
   children: (childrenOptions: ChildrenOptions) => React.ReactNode
   renderMenu: (renderOptions: RenderMenu) => React.ReactNode[] | React.ReactNode
 }
@@ -27,8 +37,10 @@ class Dropdown extends React.Component<Props, State> {
     open: false,
   }
 
+  anchorEl = null as HTMLElement | null
+
   handleToggle = () => {
-    this.setState({open: !this.state.open})
+    this.setState(state => ({open: !state.open}))
   }
 
   handleClose = () => {
@@ -36,31 +48,32 @@ class Dropdown extends React.Component<Props, State> {
   }
 
   render() {
-    const {children, renderMenu, placement} = this.props
     const {open} = this.state
-
+    const {children, renderMenu, placement} = this.props
     return (
-      <Manager tag={false}>
-        <Target>
-          {({targetProps: {ref}}) =>
-            children({showMenu: this.handleToggle, targetRef: ref, open})
-          }
-        </Target>
-        {open && (
-          <Popper
-            style={{zIndex: 1}}
-            placement={placement || 'bottom-start'}
-            eventsEnabled={open}
-          >
-            <ClickAwayListener onClickAway={this.handleClose}>
-              <Grow in={open} style={{transformOrigin: '0 0 0'}}>
+      <React.Fragment>
+        {children({
+          showMenu: this.handleToggle,
+          targetRef: node => (this.anchorEl = node),
+          open,
+        })}
+        <Popper
+          style={{zIndex: 1000000}}
+          open={open}
+          anchorEl={this.anchorEl}
+          placement={placement}
+        >
+          {() => (
+            <Grow in={open} style={{transformOrigin: '0 0 0'}}>
+              <ClickAwayListener onClickAway={this.handleClose}>
                 <Paper>{renderMenu({closeMenu: this.handleClose})}</Paper>
-              </Grow>
-            </ClickAwayListener>
-          </Popper>
-        )}
-      </Manager>
+              </ClickAwayListener>
+            </Grow>
+          )}
+        </Popper>
+      </React.Fragment>
     )
   }
 }
+
 export default Dropdown
