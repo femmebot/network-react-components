@@ -25,8 +25,6 @@ exports[`multiselect renders disabled 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-disabled-13 MuiInput-formControl-11 c1"
@@ -49,14 +47,12 @@ exports[`multiselect renders disabled 1`] = `
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -65,8 +61,6 @@ exports[`multiselect renders disabled 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -112,8 +106,6 @@ exports[`multiselect renders unselected 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-formControl-11 c1"
@@ -136,14 +128,12 @@ exports[`multiselect renders unselected 1`] = `
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -152,8 +142,6 @@ exports[`multiselect renders unselected 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -199,8 +187,6 @@ exports[`multiselect renders with error 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-error-15 MuiInput-formControl-11 c1"
@@ -223,14 +209,12 @@ exports[`multiselect renders with error 1`] = `
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={true}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -239,8 +223,6 @@ exports[`multiselect renders with error 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -259,7 +241,7 @@ exports[`multiselect renders with error 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-33 MuiFormHelperText-error-34 "
+    className="MuiFormHelperText-root-34 MuiFormHelperText-error-35 MuiFormHelperText-filled-39 "
     theme={
       Object {
         "breakpoints": Object {
@@ -389,6 +371,9 @@ exports[`multiselect renders with error 1`] = `
           "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
           "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
         ],
+        "shape": Object {
+          "borderRadius": 4,
+        },
         "spacing": Object {
           "unit": 8,
         },
@@ -452,7 +437,7 @@ exports[`multiselect renders with error 1`] = `
             "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
             "fontSize": "2.8125rem",
             "fontWeight": 400,
-            "lineHeight": "1.06667em",
+            "lineHeight": "1.13333em",
             "marginLeft": "-.02em",
           },
           "display3": Object {
@@ -554,11 +539,9 @@ exports[`multiselect renders with label 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <label
-    className="MuiFormLabel-root-42 MuiInputLabel-root-37 MuiInputLabel-formControl-38 MuiInputLabel-animated-41 MuiInputLabel-shrink-40 c1"
+    className="MuiFormLabel-root-46 MuiFormLabel-filled-50 MuiInputLabel-root-41 MuiInputLabel-formControl-42 MuiInputLabel-animated-45 MuiInputLabel-shrink-44 c1"
     data-shrink={true}
     htmlFor="id"
   >
@@ -585,14 +568,12 @@ exports[`multiselect renders with label 1`] = `
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -601,8 +582,6 @@ exports[`multiselect renders with label 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -648,8 +627,6 @@ exports[`multiselect renders with multiple values 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-error-15 MuiInput-formControl-11 c1"
@@ -672,8 +649,6 @@ exports[`multiselect renders with multiple values 1`] = `
         Option 1, Option 2, Option 3, Option 4
       </div>
       <input
-        aria-invalid={true}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -682,8 +657,6 @@ exports[`multiselect renders with multiple values 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="option1,option2,option3,option4"
@@ -702,7 +675,7 @@ exports[`multiselect renders with multiple values 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-33 MuiFormHelperText-error-34 "
+    className="MuiFormHelperText-root-34 MuiFormHelperText-error-35 MuiFormHelperText-filled-39 "
     theme={
       Object {
         "breakpoints": Object {
@@ -832,6 +805,9 @@ exports[`multiselect renders with multiple values 1`] = `
           "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
           "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
         ],
+        "shape": Object {
+          "borderRadius": 4,
+        },
         "spacing": Object {
           "unit": 8,
         },
@@ -895,7 +871,7 @@ exports[`multiselect renders with multiple values 1`] = `
             "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
             "fontSize": "2.8125rem",
             "fontWeight": 400,
-            "lineHeight": "1.06667em",
+            "lineHeight": "1.13333em",
             "marginLeft": "-.02em",
           },
           "display3": Object {
@@ -986,8 +962,6 @@ exports[`multiselect renders with single value 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-error-15 MuiInput-formControl-11 c1"
@@ -1010,8 +984,6 @@ exports[`multiselect renders with single value 1`] = `
         Option 1
       </div>
       <input
-        aria-invalid={true}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -1020,8 +992,6 @@ exports[`multiselect renders with single value 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="option1"
@@ -1040,7 +1010,7 @@ exports[`multiselect renders with single value 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-33 MuiFormHelperText-error-34 "
+    className="MuiFormHelperText-root-34 MuiFormHelperText-error-35 MuiFormHelperText-filled-39 "
     theme={
       Object {
         "breakpoints": Object {
@@ -1170,6 +1140,9 @@ exports[`multiselect renders with single value 1`] = `
           "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
           "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
         ],
+        "shape": Object {
+          "borderRadius": 4,
+        },
         "spacing": Object {
           "unit": 8,
         },
@@ -1233,7 +1206,7 @@ exports[`multiselect renders with single value 1`] = `
             "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
             "fontSize": "2.8125rem",
             "fontWeight": 400,
-            "lineHeight": "1.06667em",
+            "lineHeight": "1.13333em",
             "marginLeft": "-.02em",
           },
           "display3": Object {
@@ -1324,8 +1297,6 @@ exports[`multiselect renders without underline 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-formControl-11 c1"
@@ -1348,14 +1319,12 @@ exports[`multiselect renders without underline 1`] = `
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -1364,8 +1333,6 @@ exports[`multiselect renders without underline 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -1411,8 +1378,6 @@ exports[`single select renders disabled 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-disabled-13 MuiInput-formControl-11 c1"
@@ -1435,14 +1400,12 @@ exports[`single select renders disabled 1`] = `
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -1451,8 +1414,6 @@ exports[`single select renders disabled 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -1504,8 +1465,6 @@ exports[`single select renders placeholder 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-formControl-11 c1"
@@ -1532,8 +1491,6 @@ exports[`single select renders placeholder 1`] = `
         </div>
       </div>
       <input
-        aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -1542,8 +1499,6 @@ exports[`single select renders placeholder 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -1589,8 +1544,6 @@ exports[`single select renders unselected 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-formControl-11 c1"
@@ -1613,14 +1566,12 @@ exports[`single select renders unselected 1`] = `
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -1629,8 +1580,6 @@ exports[`single select renders unselected 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -1676,8 +1625,6 @@ exports[`single select renders with error 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-error-15 MuiInput-formControl-11 c1"
@@ -1700,14 +1647,12 @@ exports[`single select renders with error 1`] = `
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={true}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -1716,8 +1661,6 @@ exports[`single select renders with error 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -1736,7 +1679,7 @@ exports[`single select renders with error 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-33 MuiFormHelperText-error-34 "
+    className="MuiFormHelperText-root-34 MuiFormHelperText-error-35 MuiFormHelperText-filled-39 "
     theme={
       Object {
         "breakpoints": Object {
@@ -1866,6 +1809,9 @@ exports[`single select renders with error 1`] = `
           "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
           "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
         ],
+        "shape": Object {
+          "borderRadius": 4,
+        },
         "spacing": Object {
           "unit": 8,
         },
@@ -1929,7 +1875,7 @@ exports[`single select renders with error 1`] = `
             "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
             "fontSize": "2.8125rem",
             "fontWeight": 400,
-            "lineHeight": "1.06667em",
+            "lineHeight": "1.13333em",
             "marginLeft": "-.02em",
           },
           "display3": Object {
@@ -2031,11 +1977,9 @@ exports[`single select renders with label 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <label
-    className="MuiFormLabel-root-42 MuiInputLabel-root-37 MuiInputLabel-formControl-38 MuiInputLabel-animated-41 MuiInputLabel-shrink-40 c1"
+    className="MuiFormLabel-root-46 MuiFormLabel-filled-50 MuiInputLabel-root-41 MuiInputLabel-formControl-42 MuiInputLabel-animated-45 MuiInputLabel-shrink-44 c1"
     data-shrink={true}
     htmlFor="id"
   >
@@ -2062,14 +2006,12 @@ exports[`single select renders with label 1`] = `
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -2078,8 +2020,6 @@ exports[`single select renders with label 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -2129,8 +2069,6 @@ label + .c1.c1 {
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-error-15 MuiInput-formControl-11 c1"
@@ -2153,14 +2091,12 @@ label + .c1.c1 {
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={true}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -2169,8 +2105,6 @@ label + .c1.c1 {
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"
@@ -2189,7 +2123,7 @@ label + .c1.c1 {
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-33 MuiFormHelperText-error-34 "
+    className="MuiFormHelperText-root-34 MuiFormHelperText-error-35 MuiFormHelperText-filled-39 "
     theme={
       Object {
         "breakpoints": Object {
@@ -2319,6 +2253,9 @@ label + .c1.c1 {
           "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
           "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
         ],
+        "shape": Object {
+          "borderRadius": 4,
+        },
         "spacing": Object {
           "unit": 8,
         },
@@ -2382,7 +2319,7 @@ label + .c1.c1 {
             "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
             "fontSize": "2.8125rem",
             "fontWeight": 400,
-            "lineHeight": "1.06667em",
+            "lineHeight": "1.13333em",
             "marginLeft": "-.02em",
           },
           "display3": Object {
@@ -2473,8 +2410,6 @@ exports[`single select renders with value 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-error-15 MuiInput-formControl-11 c1"
@@ -2497,8 +2432,6 @@ exports[`single select renders with value 1`] = `
         Option 1
       </div>
       <input
-        aria-invalid={true}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -2507,8 +2440,6 @@ exports[`single select renders with value 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="option1"
@@ -2527,7 +2458,7 @@ exports[`single select renders with value 1`] = `
     </div>
   </div>
   <p
-    className="MuiFormHelperText-root-33 MuiFormHelperText-error-34 "
+    className="MuiFormHelperText-root-34 MuiFormHelperText-error-35 MuiFormHelperText-filled-39 "
     theme={
       Object {
         "breakpoints": Object {
@@ -2657,6 +2588,9 @@ exports[`single select renders with value 1`] = `
           "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
           "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
         ],
+        "shape": Object {
+          "borderRadius": 4,
+        },
         "spacing": Object {
           "unit": 8,
         },
@@ -2720,7 +2654,7 @@ exports[`single select renders with value 1`] = `
             "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
             "fontSize": "2.8125rem",
             "fontWeight": 400,
-            "lineHeight": "1.06667em",
+            "lineHeight": "1.13333em",
             "marginLeft": "-.02em",
           },
           "display3": Object {
@@ -2811,8 +2745,6 @@ exports[`single select renders without underline 1`] = `
 <div
   className="MuiFormControl-root-1 c0"
   id="form-control-id"
-  onBlur={[Function]}
-  onFocus={[Function]}
 >
   <div
     className="MuiInput-root-10 MuiInput-formControl-11 c1"
@@ -2835,14 +2767,12 @@ exports[`single select renders without underline 1`] = `
         <span
           dangerouslySetInnerHTML={
             Object {
-              "__html": "&#8203",
+              "__html": "&#8203;",
             }
           }
         />
       </div>
       <input
-        aria-invalid={false}
-        aria-required={false}
         autoComplete={undefined}
         autoFocus={undefined}
         defaultValue={undefined}
@@ -2851,8 +2781,6 @@ exports[`single select renders without underline 1`] = `
         onKeyDown={undefined}
         onKeyUp={undefined}
         placeholder={undefined}
-        readOnly={undefined}
-        required={undefined}
         rows={undefined}
         type="hidden"
         value="PLACEHOLDER"

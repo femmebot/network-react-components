@@ -19,7 +19,7 @@ exports[`renders as a link 1`] = `
 }
 
 <a
-  className="MuiButtonBase-root-17 MuiButtonBase-disabled-18 MuiButton-root-1 MuiButton-disabled-11 c0"
+  className="MuiButtonBase-root-27 MuiButtonBase-disabled-28 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 MuiButton-disabled-21 c0"
   href="#"
   onBlur={[Function]}
   onFocus={[Function]}
@@ -66,7 +66,7 @@ exports[`renders commit variant 1`] = `
 }
 
 <button
-  className="MuiButtonBase-root-17 MuiButton-root-1 c0"
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
   disabled={false}
   onBlur={[Function]}
   onFocus={[Function]}
@@ -87,7 +87,7 @@ exports[`renders commit variant 1`] = `
     Commit
   </span>
   <span
-    className="MuiTouchRipple-root-20"
+    className="MuiTouchRipple-root-30"
   />
 </button>
 `;
@@ -111,7 +111,7 @@ exports[`renders default 1`] = `
 }
 
 <button
-  className="MuiButtonBase-root-17 MuiButton-root-1 c0"
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
   disabled={false}
   onBlur={[Function]}
   onClick={[MockFunction]}
@@ -133,7 +133,7 @@ exports[`renders default 1`] = `
     Content
   </span>
   <span
-    className="MuiTouchRipple-root-20"
+    className="MuiTouchRipple-root-30"
   />
 </button>
 `;
@@ -157,7 +157,7 @@ exports[`renders disabled 1`] = `
 }
 
 <button
-  className="MuiButtonBase-root-17 MuiButtonBase-disabled-18 MuiButton-root-1 MuiButton-disabled-11 c0"
+  className="MuiButtonBase-root-27 MuiButtonBase-disabled-28 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 MuiButton-disabled-21 c0"
   disabled={true}
   onBlur={[Function]}
   onClick={[MockFunction]}
@@ -202,7 +202,7 @@ exports[`renders outline variant 1`] = `
 }
 
 <a
-  className="MuiButtonBase-root-17 MuiButton-root-1 c0"
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
   href="#"
   onBlur={[Function]}
   onFocus={[Function]}
@@ -223,7 +223,7 @@ exports[`renders outline variant 1`] = `
     Link
   </span>
   <span
-    className="MuiTouchRipple-root-20"
+    className="MuiTouchRipple-root-30"
   />
 </a>
 `;
@@ -247,7 +247,7 @@ exports[`renders submit type 1`] = `
 }
 
 <button
-  className="MuiButtonBase-root-17 MuiButton-root-1 c0"
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
   disabled={false}
   onBlur={[Function]}
   onFocus={[Function]}
@@ -268,7 +268,7 @@ exports[`renders submit type 1`] = `
     Submit
   </span>
   <span
-    className="MuiTouchRipple-root-20"
+    className="MuiTouchRipple-root-30"
   />
 </button>
 `;
@@ -293,7 +293,7 @@ exports[`renders wide 1`] = `
 }
 
 <a
-  className="MuiButtonBase-root-17 MuiButton-root-1 c0"
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
   href="#"
   onBlur={[Function]}
   onFocus={[Function]}
@@ -314,7 +314,7 @@ exports[`renders wide 1`] = `
     Link
   </span>
   <span
-    className="MuiTouchRipple-root-20"
+    className="MuiTouchRipple-root-30"
   />
 </a>
 `;
