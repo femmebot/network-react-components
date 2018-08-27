@@ -1,36 +1,41 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 import {
   FormControl as BaseFormControl,
   MenuItem as MuiMenuItem,
-  withStyles,
-} from '@material-ui/core'
-import {MenuItemProps} from '@material-ui/core/MenuItem'
-import {ObjectifiableFormOption} from '~data'
-import Box from '~shared/components/atoms/Box'
-import FieldError from '~shared/components/atoms/FieldError'
-import FieldLabel from '~shared/components/atoms/FieldLabel'
-import {colors, sizeStyles, spaceStyles, typography} from '~shared/styles/index'
-import {SizeProps} from '~shared/styles/props/size'
-import {SpaceProps} from '~shared/styles/props/space'
-import {pxToRem, styleObjectToTemplate} from '~shared/styles/utils'
-import objectifyOptions from '~shared/utils/objectifyOptions'
+  withStyles
+} from "@material-ui/core";
+import { MenuItemProps } from "@material-ui/core/MenuItem";
+import { ObjectifiableFormOption } from "~shared/data";
+import Box from "~shared/components/atoms/Box";
+import FieldError from "~shared/components/atoms/FieldError";
+import FieldLabel from "~shared/components/atoms/FieldLabel";
+import {
+  colors,
+  sizeStyles,
+  spaceStyles,
+  typography
+} from "~shared/styles/index";
+import { SizeProps } from "~shared/styles/props/size";
+import { SpaceProps } from "~shared/styles/props/space";
+import { pxToRem, styleObjectToTemplate } from "~shared/styles/utils";
+import objectifyOptions from "~shared/utils/objectifyOptions";
 
 interface Props extends SpaceProps, SizeProps {
-  label?: string
-  className?: string
-  onChange: (value: string[]) => void
-  onBlur: React.FocusEventHandler<HTMLInputElement>
-  id: string
-  error?: string
-  disabled?: boolean
-  disableUnderline?: boolean
-  options: ObjectifiableFormOption[]
-  name?: string
-  placeholder?: string
-  tallLabel?: boolean
-  value: string[]
+  label?: string;
+  className?: string;
+  onChange: (value: string[]) => void;
+  onBlur: React.FocusEventHandler<HTMLInputElement>;
+  id: string;
+  error?: string;
+  disabled?: boolean;
+  disableUnderline?: boolean;
+  options: ObjectifiableFormOption[];
+  name?: string;
+  placeholder?: string;
+  tallLabel?: boolean;
+  value: string[];
 }
 
 const selectFontStyle = {
@@ -38,9 +43,9 @@ const selectFontStyle = {
   fontSize: pxToRem(16),
   lineHeight: 1.1,
   letterSpacing: pxToRem(0.6),
-  textTransform: 'inherit',
-  fontWeight: 'normal',
-}
+  textTransform: "inherit",
+  fontWeight: "normal"
+};
 
 /* need to type as any because textTransform and fontWeight arent typed
  * correctly on material-ui */
@@ -48,19 +53,19 @@ const menuItemStyles: any = {
   root: {
     ...selectFontStyle,
     color: colors.grayBoulder,
-    '&:hover': {
+    "&:hover": {
       color: colors.black,
-      background: 'none',
-    },
+      background: "none"
+    }
   },
   selected: {
     background: `${colors.white} !important`,
-    color: colors.black,
-  },
-}
+    color: colors.black
+  }
+};
 
-const BaseMenuItem = (props: MenuItemProps) => <MuiMenuItem {...props} />
-const MenuItem = withStyles(menuItemStyles)(BaseMenuItem)
+const BaseMenuItem = (props: MenuItemProps) => <MuiMenuItem {...props} />;
+const MenuItem = withStyles(menuItemStyles)(BaseMenuItem);
 
 const FormControl = styled(BaseFormControl)`
   ${sizeStyles};
@@ -69,7 +74,7 @@ const FormControl = styled(BaseFormControl)`
   && input {
     ${styleObjectToTemplate(selectFontStyle)};
   }
-`
+`;
 
 const Checkbox = styled.div`
   width: 16px;
@@ -79,15 +84,15 @@ const Checkbox = styled.div`
   border-width: 1px;
   border-radius: 2px;
   margin-right: ${pxToRem(8)};
-  ${(props: {checked: boolean}) =>
-    props.checked ? 'background: currentColor' : `background: ${colors.white}`};
-`
+  ${(props: { checked: boolean }) =>
+    props.checked ? "background: currentColor" : `background: ${colors.white}`};
+`;
 
 const StyledMenuItem = styled(MenuItem)`
   && {
     padding-left: 0;
   }
-`
+`;
 
 const CheckboxGroupField = ({
   label,
@@ -101,7 +106,7 @@ const CheckboxGroupField = ({
   onBlur: _onBlur,
   ...styleProps
 }: Props) => {
-  const objectOptions = objectifyOptions(options)
+  const objectOptions = objectifyOptions(options);
 
   return (
     <FormControl
@@ -131,7 +136,7 @@ const CheckboxGroupField = ({
       </Box>
       {error && <FieldError>{error}</FieldError>}
     </FormControl>
-  )
-}
+  );
+};
 
-export default CheckboxGroupField
+export default CheckboxGroupField;

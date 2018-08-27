@@ -1,16 +1,16 @@
-import * as React from 'react'
-import * as colors from '~/styles/constants/color'
+import * as React from "react";
+import * as colors from "~shared/styles/constants/color";
 
 interface Props {
-  email: string
+  email: string;
 }
 
-export const createMailtoLink = (email: string) => `mailto:${email}`
+export const createMailtoLink = (email: string) => `mailto:${email}`;
 
 const Mailto: React.SFC<Props> = props => (
-  <a href={createMailtoLink(props.email)} style={{color: colors.link}}>
+  <a href={createMailtoLink(props.email)} style={{ color: colors.link }}>
     {props.children}
   </a>
-)
+);
 
-export default Mailto
+export default Mailto;

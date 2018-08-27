@@ -1,6 +1,6 @@
 import {Model, prop} from 'datx'
 import {jsonapi} from 'datx-jsonapi'
-import {DateTimeString, InvoiceItemId} from '~data'
+import {DateTimeString, InvoiceItemId} from '~shared/data'
 
 export class InvoiceItem extends jsonapi(Model) {
   public static type = 'invoice_items'

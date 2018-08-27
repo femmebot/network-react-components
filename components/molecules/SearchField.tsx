@@ -1,15 +1,15 @@
-import {InputAdornment} from '@material-ui/core'
-import * as React from 'react'
-import styled from 'styled-components'
-import CloseIcon from '~images/icon-close.svg'
-import MagnifyingGlassIcon from '~images/icon-magnifying-glass.svg'
+import { InputAdornment } from "@material-ui/core";
+import * as React from "react";
+import styled from "styled-components";
+import CloseIcon from "~shared/images/icon-close.svg";
+import MagnifyingGlassIcon from "~shared/images/icon-magnifying-glass.svg";
 import TextField, {
-  Props as TextFieldProps,
-} from '~shared/components/molecules/TextField'
-import {colors} from '~shared/styles/index'
+  Props as TextFieldProps
+} from "~shared/components/molecules/TextField";
+import { colors } from "~shared/styles/index";
 
 interface Props extends TextFieldProps {
-  reset: () => void
+  reset: () => void;
 }
 
 const CloseIconWrapper = styled.div`
@@ -18,7 +18,7 @@ const CloseIconWrapper = styled.div`
   &:hover {
     color: ${colors.black};
   }
-`
+`;
 
 class SearchField extends React.Component<Props> {
   render() {
@@ -40,8 +40,8 @@ class SearchField extends React.Component<Props> {
         }
         {...this.props}
       />
-    )
+    );
   }
 }
 
-export default SearchField
+export default SearchField;
