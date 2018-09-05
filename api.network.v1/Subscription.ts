@@ -1,15 +1,15 @@
-import { Model, prop } from "datx";
-import { jsonapi } from "datx-jsonapi";
+import { Model, prop } from 'datx';
+import { jsonapi } from 'datx-jsonapi';
 import {
   DateTimeString,
   PaymentMethodId,
   PlanId,
   SubscriptionId
-} from "~shared/data";
-import { PaymentMethod, Plan } from "~shared/api.nt.v1";
+} from '~shared/data';
+import { PaymentMethod, Plan } from '~shared/api.network.v1';
 
 export class Subscription extends jsonapi(Model) {
-  public static type = "subscriptions";
+  public static type = 'subscriptions';
 
   @prop.identifier
   public id: SubscriptionId;

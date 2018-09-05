@@ -2,7 +2,7 @@ import { Grid } from "@material-ui/core";
 import * as React from "react";
 import PlusIcon from "~shared/images/icon-plus.svg";
 import CardForm from "~shared/components/compounds/CardForm";
-import { PaymentMethod } from "~shared/api.nt.v1";
+import { PaymentMethod } from "~shared/api.network.v1";
 import Box from "~shared/components/atoms/Box";
 import Button from "~shared/components/atoms/Button";
 import PaymentMethodList from "~shared/components/compounds/PaymentMethodList";

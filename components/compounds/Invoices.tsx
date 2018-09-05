@@ -2,7 +2,7 @@ import { Grid } from "@material-ui/core";
 import * as React from "react";
 import styled from "styled-components";
 import DownloadIcon from "~shared/images/icon-download.svg";
-import { Invoice } from "~shared/api.nt.v1";
+import { Invoice } from "~shared/api.network.v1";
 import Typography from "~shared/components/atoms/Typography";
 import Section from "~shared/components/molecules/Section";
 import { formatAsDollarAmount, formatDate } from "~shared/utils/formatters";

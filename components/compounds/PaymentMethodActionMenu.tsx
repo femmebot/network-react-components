@@ -2,7 +2,7 @@ import MenuList from "@material-ui/core/MenuList";
 import * as React from "react";
 import ArchiveIcon from "~shared/images/icon-archive.svg";
 import ActionIcon from "~shared/images/icon-dot-menu.svg";
-import { PaymentMethod } from "~shared/api.nt.v1";
+import { PaymentMethod } from "~shared/api.network.v1";
 import ContextMenuItem from "~shared/components/atoms/ContextMenuItem";
 import IconButton from "~shared/components/atoms/IconButton";
 import Typography from "~shared/components/atoms/Typography";

@@ -10,7 +10,7 @@ import {
   ReactStripeElements,
   StripeProvider,
 } from 'react-stripe-elements'
-import {Brand} from '~shared/api.nt.v1'
+import {Brand} from '~shared/api.network.v1'
 import Box from '~shared/components/atoms/Box'
 import CardBrandIcon from '~shared/components/atoms/CardBrandIcon'
 import CardFormField from '~shared/components/atoms/CardFormField'

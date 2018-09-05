@@ -6,7 +6,7 @@ import MastercardIcon from "~shared/images/icon-card-mastercard.svg";
 import PaypalIcon from "~shared/images/icon-card-paypal.svg";
 import PlaceholderIcon from "~shared/images/icon-card-placeholder.svg";
 import VisaIcon from "~shared/images/icon-card-visa.svg";
-import { Brand } from "~shared/api.nt.v1";
+import { Brand } from "~shared/api.network.v1";
 
 interface Props {
   brand: Brand;

@@ -1,7 +1,7 @@
 import {Grid} from '@material-ui/core'
 import {isEmpty} from 'lodash'
 import * as React from 'react'
-import {PaymentMethod} from '~shared/api.nt.v1'
+import {PaymentMethod} from '~shared/api.network.v1'
 import FieldLabel from '~shared/components/atoms/FieldLabel'
 import PaymentMethodActionMenu from '~shared/components/compounds/PaymentMethodActionMenu'
 import CardExpirationField from '~shared/components/molecules/CardExpirationField'
