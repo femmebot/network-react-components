@@ -5,7 +5,7 @@ export type InvoiceItemId = Opaque<number, 'InvoiceItemId'>
 export type PlanId = Opaque<number, 'planId'>
 export type PaymentMethodId = Opaque<number, 'paymentMethodId'>
 export type SubscriptionId = Opaque<number, 'subscriptionId'>
-export type NetworkToolOrganizationId = Opaque<number, 'organizationId'>
+export type NetworkOrganizationId = Opaque<number, 'organizationId'>
 export interface FormOption {
   value: string
   label: string

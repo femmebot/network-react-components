@@ -1,9 +1,9 @@
-import { Model, prop } from "datx";
-import { jsonapi } from "datx-jsonapi";
-import { PaymentMethodId } from "~shared/data";
+import { Model, prop } from 'datx';
+import { jsonapi } from 'datx-jsonapi';
+import { PaymentMethodId } from '~shared/data';
 
 export class CreatePaymentMethod extends jsonapi(Model) {
-  public static type = "payment_methods";
+  public static type = 'payment_methods';
 
   @prop.identifier
   public id: PaymentMethodId;
