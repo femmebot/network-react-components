@@ -1,3 +1,4 @@
+export type CouponId = Opaque<number, 'couponId'>
 export type DateTimeString = Opaque<string, 'datetime'>
 export type Id = string | number
 export type InvoiceId = Opaque<number, 'InvoiceId'>

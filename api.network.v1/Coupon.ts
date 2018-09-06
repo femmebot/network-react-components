@@ -1,11 +1,11 @@
 import {Model, prop} from 'datx'
 import {jsonapi} from 'datx-jsonapi'
-import {DateTimeString} from '~shared/data';
+import {CouponId, DateTimeString} from '~shared/data'
 
 export class Coupon extends jsonapi(Model) {
   public static type = 'coupons'
 
-  @prop.identifier public id: number
+  @prop.identifier public id: CouponId
 
   @prop public code: string
 
