@@ -74,6 +74,7 @@ const FormControl = styled(
 `
 
 const TextField = ({
+  autocomplete,
   label,
   placeholder,
   className,
@@ -121,6 +122,7 @@ const TextField = ({
         onBlur,
         onFocus,
         required,
+        autocomplete,
       }}
       startAdornment={startAdornment}
       endAdornment={endAdornment}
