@@ -16,6 +16,7 @@ interface StyleProps extends SpaceProps, SizeProps {
 
 export interface Props extends StyleProps {
   label?: string
+  autocomplete?: string
   className?: string
   onChange?: React.ChangeEventHandler<HTMLInputElement>
   placeholder?: string
