@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid/Grid'
 import {partition, sortBy, sumBy} from 'lodash'
 import styled from 'styled-components'
 import logo from '~shared/images/logo.png'
-import {Invoice, Subscription} from '~shared/api.network.v1'
+import {Coupon, Invoice, Subscription} from '~shared/api.network.v1'
 import {InvoiceItem} from '~shared/api.network.v1/InvoiceItem'
 import Box from '~shared/components/atoms/Box'
 import Center from '~shared/components/atoms/Center'
@@ -54,7 +54,7 @@ const Subtotal: React.SFC<{items: InvoiceItem[]}> = ({items}) => (
   </React.Fragment>
 )
 
-const Coupon: React.SFC<{coupon: Coupon; invoice: Invoice}> = ({
+const CouponLine: React.SFC<{coupon: Coupon; invoice: Invoice}> = ({
   coupon,
   invoice,
 }) => {
@@ -255,7 +255,7 @@ const PrintableInvoice: React.SFC<Props> = ({
             </Typography>
           </Grid>
         </Grid>
-        {coupon && <Coupon coupon={coupon} invoice={invoice} />}
+        {coupon && <CouponLine coupon={coupon} invoice={invoice} />}
         <HorizontalDivider color={colors.black} />
         <Grid container spacing={24} alignItems="flex-end">
           <Grid item xs={10} container justify="flex-end">
