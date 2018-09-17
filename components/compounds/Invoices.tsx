@@ -4,6 +4,7 @@ import styled from "styled-components";
 import DownloadIcon from "~shared/images/icon-download.svg";
 import { Invoice } from "~shared/api.network.v1";
 import Typography from "~shared/components/atoms/Typography";
+import FieldLabel from "~shared/components/atoms/FieldLabel";
 import Section from "~shared/components/molecules/Section";
 import { formatAsDollarAmount, formatDate } from "~shared/utils/formatters";
 import { colors } from "~shared/styles";
@@ -30,13 +31,13 @@ const Invoices: React.SFC<Props> = ({ invoices }) => (
   <Section title="Billing Statements">
     <Grid container spacing={40}>
       <Grid item xs={5}>
-        <Typography variant="label">Period</Typography>{" "}
+        <FieldLabel>Period</FieldLabel>
       </Grid>
       <Grid item xs={3}>
-        <Typography variant="label">Total</Typography>{" "}
+        <FieldLabel variant="label">Total</FieldLabel>
       </Grid>
       <Grid item xs={3}>
-        <Typography variant="label">Status</Typography>{" "}
+        <FieldLabel>Status</FieldLabel>
       </Grid>
       <Grid item xs={1} />
     </Grid>
