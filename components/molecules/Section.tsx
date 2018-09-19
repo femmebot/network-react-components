@@ -8,14 +8,21 @@ export interface Props {
   header?: React.ReactType
 }
 
+const titleAndHeader = (title: string, header: Header) => {
+  if (!title && !header) return
+  return (
+    <Box mb={40}>
+      {title && <Typography variant="heading-2">{title}</Typography>}
+      {header && <Header />}
+    </Box>
+  )
+}
+
 const Section: React.SFC<Props> = ({title, header: Header, children}) => (
   <Box mt={30}>
     <Paper>
       <Box p={30}>
-        <Box mb={40}>
-          {title && <Typography variant="heading-2">{title}</Typography>}
-          {Header && <Header />}
-        </Box>
+        {titleAndHeader(title, Header)}
         {children}
       </Box>
     </Paper>
