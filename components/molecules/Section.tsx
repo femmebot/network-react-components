@@ -12,10 +12,12 @@ const Section: React.SFC<Props> = ({title, header: Header, children}) => (
   <Box mt={30}>
     <Paper>
       <Box p={30}>
-        <Box mb={40}>
-          {title && <Typography variant="heading-2">{title}</Typography>}
-          {Header && <Header />}
-        </Box>
+        {(title || Header) && (
+          <Box mb={40}>
+            {title && <Typography variant="heading-2">{title}</Typography>}
+            {Header && <Header />}
+          </Box>
+        )}
         {children}
       </Box>
     </Paper>

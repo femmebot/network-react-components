@@ -1,6 +1,6 @@
 ```jsx
 const {MenuItem, MenuList} = require('@material-ui/core')
-const ContextMenuItem = require('../../../src/components/atoms/ContextMenuItem')
+const ContextMenuItem = require('../atoms/ContextMenuItem')
   .default
 ;<Dropdown
   renderMenu={menuProps => (
