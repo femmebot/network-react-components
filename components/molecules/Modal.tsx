@@ -14,6 +14,7 @@ export interface Props {
   trigger?: React.ReactNode
   children: (closeModal: () => void) => React.ReactNode
   open?: boolean
+  openImmediately?: boolean
   onClose?: () => void
   container?: React.ReactType
   maxWidth?: number
@@ -50,9 +51,22 @@ class Modal extends React.Component<Props, State> {
 
   mounted = false
 
+  constructor(props) {
+    super(props)
+    if (this.props.openImmediately) this.state = {open: true}
+  }
+
+  componentDidUpdate() {
+    if (
+      this.props.hasOwnProperty('open') &&
+      !!this.props.open !== this.state.open
+    ) {
+      this.setState({open: !!this.props.open})
+    }
+  }
+
   componentDidMount() {
     this.mounted = true
-    this.setState({open: this.props.open})
   }
 
   componentWillUnmount() {
