@@ -1,7 +1,7 @@
 Using Trigger Component
 
 ```jsx
-const ArchiveIcon = require('../../../assets/images/icon-archive.svg')
+const ArchiveIcon = require('../../images/icon-archive.svg')
   .default
 ;<React.Fragment>
   <ConfirmationModal
