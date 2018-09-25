@@ -51,7 +51,7 @@ class Modal extends React.Component<Props, State> {
 
   mounted = false
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props)
     if (this.props.openImmediately) this.state = {open: true}
   }

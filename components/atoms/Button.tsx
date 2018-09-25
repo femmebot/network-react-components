@@ -17,6 +17,7 @@ interface LinkButtonProps extends BaseProps {
 export interface ButtonProps extends BaseProps {
   onClick?: (event: any) => void
   type?: 'button' | 'submit'
+  name?: string
 }
 
 export type Props = ButtonProps | LinkButtonProps
