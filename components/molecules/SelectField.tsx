@@ -53,7 +53,7 @@ interface SingleSelectProps {
 export type Props = BaseProps & (MultipleSelectProps | SingleSelectProps);
 
 const selectFontStyle = {
-  fontFamily: typography.serif,
+  fontFamily: typography.sans,
   fontSize: pxToRem(16),
   lineHeight: 1.1,
   letterSpacing: pxToRem(0.6),
