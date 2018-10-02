@@ -1,13 +1,16 @@
-import { Model, prop } from 'datx';
-import { jsonapi } from 'datx-jsonapi';
-import { PlanId } from '~shared/data';
+import BaseModel from '~shared/api.network.v1/BaseModel'
+import { prop } from 'datx'
+import { PlanId } from '~shared/data'
+import { apiUrl } from '~shared/api.network.v1/util'
 
-export class Plan extends jsonapi(Model) {
-  public static type = 'plans';
+export class Plan extends BaseModel {
+  public static type = 'plans'
+
+  public static baseUrl = apiUrl('plans')
 
   @prop.identifier
-  public id: PlanId;
+  public id: PlanId
 
   @prop
-  public name: string;
+  public name: string
 }

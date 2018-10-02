@@ -1,3 +1,6 @@
+import ensureTrailingSlash from '~shared/utils/ensureTrailingSlash'
+import IdeoSSO from 'ideo-sso'
+
 export function castToArray<T>(data: T | T[] | null): T[] {
   if (data == null) {
     const emptyArray: T[] = new Array()
@@ -9,4 +12,8 @@ export function castToArray<T>(data: T | T[] | null): T[] {
   }
 
   return [data]
+}
+
+export function apiUrl(type: string) {
+  return `${ensureTrailingSlash(IdeoSSO.baseApiUrl)}${type}`
 }

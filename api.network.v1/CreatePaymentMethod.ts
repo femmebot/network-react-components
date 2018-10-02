@@ -1,36 +1,39 @@
-import { Model, prop } from 'datx';
-import { jsonapi } from 'datx-jsonapi';
-import { PaymentMethodId } from '~shared/data';
+import BaseModel from '~shared/api.network.v1/BaseModel'
+import { prop } from 'datx'
+import { PaymentMethodId } from '~shared/data'
+import { apiUrl } from '~shared/api.network.v1/util'
 
-export class CreatePaymentMethod extends jsonapi(Model) {
-  public static type = 'payment_methods';
+export class CreatePaymentMethod extends BaseModel {
+  public static type = 'payment_methods'
+
+  public static baseUrl = apiUrl('payment_methods')
 
   @prop.identifier
-  public id: PaymentMethodId;
+  public id: PaymentMethodId
 
   @prop
-  public stripe_card_token: string;
+  public stripe_card_token: string
 
   @prop
-  public organization_id: number;
+  public organization_id: number
 
   @prop
-  public name: string;
+  public name: string
 
   @prop
-  public exp_month: number;
+  public exp_month: number
 
   @prop
-  public exp_year: number;
+  public exp_year: number
 
   @prop
-  public address_zip: string;
+  public address_zip: string
 
   @prop
-  public address_country: string;
+  public address_country: string
 
   @prop
-  public default: boolean;
+  public default: boolean
 
   constructor(
     stripe_card_token: string,
@@ -41,13 +44,13 @@ export class CreatePaymentMethod extends jsonapi(Model) {
     address_country: string,
     isDefault: boolean
   ) {
-    super();
-    this.stripe_card_token = stripe_card_token;
-    this.name = name;
-    this.exp_month = exp_month;
-    this.exp_year = exp_year;
-    this.address_zip = address_zip;
-    this.address_country = address_country;
-    this.default = isDefault;
+    super()
+    this.stripe_card_token = stripe_card_token
+    this.name = name
+    this.exp_month = exp_month
+    this.exp_year = exp_year
+    this.address_zip = address_zip
+    this.address_country = address_country
+    this.default = isDefault
   }
 }

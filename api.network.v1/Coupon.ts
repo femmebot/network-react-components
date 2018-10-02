@@ -1,21 +1,31 @@
-import {Model, prop} from 'datx'
-import {jsonapi} from 'datx-jsonapi'
-import {CouponId, DateTimeString} from '~shared/data'
+import BaseModel from '~shared/api.network.v1/BaseModel'
+import { prop } from 'datx'
+import { CouponId, DateTimeString } from '~shared/data'
+import { apiUrl } from '~shared/api.network.v1/util'
 
-export class Coupon extends jsonapi(Model) {
+export class Coupon extends BaseModel {
   public static type = 'coupons'
 
-  @prop.identifier public id: CouponId
+  public static baseUrl = apiUrl('coupons')
 
-  @prop public code: string
+  @prop.identifier
+  public id: CouponId
 
-  @prop public name: string
+  @prop
+  public code: string
 
-  @prop public amount_off: number
+  @prop
+  public name: string
 
-  @prop public percent_off: number
+  @prop
+  public amount_off: number
 
-  @prop public currency: string
+  @prop
+  public percent_off: number
 
-  @prop public expires_at: DateTimeString
+  @prop
+  public currency: string
+
+  @prop
+  public expires_at: DateTimeString
 }
