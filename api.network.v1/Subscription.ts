@@ -13,7 +13,7 @@ import { apiUrl } from '~shared/api.network.v1/util'
 export class Subscription extends BaseModel {
   public static type = 'subscriptions'
 
-  public static baseUrl = apiUrl('subscriptions')
+  public static endpoint = apiUrl('subscriptions')
 
   @prop.identifier
   public id: SubscriptionId

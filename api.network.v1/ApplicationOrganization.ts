@@ -5,7 +5,7 @@ import { apiUrl } from '~shared/api.network.v1/util'
 export class ApplicationOrganization extends BaseModel {
   public static type = 'application_organizations'
 
-  public static baseUrl = apiUrl('application_organizations')
+  public static endpoint = apiUrl('application_organizations')
 
   @prop.identifier
   public id: number

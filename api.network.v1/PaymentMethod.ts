@@ -7,7 +7,7 @@ import { apiUrl } from '~shared/api.network.v1/util'
 export class PaymentMethod extends BaseModel {
   public static type = 'payment_methods'
 
-  public static baseUrl = apiUrl('payment_methods')
+  public static endpoint = apiUrl('payment_methods')
 
   @prop.identifier
   public id: PaymentMethodId

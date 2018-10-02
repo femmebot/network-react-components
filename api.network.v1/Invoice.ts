@@ -8,7 +8,7 @@ import { apiUrl } from '~shared/api.network.v1/util'
 export class Invoice extends BaseModel {
   public static type = 'invoices'
 
-  public static baseUrl = apiUrl('invoices')
+  public static endpoint = apiUrl('invoices')
 
   @prop.identifier
   public id: InvoiceId

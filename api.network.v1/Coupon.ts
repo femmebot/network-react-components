@@ -6,7 +6,7 @@ import { apiUrl } from '~shared/api.network.v1/util'
 export class Coupon extends BaseModel {
   public static type = 'coupons'
 
-  public static baseUrl = apiUrl('coupons')
+  public static endpoint = apiUrl('coupons')
 
   @prop.identifier
   public id: CouponId
