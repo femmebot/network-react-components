@@ -18,7 +18,7 @@ interface Props {
     closeModal: () => void
   ) => (token: stripe.Token) => Promise<void>
   paymentMethods: PaymentMethod[]
-  NoPaymentMethodsComponent: React.ComponentType
+  NoPaymentMethodsComponent?: React.ComponentType
 }
 
 const PaymentMethods: React.SFC<Props> = ({
