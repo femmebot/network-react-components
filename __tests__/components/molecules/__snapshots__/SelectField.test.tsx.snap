@@ -3,7 +3,7 @@
 exports[`multiselect renders disabled 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -84,7 +84,7 @@ exports[`multiselect renders disabled 1`] = `
 exports[`multiselect renders unselected 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -165,7 +165,7 @@ exports[`multiselect renders unselected 1`] = `
 exports[`multiselect renders with error 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -517,7 +517,7 @@ exports[`multiselect renders with label 1`] = `
 
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -605,7 +605,7 @@ exports[`multiselect renders with label 1`] = `
 exports[`multiselect renders with multiple values 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -940,7 +940,7 @@ exports[`multiselect renders with multiple values 1`] = `
 exports[`multiselect renders with single value 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -1275,7 +1275,7 @@ exports[`multiselect renders with single value 1`] = `
 exports[`multiselect renders without underline 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -1356,7 +1356,7 @@ exports[`multiselect renders without underline 1`] = `
 exports[`single select renders disabled 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -1437,7 +1437,7 @@ exports[`single select renders disabled 1`] = `
 exports[`single select renders placeholder 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -1522,7 +1522,7 @@ exports[`single select renders placeholder 1`] = `
 exports[`single select renders unselected 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -1603,7 +1603,7 @@ exports[`single select renders unselected 1`] = `
 exports[`single select renders with error 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -1955,7 +1955,7 @@ exports[`single select renders with label 1`] = `
 
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -2043,7 +2043,7 @@ exports[`single select renders with label 1`] = `
 exports[`single select renders with tallLabel 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -2388,7 +2388,7 @@ label + .c1.c1 {
 exports[`single select renders with value 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
@@ -2723,7 +2723,7 @@ exports[`single select renders with value 1`] = `
 exports[`single select renders without underline 1`] = `
 .c0.c0 > div,
 .c0.c0 input {
-  font-family: "Sentinel",serif;
+  font-family: "Gotham",sans-serif;
   font-size: 1rem;
   line-height: 1.1;
   -webkit-letter-spacing: 0.0375rem;
