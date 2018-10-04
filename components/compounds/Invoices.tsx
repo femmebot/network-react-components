@@ -34,7 +34,7 @@ const Invoices: React.SFC<Props> = ({ invoices }) => (
         <FieldLabel>Period</FieldLabel>
       </Grid>
       <Grid item xs={3}>
-        <FieldLabel variant="label">Total</FieldLabel>
+        <FieldLabel>Total</FieldLabel>
       </Grid>
       <Grid item xs={3}>
         <FieldLabel>Status</FieldLabel>
