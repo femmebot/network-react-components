@@ -1,5 +1,5 @@
-import {Model, prop} from 'datx'
-import {jsonapi} from 'datx-jsonapi'
+import BaseModel from '~shared/api.network.v1/BaseModel'
+import { prop } from 'datx'
 import {
   CouponId,
   DateTimeString,
@@ -7,28 +7,41 @@ import {
   PlanId,
   SubscriptionId,
 } from '~shared/data'
-import {Coupon, PaymentMethod, Plan} from '~shared/api.network.v1'
+import { Coupon, PaymentMethod, Plan } from '~shared/api.network.v1'
+import { apiUrl } from '~shared/api.network.v1/util'
 
-export class Subscription extends jsonapi(Model) {
+export class Subscription extends BaseModel {
   public static type = 'subscriptions'
 
-  @prop.identifier public id: SubscriptionId
+  public static endpoint = apiUrl('subscriptions')
 
-  @prop public created_at: DateTimeString
+  @prop.identifier
+  public id: SubscriptionId
 
-  @prop public plan_id: PlanId
+  @prop
+  public created_at: DateTimeString
 
-  @prop public payment_method_id: PaymentMethodId
+  @prop
+  public plan_id: PlanId
 
-  @prop public coupon_id?: CouponId
+  @prop
+  public payment_method_id: PaymentMethodId
 
-  @prop public quantity: number
+  @prop
+  public coupon_id?: CouponId
 
-  @prop public prorate: boolean
+  @prop
+  public quantity: number
 
-  @prop.toOne(PaymentMethod) payment_method: PaymentMethod
+  @prop
+  public prorate: boolean
 
-  @prop.toOne(Plan) plan: Plan
+  @prop.toOne(PaymentMethod)
+  payment_method: PaymentMethod
 
-  @prop.toOne(Coupon) coupon: Coupon
+  @prop.toOne(Plan)
+  plan: Plan
+
+  @prop.toOne(Coupon)
+  coupon: Coupon
 }

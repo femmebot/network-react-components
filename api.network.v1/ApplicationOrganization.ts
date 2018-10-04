@@ -1,12 +1,18 @@
-import {Model, prop} from 'datx'
-import {jsonapi} from 'datx-jsonapi'
+import BaseModel from '~shared/api.network.v1/BaseModel'
+import { prop } from 'datx'
+import { apiUrl } from '~shared/api.network.v1/util'
 
-export class ApplicationOrganization extends jsonapi(Model) {
-  public static type = 'application_organization'
+export class ApplicationOrganization extends BaseModel {
+  public static type = 'application_organizations'
 
-  @prop.identifier public id: number
+  public static endpoint = apiUrl('application_organizations')
 
-  @prop public organization_id: string
+  @prop.identifier
+  public id: number
 
-  @prop public external_id: string
+  @prop
+  public organization_id: string
+
+  @prop
+  public external_id: string
 }

@@ -24,6 +24,7 @@ const ContentWrapper = styled(Paper)`
     width: ${pxToRem(380)};
     max-width: ${pxToRem(800)};
     background: ${colors.ctaPrimary};
+    outline: none;
   }
 `;
 
@@ -42,7 +43,7 @@ class ConfirmationModal extends React.Component<Props> {
           <React.Fragment>
             <Flex p={16} justifyContent="flex-end">
               <IconButton onClick={closeModal}>
-                <CloseIcon height="16" />
+                <CloseIcon width="16px" height="16" />
               </IconButton>
             </Flex>
             <Flex pb={16} px={32} flexDirection="column">

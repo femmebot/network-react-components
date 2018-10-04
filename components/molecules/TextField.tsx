@@ -49,7 +49,7 @@ const fontStyles = ({inheritFont = false}: StyleProps) => {
     `
   }
   return `
-    font-family: ${typography.serif};
+    font-family: ${typography.sans};
     font-size: ${pxToRem(16)};
     line-height: 1.1;
     letter-spacing: ${pxToRem(0.6)};

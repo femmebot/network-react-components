@@ -1,7 +1,6 @@
 export * from './ApplicationOrganization'
 export * from './Brand'
 export * from './Coupon'
-export * from './CreatePaymentMethod'
 export * from './Invoice'
 export * from './NetworkOrganization'
 export * from './PaymentMethod'
