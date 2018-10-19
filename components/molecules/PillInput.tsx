@@ -79,10 +79,6 @@ class PillInput extends React.Component<Props, State> {
     this.handleInput(e.target.value);
   };
 
-  handlePaste: React.ClipboardEventHandler<HTMLInputElement> = e => {
-    this.handleInput(e.clipboardData.getData("text/plain"));
-  };
-
   maybeCommit: React.KeyboardEventHandler<HTMLInputElement> = e => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -135,7 +131,6 @@ class PillInput extends React.Component<Props, State> {
                   : this.props.nonEmptyPlaceholder
               }
               onBlur={this.commit}
-              onPaste={this.handlePaste}
               onChange={this.handleChange}
               onKeyPress={this.maybeCommit}
               value={this.state.input}
