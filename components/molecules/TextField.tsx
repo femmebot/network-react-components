@@ -5,7 +5,7 @@ import BaseFormControl, {FormControlProps} from '@material-ui/core/FormControl'
 import FieldError from '~shared/components/atoms/FieldError'
 import FieldLabel from '~shared/components/atoms/FieldLabel'
 import TextInput from '~shared/components/atoms/TextInput'
-import {colors, sizeStyles, spaceStyles, typography} from '~shared/styles/index'
+import {sizeStyles, spaceStyles, typography} from '~shared/styles/index'
 import {SizeProps} from '~shared/styles/props/size'
 import {SpaceProps} from '~shared/styles/props/space'
 import {pxToRem} from '~shared/styles/utils'
@@ -66,7 +66,9 @@ const FormControl = styled(
   ${sizeStyles};
   ${spaceStyles};
   && input {
-    border-bottom: 1px solid ${colors.black};
+    &:focus {
+      border-bottom: 1px solid #000000;
+    }
   }
   && > div,
   && input {
