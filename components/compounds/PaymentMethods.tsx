@@ -19,6 +19,7 @@ interface Props {
   ) => (token: stripe.Token) => Promise<void>
   paymentMethods: PaymentMethod[]
   NoPaymentMethodsComponent?: React.ComponentType
+  FinePrintComponent?: React.ComponentType
 }
 
 const PaymentMethods: React.SFC<Props> = ({
@@ -28,6 +29,7 @@ const PaymentMethods: React.SFC<Props> = ({
   makePaymentMethodDefault,
   destroyPaymentMethod,
   NoPaymentMethodsComponent,
+  FinePrintComponent,
 }) => (
   <React.Fragment>
     <Section title="Payment Methods">
@@ -56,23 +58,26 @@ const PaymentMethods: React.SFC<Props> = ({
           <div>
             <CardForm onTokenCreated={tokenCreated(closeModal)}>
               {processing => (
-                <Grid container justify="center" spacing={32}>
-                  <Grid item>
-                    <Button disabled={processing} onClick={closeModal} wide>
-                      Cancel
-                    </Button>
+                <React.Fragment>
+                  {FinePrintComponent && <FinePrintComponent />}
+                  <Grid container justify="center" spacing={32}>
+                    <Grid item>
+                      <Button disabled={processing} onClick={closeModal} wide>
+                        Cancel
+                      </Button>
+                    </Grid>
+                    <Grid item>
+                      <Button
+                        disabled={processing}
+                        variant="commit"
+                        type="submit"
+                        wide
+                      >
+                        Add card
+                      </Button>
+                    </Grid>
                   </Grid>
-                  <Grid item>
-                    <Button
-                      disabled={processing}
-                      variant="commit"
-                      type="submit"
-                      wide
-                    >
-                      Add card
-                    </Button>
-                  </Grid>
-                </Grid>
+                </React.Fragment>
               )}
             </CardForm>
           </div>
