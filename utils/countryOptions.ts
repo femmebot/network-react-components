@@ -1,6 +1,6 @@
 import countries from 'i18n-iso-countries'
 import en from 'i18n-iso-countries/langs/en.json'
-import {toPairs} from 'lodash'
+import {findIndex, toPairs} from 'lodash'
 
 countries.registerLocale(en)
 
@@ -15,7 +15,14 @@ const supportedCountries = toPairs(countries.getNames('en')).map(
 
 // iteration order of toPairs is not guaranteed
 supportedCountries.sort((c1, c2) => c1.name.localeCompare(c2.name))
-export default supportedCountries.map((c: SupportedCountry) => ({
+
+const usaIndex = findIndex(supportedCountries, ['code', 'US'])
+const usa = supportedCountries[usaIndex]
+
+const nonUsCountries = supportedCountries.filter(c => c.code !== 'US')
+nonUsCountries.unshift(usa)
+
+export default nonUsCountries.map((c: SupportedCountry) => ({
   value: c.code,
   label: c.name,
 }))
