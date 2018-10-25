@@ -41,6 +41,12 @@ const PillButton = withTheme(styled.button`
   }
 `);
 
+const StyledTextField = styled(TextField)`
+  && {
+    min-width: 350px;
+  }
+`
+
 export interface Props {
   emptyPlaceholder: string;
   nonEmptyPlaceholder: string;
@@ -122,7 +128,7 @@ class PillInput extends React.Component<Props, State> {
             </Grid>
           ))}
           <Grid item>
-            <TextField
+            <StyledTextField
               type="text"
               id="pill-input"
               placeholder={
