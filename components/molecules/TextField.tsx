@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import BaseFormControl, {FormControlProps} from '@material-ui/core/FormControl'
+import BaseFormControl, {
+  FormControlProps,
+} from '@material-ui/core/FormControl'
 import FieldError from '~shared/components/atoms/FieldError'
 import FieldLabel from '~shared/components/atoms/FieldLabel'
 import TextInput from '~shared/components/atoms/TextInput'
-import {sizeStyles, spaceStyles, typography} from '~shared/styles/index'
-import {SizeProps} from '~shared/styles/props/size'
-import {SpaceProps} from '~shared/styles/props/space'
-import {pxToRem} from '~shared/styles/utils'
+import { sizeStyles, spaceStyles, typography } from '~shared/styles/index'
+import { SizeProps } from '~shared/styles/props/size'
+import { SpaceProps } from '~shared/styles/props/space'
+import { pxToRem } from '~shared/styles/utils'
 
 interface StyleProps extends SpaceProps, SizeProps {
   inheritFont?: boolean
@@ -16,7 +18,7 @@ interface StyleProps extends SpaceProps, SizeProps {
 
 export interface Props extends StyleProps {
   label?: string
-  autocomplete?: string
+  autoComplete?: string
   className?: string
   onChange?: React.ChangeEventHandler<HTMLInputElement>
   placeholder?: string
@@ -39,7 +41,7 @@ export interface Props extends StyleProps {
   required?: boolean
 }
 
-const fontStyles = ({inheritFont = false}: StyleProps) => {
+const fontStyles = ({ inheritFont = false }: StyleProps) => {
   if (inheritFont) {
     return `
       font: inherit;
@@ -57,7 +59,7 @@ const fontStyles = ({inheritFont = false}: StyleProps) => {
 }
 
 const FormControl = styled(
-  ({children, disabled, error, className}: FormControlProps) => (
+  ({ children, disabled, error, className }: FormControlProps) => (
     <BaseFormControl disabled={disabled} error={error} className={className}>
       {children}
     </BaseFormControl>
@@ -77,7 +79,7 @@ const FormControl = styled(
 `
 
 const TextField = ({
-  autocomplete,
+  autoComplete,
   label,
   placeholder,
   className,
@@ -125,7 +127,7 @@ const TextField = ({
         onBlur,
         onFocus,
         required,
-        autocomplete,
+        autoComplete,
       }}
       startAdornment={startAdornment}
       endAdornment={endAdornment}
