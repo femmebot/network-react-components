@@ -1,8 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Typography from '~shared/components/atoms/Typography'
-import {pxToRem} from '~shared/styles/utils'
-import {formatAsDollarAmount} from '~shared/utils/formatters'
+import { pxToRem } from '~shared/styles/utils'
+import { formatAsDollarAmount } from '~shared/utils/formatters'
 
 const Sup = styled.span`
   position: relative;
@@ -11,7 +11,7 @@ const Sup = styled.span`
   padding-left: ${pxToRem(5)};
 `
 
-const FancyDollarAmount: React.SFC<{children: string | number}> = ({
+const FancyDollarAmount: React.SFC<{ children: string | number }> = ({
   children,
 }) => {
   const values = formatAsDollarAmount(Number(children)).split('.')

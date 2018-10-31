@@ -1,7 +1,7 @@
-import {Grid} from '@material-ui/core'
-import {Field, Form, Formik, FormikErrors, FormikProps} from 'formik'
+import { Grid } from '@material-ui/core'
+import { Field, Form, Formik, FormikErrors, FormikProps } from 'formik'
 import * as React from 'react'
-import {PaymentMethod} from '~shared/api.network.v1'
+import { PaymentMethod } from '~shared/api.network.v1'
 import Button from '~shared/components/atoms/Button'
 import CardNameField from '~shared/components/molecules/CardNameField'
 import {
@@ -10,7 +10,7 @@ import {
 } from '~shared/components/molecules/FormikFields'
 import Modal from '~shared/components/molecules/Modal'
 import countryOptions from '~shared/utils/countryOptions'
-import {formatAsExpirationDate} from '~shared/utils/formatters'
+import { formatAsExpirationDate } from '~shared/utils/formatters'
 import handleError from '~shared/utils/handleError'
 
 interface Props {
@@ -66,7 +66,7 @@ class UpdateCardInfoModal extends React.Component<Props, State> {
     const month = parts[0].trim()
     const year = String(new Date().getFullYear()).substr(0, 2) + parts[1].trim()
 
-    return {year: Number(year), month: Number(month)}
+    return { year: Number(year), month: Number(month) }
   }
 
   isValidExpirationFormat = (expiration: string) =>
@@ -101,7 +101,7 @@ class UpdateCardInfoModal extends React.Component<Props, State> {
 
   componentDidUpdate() {
     if (this.props.open !== this.state.open) {
-      this.setState({open: !!this.props.open})
+      this.setState({ open: !!this.props.open })
     }
   }
 

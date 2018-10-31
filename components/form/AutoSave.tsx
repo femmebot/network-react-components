@@ -1,5 +1,5 @@
-import {FormikProps} from 'formik'
-import {debounce, isEqual} from 'lodash'
+import { FormikProps } from 'formik'
+import { debounce, isEqual } from 'lodash'
 import * as React from 'react'
 
 class AutoSave<T> extends React.Component<FormikProps<T>> {

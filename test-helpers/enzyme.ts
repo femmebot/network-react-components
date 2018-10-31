@@ -1,6 +1,6 @@
-import Enzyme, {mount, render, shallow} from 'enzyme'
+import Enzyme, { mount, render, shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import {createSerializer} from 'enzyme-to-json'
+import { createSerializer } from 'enzyme-to-json'
 import 'jest-enzyme'
 
 const serializer: jest.SnapshotSerializerPlugin = createSerializer({
@@ -10,6 +10,6 @@ const serializer: jest.SnapshotSerializerPlugin = createSerializer({
 
 expect.addSnapshotSerializer(serializer)
 
-Enzyme.configure({adapter: new Adapter()})
+Enzyme.configure({ adapter: new Adapter() })
 
-export {shallow, mount, render}
+export { shallow, mount, render }

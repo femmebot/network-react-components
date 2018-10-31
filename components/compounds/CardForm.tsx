@@ -1,4 +1,4 @@
-import {Grid} from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import * as React from 'react'
 import {
   CardCVCElement,
@@ -10,7 +10,7 @@ import {
   ReactStripeElements,
   StripeProvider,
 } from 'react-stripe-elements'
-import {Brand} from '~shared/api.network.v1'
+import { Brand } from '~shared/api.network.v1'
 import Box from '~shared/components/atoms/Box'
 import CardBrandIcon from '~shared/components/atoms/CardBrandIcon'
 import CardFormField from '~shared/components/atoms/CardFormField'
@@ -32,7 +32,7 @@ interface State {
   name: string
   country: string
   processing: boolean
-  errors: {[key: string]: string | undefined}
+  errors: { [key: string]: string | undefined }
 }
 
 const brandMap = new Map<string, Brand>([
@@ -81,19 +81,19 @@ class CardForm extends React.Component<
   }
 
   handleChangeOfCountry = (value: string | null) => {
-    this.setState({country: value || ''})
+    this.setState({ country: value || '' })
   }
 
   handleChangeOfCardName = (value: string) => {
-    this.setState({name: value})
+    this.setState({ name: value })
   }
 
   processing = () => {
-    this.setState({processing: true})
+    this.setState({ processing: true })
   }
 
   processed = () => {
-    this.setState({processing: false})
+    this.setState({ processing: false })
   }
 
   resolveBrand = (value: string): Brand => {
@@ -106,7 +106,7 @@ class CardForm extends React.Component<
   }
 
   handleChangeOfCardNumber = (value: stripe.elements.ElementChangeResponse) => {
-    this.setState({brand: this.resolveBrand(value.brand)})
+    this.setState({ brand: this.resolveBrand(value.brand) })
   }
 
   handleApiError = (error: stripe.elements.ElementChangeResponse) => {
@@ -119,7 +119,7 @@ class CardForm extends React.Component<
       throw Error("Stripe.js hasn't loaded yet.")
     }
 
-    const payload = await this.props.stripe.createToken({name})
+    const payload = await this.props.stripe.createToken({ name })
 
     if (payload.token) {
       return payload.token
@@ -161,7 +161,7 @@ class CardForm extends React.Component<
   }
 
   render() {
-    const {errors} = this.state
+    const { errors } = this.state
     return (
       <Box pt={40}>
         <form onSubmit={this.handleSubmit}>

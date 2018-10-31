@@ -1,6 +1,6 @@
-import {FormikActions} from 'formik'
-import {isEmpty, isEqual, reduce} from 'lodash'
-import {saveIndicatorStore} from '~stores'
+import { FormikActions } from 'formik'
+import { isEmpty, isEqual, reduce } from 'lodash'
+import { saveIndicatorStore } from '~stores'
 
 export const getChangedValues = <T extends Dictionary>(
   initialValues: T,
@@ -22,7 +22,7 @@ export const onUpdate = <T extends Dictionary>(
   save: (updates: Partial<T>) => Promise<void>
 ) => async (
   values: T,
-  {setSubmitting, setErrors}: FormikActions<T>
+  { setSubmitting, setErrors }: FormikActions<T>
 ): Promise<void> => {
   try {
     const updates = getChangedValues(initialValues, values)
@@ -42,7 +42,7 @@ export const onCreate = <T extends Dictionary>(
   create: (params: NonNullableObject<T>) => Promise<void>
 ) => async (
   values: NonNullableObject<T>,
-  {setSubmitting, setErrors}: FormikActions<NonNullableObject<T>>
+  { setSubmitting, setErrors }: FormikActions<NonNullableObject<T>>
 ): Promise<void> => {
   try {
     await create(values)

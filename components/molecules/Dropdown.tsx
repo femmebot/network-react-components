@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {ClickAwayListener, Grow, Paper, Popper} from '@material-ui/core'
+import { ClickAwayListener, Grow, Paper, Popper } from '@material-ui/core'
 
 export interface RenderMenu {
   closeMenu: () => void
@@ -40,16 +40,16 @@ class Dropdown extends React.Component<Props, State> {
   anchorEl = null as HTMLElement | null
 
   handleToggle = () => {
-    this.setState(state => ({open: !state.open}))
+    this.setState(state => ({ open: !state.open }))
   }
 
   handleClose = () => {
-    this.setState({open: false})
+    this.setState({ open: false })
   }
 
   render() {
-    const {open} = this.state
-    const {children, renderMenu, placement} = this.props
+    const { open } = this.state
+    const { children, renderMenu, placement } = this.props
     return (
       <React.Fragment>
         {children({
@@ -58,15 +58,15 @@ class Dropdown extends React.Component<Props, State> {
           open,
         })}
         <Popper
-          style={{zIndex: 1000000}}
+          style={{ zIndex: 1000000 }}
           open={open}
           anchorEl={this.anchorEl}
           placement={placement}
         >
           {() => (
-            <Grow in={open} style={{transformOrigin: '0 0 0'}}>
+            <Grow in={open} style={{ transformOrigin: '0 0 0' }}>
               <ClickAwayListener onClickAway={this.handleClose}>
-                <Paper>{renderMenu({closeMenu: this.handleClose})}</Paper>
+                <Paper>{renderMenu({ closeMenu: this.handleClose })}</Paper>
               </ClickAwayListener>
             </Grow>
           )}

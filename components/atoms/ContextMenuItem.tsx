@@ -1,13 +1,13 @@
-import {MenuItem} from '@material-ui/core'
-import {MenuItemProps} from '@material-ui/core/MenuItem'
+import { MenuItem } from '@material-ui/core'
+import { MenuItemProps } from '@material-ui/core/MenuItem'
 import * as React from 'react'
 import styled from 'styled-components'
-import {withTheme, WithTheme} from '~shared/styles/themes'
-import {styleObjectToTemplate} from '~shared/styles/utils'
+import { withTheme, WithTheme } from '~shared/styles/themes'
+import { styleObjectToTemplate } from '~shared/styles/utils'
 
 const StyledMenuItem = withTheme(styled(MenuItem)`
   && {
-    ${({theme}: WithTheme & MenuItemProps) =>
+    ${({ theme }: WithTheme & MenuItemProps) =>
       styleObjectToTemplate(theme.typography.display1)};
   }
 `)

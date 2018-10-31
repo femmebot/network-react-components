@@ -1,4 +1,4 @@
-import {defaultsDeep} from 'lodash'
+import { defaultsDeep } from 'lodash'
 
 const defaultOptions = {
   credentials: 'include',

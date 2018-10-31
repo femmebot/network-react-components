@@ -15,7 +15,7 @@ const makeSpec = (title: string, example: Example) => {
 }
 
 type Example = () => JSX.Element
-type Examples = {[when: string]: Example} | Example
+type Examples = { [when: string]: Example } | Example
 
 const itRenders = (examples: Examples) => {
   if (typeof examples === 'function') {

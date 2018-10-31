@@ -1,4 +1,4 @@
-import {map} from 'lodash'
+import { map } from 'lodash'
 
 export const BASE_FONT_SIZE = 16
 
@@ -51,7 +51,7 @@ export const convertHexToRGB = (color: string) => {
 
 export const decomposeColor = (
   color: string
-): {type: string; values: number[]} => {
+): { type: string; values: number[] } => {
   if (color.charAt(0) === '#') {
     return decomposeColor(convertHexToRGB(color))
   }
@@ -63,7 +63,7 @@ export const decomposeColor = (
     .split(',')
     .map(parseFloat)
 
-  return {type, values}
+  return { type, values }
 }
 
 export const getLuminance = (color: string) => {

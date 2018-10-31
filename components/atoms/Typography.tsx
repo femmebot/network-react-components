@@ -19,7 +19,7 @@ interface Props extends TypographyProps {
     | 'button'
 }
 
-const Typography: React.SFC<Props> = ({variant, ...props}) => {
+const Typography: React.SFC<Props> = ({ variant, ...props }) => {
   interface VariantMap {
     [key: string]: TypographyProps['variant']
   }

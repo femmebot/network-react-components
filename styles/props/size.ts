@@ -1,4 +1,4 @@
-import {mapValues, pick} from 'lodash'
+import { mapValues, pick } from 'lodash'
 
 const setSize = (dim: number) => (dim > 1 ? `${dim}px` : `${dim * 100}%`)
 

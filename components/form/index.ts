@@ -1,1 +1,1 @@
-export {default as AutoSave} from './AutoSave'
+export { default as AutoSave } from './AutoSave'

@@ -7,7 +7,7 @@ interface Props {
   repeat?: boolean
 }
 
-const backgroundStyles = ({repeat, src}: Props) => `
+const backgroundStyles = ({ repeat, src }: Props) => `
   background: url('${src}');
   background-repeat: ${repeat ? 'repeat' : 'no-repeat'};
   background-size: ${repeat ? 'auto' : 'cover'};

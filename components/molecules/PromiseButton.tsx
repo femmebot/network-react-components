@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import Button, {ButtonProps} from '~shared/components/atoms/Button'
+import Button, { ButtonProps } from '~shared/components/atoms/Button'
 
 interface Props extends ButtonProps {
   onClick: (event: any) => Promise<void>
@@ -26,13 +26,13 @@ class PromiseButton extends React.Component<Props, State> {
   }
 
   onClick = async (e: any) => {
-    this.mounted && this.setState({pending: true})
+    this.mounted && this.setState({ pending: true })
     await this.props.onClick(e)
-    this.mounted && this.setState({pending: false})
+    this.mounted && this.setState({ pending: false })
   }
 
   render() {
-    const {onClick, disabled, ...props} = this.props
+    const { onClick, disabled, ...props } = this.props
 
     return (
       <Button

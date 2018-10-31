@@ -1,4 +1,4 @@
-import {Grid, Modal as MUIModal, Paper} from '@material-ui/core'
+import { Grid, Modal as MUIModal, Paper } from '@material-ui/core'
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -6,8 +6,8 @@ import CloseIcon from '~shared/images/icon-close.svg'
 import Box from '~shared/components/atoms/Box'
 import IconButton from '~shared/components/atoms/IconButton'
 import Typography from '~shared/components/atoms/Typography'
-import {colors} from '~shared/styles/index'
-import {pxToRem} from '~shared/styles/utils'
+import { colors } from '~shared/styles/index'
+import { pxToRem } from '~shared/styles/utils'
 
 export interface Props {
   title?: string
@@ -33,12 +33,14 @@ const ModalWrapper = styled(MUIModal)`
 `
 
 const DefaultContainer = styled(
-  ({maxWidth: _maxWidth, ...rest}: {maxWidth?: number}) => <Paper {...rest} />
+  ({ maxWidth: _maxWidth, ...rest }: { maxWidth?: number }) => (
+    <Paper {...rest} />
+  )
 )`
   padding: ${pxToRem(32)};
   margin: ${pxToRem(16)};
   width: 80vw;
-  max-width: ${({maxWidth}: {maxWidth?: number}) =>
+  max-width: ${({ maxWidth }: { maxWidth?: number }) =>
     pxToRem(maxWidth ? maxWidth : 640)};
   color: ${colors.black};
   outline: none;
@@ -53,7 +55,7 @@ class Modal extends React.Component<Props, State> {
 
   constructor(props: Props) {
     super(props)
-    if (this.props.openImmediately) this.state = {open: true}
+    if (this.props.openImmediately) this.state = { open: true }
   }
 
   componentDidUpdate() {
@@ -61,7 +63,7 @@ class Modal extends React.Component<Props, State> {
       this.props.hasOwnProperty('open') &&
       !!this.props.open !== this.state.open
     ) {
-      this.setState({open: !!this.props.open})
+      this.setState({ open: !!this.props.open })
     }
   }
 
@@ -74,19 +76,19 @@ class Modal extends React.Component<Props, State> {
   }
 
   open = () => {
-    this.mounted && this.setState({open: true})
+    this.mounted && this.setState({ open: true })
   }
 
   close = () => {
     if (!this.mounted) {
       return
     }
-    this.setState({open: false})
+    this.setState({ open: false })
     this.props.onClose && this.props.onClose()
   }
 
   render() {
-    const {container: Container} = this.props
+    const { container: Container } = this.props
     return (
       <React.Fragment>
         {this.props.trigger && (

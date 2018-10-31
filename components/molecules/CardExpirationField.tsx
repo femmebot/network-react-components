@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {PaymentMethod} from '~shared/api.network.v1'
+import { PaymentMethod } from '~shared/api.network.v1'
 import Typography from '~shared/components/atoms/Typography'
 
 interface Props {

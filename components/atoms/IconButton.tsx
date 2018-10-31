@@ -1,7 +1,7 @@
 import MuiIconButton from '@material-ui/core/IconButton/IconButton'
 import * as React from 'react'
 import styled from 'styled-components'
-import {pxToRem} from '~shared/styles/utils'
+import { pxToRem } from '~shared/styles/utils'
 
 const IconButton = styled(MuiIconButton)`
   && {

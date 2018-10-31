@@ -1,4 +1,4 @@
-import {pick} from 'lodash'
+import { pick } from 'lodash'
 
 export interface FlexBoxProps {
   alignContent?:

@@ -1,11 +1,11 @@
-import {FormHelperText} from '@material-ui/core'
+import { FormHelperText } from '@material-ui/core'
 import * as React from 'react'
 import styled from 'styled-components'
 
-import {sizeStyles, spaceStyles} from '~shared/styles/index'
-import {SizeProps} from '~shared/styles/props/size'
-import {SpaceProps} from '~shared/styles/props/space'
-import {withTheme, WithTheme} from '~shared/styles/themes'
+import { sizeStyles, spaceStyles } from '~shared/styles/index'
+import { SizeProps } from '~shared/styles/props/size'
+import { SpaceProps } from '~shared/styles/props/space'
+import { withTheme, WithTheme } from '~shared/styles/themes'
 
 type Props = SpaceProps & SizeProps
 

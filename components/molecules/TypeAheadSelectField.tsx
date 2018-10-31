@@ -3,25 +3,30 @@ import {
   MenuItem as MuiMenuItem,
   withStyles,
 } from '@material-ui/core'
-import {MenuItemProps} from '@material-ui/core/MenuItem'
+import { MenuItemProps } from '@material-ui/core/MenuItem'
 import Paper from '@material-ui/core/Paper'
 import TextField from '@material-ui/core/TextField'
 import * as React from 'react'
 import Select from 'react-select'
-import {ValueContainerProps} from 'react-select/lib/components/containers'
-import {ControlProps} from 'react-select/lib/components/Control'
-import {MenuProps, NoticeProps} from 'react-select/lib/components/Menu'
-import {OptionProps} from 'react-select/lib/components/Option'
-import {PlaceholderProps} from 'react-select/lib/components/Placeholder'
-import {SingleValueProps} from 'react-select/lib/components/SingleValue'
+import { ValueContainerProps } from 'react-select/lib/components/containers'
+import { ControlProps } from 'react-select/lib/components/Control'
+import { MenuProps, NoticeProps } from 'react-select/lib/components/Menu'
+import { OptionProps } from 'react-select/lib/components/Option'
+import { PlaceholderProps } from 'react-select/lib/components/Placeholder'
+import { SingleValueProps } from 'react-select/lib/components/SingleValue'
 import styled from 'styled-components'
-import {FormOption, ObjectifiableFormOption} from '~shared/data'
+import { FormOption, ObjectifiableFormOption } from '~shared/data'
 import Box from '~shared/components/atoms/Box'
 import FieldLabel from '~shared/components/atoms/FieldLabel'
-import {colors, sizeStyles, spaceStyles, typography} from '~shared/styles/index'
-import {SizeProps} from '~shared/styles/props/size'
-import {SpaceProps} from '~shared/styles/props/space'
-import {pxToRem, styleObjectToTemplate} from '~shared/styles/utils'
+import {
+  colors,
+  sizeStyles,
+  spaceStyles,
+  typography,
+} from '~shared/styles/index'
+import { SizeProps } from '~shared/styles/props/size'
+import { SpaceProps } from '~shared/styles/props/space'
+import { pxToRem, styleObjectToTemplate } from '~shared/styles/utils'
 import objectifyOptions from '~shared/utils/objectifyOptions'
 
 function NoOptionsMessage(props: NoticeProps<any>) {
@@ -193,7 +198,7 @@ class TypeAheadSelectField extends React.Component<Props, State> {
           : x === this.props.value
     )
     if (value) {
-      this.setState({value})
+      this.setState({ value })
     }
   }
 
@@ -234,7 +239,7 @@ class TypeAheadSelectField extends React.Component<Props, State> {
             components={components}
             value={this.state.value}
             onChange={this.handleChange}
-            onFocus={() => this.setState({value: null})}
+            onFocus={() => this.setState({ value: null })}
             placeholder={placeholder || ''}
             isClearable
           />

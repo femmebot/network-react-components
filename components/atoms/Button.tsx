@@ -1,8 +1,8 @@
 import MuiButton from '@material-ui/core/Button/Button'
 import * as React from 'react'
 import styled from 'styled-components'
-import {colors} from '~shared/styles/index'
-import {pxToRem} from '~shared/styles/utils'
+import { colors } from '~shared/styles/index'
+import { pxToRem } from '~shared/styles/utils'
 
 interface BaseProps {
   disabled?: boolean
@@ -54,7 +54,7 @@ const variantOverrides = (variant?: Variant) => {
 }
 
 const StyledButton = styled(
-  ({variant: _variant, wide: _wide, ...props}: Props) => (
+  ({ variant: _variant, wide: _wide, ...props }: Props) => (
     <MuiButton variant="flat" {...props} />
   )
 )`
@@ -71,7 +71,7 @@ const StyledButton = styled(
   }
 `
 
-const Button: React.SFC<Props> = ({children, variant, ...props}) => (
+const Button: React.SFC<Props> = ({ children, variant, ...props }) => (
   <StyledButton variant={variant} {...props}>
     {children}
   </StyledButton>

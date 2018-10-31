@@ -1,6 +1,6 @@
 import IdeoSSO from 'ideo-sso'
 import 'whatwg-fetch'
-import {config} from 'datx-jsonapi'
+import { config } from 'datx-jsonapi'
 
 config.baseUrl = '/'
 
