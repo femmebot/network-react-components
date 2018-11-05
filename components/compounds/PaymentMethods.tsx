@@ -20,6 +20,8 @@ interface Props {
   paymentMethods: PaymentMethod[]
   NoPaymentMethodsComponent?: React.ComponentType
   FinePrintComponent?: React.ComponentType
+  BackdropComponent?: React.ComponentType
+  ModalContainer?: React.ComponentType
 }
 
 const PaymentMethods: React.SFC<Props> = ({
@@ -30,6 +32,8 @@ const PaymentMethods: React.SFC<Props> = ({
   destroyPaymentMethod,
   NoPaymentMethodsComponent,
   FinePrintComponent,
+  BackdropComponent,
+  ModalContainer,
 }) => (
   <React.Fragment>
     <Section title="Payment Methods">
@@ -47,6 +51,8 @@ const PaymentMethods: React.SFC<Props> = ({
       </Box>
       <Modal
         title="Add new card"
+        container={ModalContainer}
+        backdrop={BackdropComponent}
         trigger={
           <Button wide href="#">
             <PlusIcon width={15} style={{ fill: colors.black }} />
