@@ -7,7 +7,12 @@ import BaseFormControl, {
 import FieldError from '~shared/components/atoms/FieldError'
 import FieldLabel from '~shared/components/atoms/FieldLabel'
 import TextInput from '~shared/components/atoms/TextInput'
-import { colors, sizeStyles, spaceStyles, typography } from '~shared/styles/index'
+import {
+  colors,
+  sizeStyles,
+  spaceStyles,
+  typography,
+} from '~shared/styles/index'
 import { SizeProps } from '~shared/styles/props/size'
 import { SpaceProps } from '~shared/styles/props/space'
 import { pxToRem } from '~shared/styles/utils'
@@ -18,7 +23,7 @@ interface StyleProps extends SpaceProps, SizeProps {
 
 export interface Props extends StyleProps {
   label?: string
-  autocomplete?: string
+  autoComplete?: string
   className?: string
   onChange?: React.ChangeEventHandler<HTMLInputElement>
   placeholder?: string
@@ -77,7 +82,7 @@ const FormControl = styled(
 `
 
 const TextField = ({
-  autocomplete,
+  autoComplete,
   label,
   placeholder,
   className,
@@ -125,7 +130,7 @@ const TextField = ({
         onBlur,
         onFocus,
         required,
-        autocomplete,
+        autoComplete,
       }}
       startAdornment={startAdornment}
       endAdornment={endAdornment}

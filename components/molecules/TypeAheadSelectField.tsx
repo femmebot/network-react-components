@@ -55,7 +55,7 @@ function Control(props: ControlProps<any>) {
   return (
     <StyledTextInput
       fullWidth
-      autocomplete="off"
+      autoComplete="off"
       InputProps={{
         inputComponent: InputComponent,
         disableUnderline: true,
