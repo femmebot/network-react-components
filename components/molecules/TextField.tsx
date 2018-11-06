@@ -18,7 +18,7 @@ interface StyleProps extends SpaceProps, SizeProps {
 
 export interface Props extends StyleProps {
   label?: string
-  autoComplete?: string
+  autocomplete?: string
   className?: string
   onChange?: React.ChangeEventHandler<HTMLInputElement>
   placeholder?: string
@@ -79,7 +79,7 @@ const FormControl = styled(
 `
 
 const TextField = ({
-  autoComplete,
+  autocomplete,
   label,
   placeholder,
   className,
@@ -127,7 +127,7 @@ const TextField = ({
         onBlur,
         onFocus,
         required,
-        autoComplete,
+        autocomplete,
       }}
       startAdornment={startAdornment}
       endAdornment={endAdornment}
