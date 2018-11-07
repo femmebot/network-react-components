@@ -1,5 +1,5 @@
 ```jsx
-const colors = require('./color.ts')
+const colors = require('./colors.ts')
 ;<Flex flexWrap="wrap">
   {Object.keys(colors).map(c => {
     const color = colors[c]
@@ -18,7 +18,7 @@ const colors = require('./color.ts')
 Colors found in header and footer
 
 ```jsx
-const colors = require('./legacyColor.ts')
+const colors = require('./legacycolors.ts')
 ;<Flex flexWrap="wrap">
   {Object.keys(colors).map(c => {
     const color = colors[c]
@@ -35,7 +35,7 @@ const colors = require('./legacyColor.ts')
 ## Creative Qualities Colors
 
 ```jsx
-const colors = require('./createQualityColor.ts')
+const colors = require('./creativeQualityColors.ts')
 ;<Flex flexWrap="wrap">
   {Object.keys(colors).map(c => {
     const color = colors[c]

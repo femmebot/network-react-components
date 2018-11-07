@@ -9,7 +9,7 @@ import Typography from '~shared/components/atoms/Typography'
 import UpdateCardInfoModal from '~shared/components/compounds/UpdateCardInfoModal'
 import ConfirmationModal from '~shared/components/molecules/ConfirmationModal'
 import Dropdown, { RenderMenu } from '~shared/components/molecules/Dropdown'
-import * as colors from '~shared/styles/constants/color'
+import * as colors from '~shared/styles/constants/colors'
 
 interface Props {
   paymentMethod: PaymentMethod
@@ -84,7 +84,7 @@ class InvoiceActionMenu extends React.Component<Props, State> {
       key="remove"
       onClick={() => this.openRemoveCardConfirmation(menuProps)}
     >
-      <Typography variant="instructional" style={{ color: colors.paleRed }}>
+      <Typography variant="instructional" style={{ color: colors.error }}>
         Remove
       </Typography>
     </ContextMenuItem>

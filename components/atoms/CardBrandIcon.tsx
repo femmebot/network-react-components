@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as colors from '~shared/styles/constants/color'
+import * as colors from '~shared/styles/constants/colors'
 import AmexIcon from '~shared/images/icon-card-amex.svg'
 import DiscoverIcon from '~shared/images/icon-card-discover.svg'
 import MastercardIcon from '~shared/images/icon-card-mastercard.svg'
