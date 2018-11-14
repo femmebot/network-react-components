@@ -18,7 +18,7 @@ const colors = require('./colors.ts')
 Colors found in header and footer
 
 ```jsx
-const colors = require('./legacycolors.ts')
+const colors = require('./legacyColors.ts')
 ;<Flex flexWrap="wrap">
   {Object.keys(colors).map(c => {
     const color = colors[c]
