@@ -73,6 +73,7 @@ function Control(props: ControlProps<any>) {
 function Option(props: OptionProps<any>) {
   return (
     <MenuItem
+      // @ts-ignore
       buttonRef={props.innerRef}
       selected={props.isFocused}
       {...props.innerProps}
