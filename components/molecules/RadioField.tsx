@@ -108,6 +108,7 @@ const RadioField = ({
           label={option}
           control={<Radio color="primary" />}
           labelPlacement={labelPlacement}
+          data-cy={`${name}-${option}`}
         />
       ))}
     </RadioGroup>
