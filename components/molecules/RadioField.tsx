@@ -95,11 +95,11 @@ const RadioField = ({
     {label && <FieldLabel htmlFor={id}>{label}</FieldLabel>}
     <RadioGroup
       name={name}
-      onChange={(event: object, value: string) =>
-        onChange && onChange(event, value)
+      onChange={(event: object, eventValue: string) =>
+        onChange && onChange(event, eventValue)
       }
       value={format && value ? format(value) : value}
-      row={true}
+      row
     >
       {options.map(option => (
         <FormControlLabel
