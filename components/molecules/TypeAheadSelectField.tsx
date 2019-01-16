@@ -232,7 +232,11 @@ class TypeAheadSelectField extends React.Component<Props, State> {
         className={className}
         fullWidth
       >
-        {label && <FieldLabel htmlFor={id}>{label}</FieldLabel>}
+        {label && (
+          <Box mb={18}>
+            <FieldLabel htmlFor={id}>{label}</FieldLabel>
+          </Box>
+        )}
         <Wrapper>
           <Select
             name={name}

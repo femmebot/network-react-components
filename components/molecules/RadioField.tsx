@@ -9,7 +9,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 import FieldError from '~shared/components/atoms/FieldError'
 import FieldLabel from '~shared/components/atoms/FieldLabel'
-import RadioInput from '~shared/components/atoms/RadioInput'
 import {
   colors,
   sizeStyles,
@@ -19,7 +18,6 @@ import {
 import { SizeProps } from '~shared/styles/props/size'
 import { SpaceProps } from '~shared/styles/props/space'
 import { pxToRem } from '~shared/styles/utils'
-import Flex from '~shared/components/atoms/Flex'
 
 interface StyleProps extends SpaceProps, SizeProps {
   inheritFont?: boolean
@@ -27,20 +25,16 @@ interface StyleProps extends SpaceProps, SizeProps {
 
 export interface Props extends StyleProps {
   label?: string
+  name: string
   className?: string
-  onChange?: React.ChangeEventHandler<HTMLInputElement>
-  onBlur?: React.FocusEventHandler<HTMLInputElement>
-  onFocus?: React.FocusEventHandler<HTMLInputElement>
-  options: ObjectifiableFormOption[]
-  labelPlacement: 'end' | 'start' | 'top' | 'bottom'
+  onChange?: (event: object, value: string) => void
+  options: string[]
+  labelPlacement?: 'end' | 'start' | undefined
   value?: string
   id?: string
   error?: string
-  type?: string
   disabled?: boolean
   format?: (value: string) => string
-  readOnly?: boolean
-  required?: boolean
 }
 
 const fontStyles = ({ inheritFont = false }: StyleProps) => {
@@ -82,18 +76,14 @@ const RadioField = ({
   label,
   className,
   onChange,
-  onBlur,
-  onFocus,
   options,
   value,
+  name,
   id,
-  type = 'radio',
   labelPlacement = 'end',
   disabled,
   error,
   format,
-  readOnly,
-  required,
   ...styleProps
 }: Props) => (
   <FormControl
@@ -104,9 +94,10 @@ const RadioField = ({
   >
     {label && <FieldLabel htmlFor={id}>{label}</FieldLabel>}
     <RadioGroup
-      id={id}
       name={name}
-      onChange={onChange}
+      onChange={(event: object, value: string) =>
+        onChange && onChange(event, value)
+      }
       value={format && value ? format(value) : value}
       row={true}
     >
