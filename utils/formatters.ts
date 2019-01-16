@@ -1,10 +1,12 @@
-import { format } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 
 export const formatAsDollarAmount = (value: number) => `$${value.toFixed(2)}`
 
 export const formatAsNumber = (value: string) => value.replace(/\D+/, '')
 
 export const formatDate = format
+
+export const dateParseISO = parseISO
 
 export const formatAsExpirationDate = (value: string) => {
   const sep = ' / '

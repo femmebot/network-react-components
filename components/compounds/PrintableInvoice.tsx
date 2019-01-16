@@ -12,7 +12,11 @@ import Typography from '~shared/components/atoms/Typography'
 import FieldLabel from '~shared/components/atoms/FieldLabel'
 import { colors } from '~shared/styles/index'
 import { pxToRem } from '~shared/styles/utils'
-import { formatAsDollarAmount, formatDate } from '~shared/utils/formatters'
+import {
+  formatAsDollarAmount,
+  formatDate,
+  dateParseISO,
+} from '~shared/utils/formatters'
 
 const Wrapper = styled.div`
   padding: ${pxToRem(90)} ${pxToRem(20)};
@@ -144,7 +148,7 @@ const PrintableInvoice: React.SFC<Props> = ({
         <Grid item xs={5}>
           <LabelValue label="Customer">{organization.name_display}</LabelValue>
           <LabelValue label="Date Paid">
-            {formatDate(invoice.period_end, 'MM/DD/YYYY')}
+            {formatDate(dateParseISO(invoice.period_end), 'MM/dd/yyyy')}
           </LabelValue>
           <LabelValue label="Payment Method">
             {invoice.payment_methods[0].brand} ending in{' '}
@@ -154,12 +158,12 @@ const PrintableInvoice: React.SFC<Props> = ({
         <Grid item xs={2} />
         <Grid item xs={5}>
           <LabelValue label="Statement Date">
-            {formatDate(invoice.period_end, 'MM/DD/YYYY')}
+            {formatDate(dateParseISO(invoice.period_end), 'MM/dd/yyyy')}
           </LabelValue>
           <LabelValue label="Statement #">{invoice.id}</LabelValue>
           <LabelValue label="Billing Period">
-            {formatDate(invoice.period_start, 'MM/DD/YYYY')} –
-            {formatDate(invoice.period_end, 'MM/DD/YYYY')}
+            {formatDate(dateParseISO(invoice.period_start), 'MM/dd/yyyy')} –
+            {formatDate(dateParseISO(invoice.period_end), 'MM/dd/yyyy')}
           </LabelValue>
         </Grid>
       </Grid>
