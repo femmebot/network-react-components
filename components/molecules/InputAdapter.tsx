@@ -28,7 +28,7 @@ const InputAdapter = (
           ? (value: string | string[]) => form.setFieldValue(field.name, value)
           : field.onChange
       }
-      onBlur={field.onBlur && field.onBlur}
+      onBlur={field.onBlur}
       value={(!isUndefined(field.value) && formatValue(field.value)) || ''}
       id={field.name}
       name={field.name}
