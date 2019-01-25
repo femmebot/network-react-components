@@ -94,7 +94,11 @@ class Modal extends React.Component<Props, State> {
         {this.props.trigger && (
           <div onClick={this.open}>{this.props.trigger}</div>
         )}
-        <ModalWrapper open={this.state.open} onClose={this.close}>
+        <ModalWrapper
+          open={this.state.open}
+          onClose={this.close}
+          data-cy="modal"
+        >
           {Container ? (
             <Container>{this.props.children(this.close)}</Container>
           ) : (
@@ -102,7 +106,7 @@ class Modal extends React.Component<Props, State> {
               <Grid container>
                 <Grid item xs={11}>
                   <Box mb={16}>
-                    <Typography variant="heading-2">
+                    <Typography variant="heading-2" data-cy="modal-title">
                       {this.props.title}
                     </Typography>
                   </Box>
