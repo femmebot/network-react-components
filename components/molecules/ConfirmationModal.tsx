@@ -57,7 +57,10 @@ class ConfirmationModal extends React.Component<Props> {
               </Box>
               <Flex justifyContent="space-between">
                 <Button onClick={closeModal}>Cancel</Button>
-                <Button onClick={() => onConfirmed(closeModal)}>
+                <Button
+                  data-cy="confirmation-modal-button"
+                  onClick={() => onConfirmed(closeModal)}
+                >
                   {buttonText}
                 </Button>
               </Flex>
