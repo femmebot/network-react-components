@@ -116,10 +116,21 @@ class PillInput extends React.Component<Props, State> {
   render() {
     return (
       <Pills>
-        <Grid container spacing={8} alignItems="center">
+        <Grid
+          container
+          spacing={8}
+          alignItems="center"
+          data-cy="email-pill-container"
+        >
           {this.props.value.map(item => (
             <Grid item key={item}>
-              <Pill px={10} py={8} justifyContent="center" alignItems="center">
+              <Pill
+                px={10}
+                py={8}
+                justifyContent="center"
+                alignItems="center"
+                data-cy="email-pill"
+              >
                 {item}
                 <PillButton onClick={this.removeItem(item)}>
                   <CloseIcon width="11px" height="11px" />
