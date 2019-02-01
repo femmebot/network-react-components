@@ -113,7 +113,10 @@ class Modal extends React.Component<Props, State> {
                 </Grid>
                 <Grid item xs={1}>
                   <Typography align="right">
-                    <IconButton onClick={this.close}>
+                    <IconButton
+                      onClick={this.close}
+                      data-cy="modal-close-button"
+                    >
                       <CloseIcon width="16px" height="16px" />
                     </IconButton>
                   </Typography>
