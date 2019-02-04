@@ -142,6 +142,7 @@ class PillInput extends React.Component<Props, State> {
             <StyledTextField
               type="text"
               id="pill-input"
+              data-cy="pill-input-text-field"
               placeholder={
                 this.props.value.length === 0
                   ? this.props.emptyPlaceholder
