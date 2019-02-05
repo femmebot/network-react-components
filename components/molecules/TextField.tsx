@@ -79,6 +79,12 @@ const FormControl = styled(
   && input {
     ${fontStyles};
   }
+  && input#pill-input {
+    border-bottom: none;
+    &:focus {
+      border-bottom: 1px solid ${colors.black} !important;
+    }
+  }
 `
 
 const TextField = ({
