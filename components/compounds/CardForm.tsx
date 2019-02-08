@@ -1,5 +1,5 @@
-import { Grid } from '@material-ui/core'
-import * as React from 'react'
+import { Grid } from '@material-ui/core';
+import * as React from 'react';
 import {
   CardCVCElement,
   CardExpiryElement,
@@ -9,30 +9,30 @@ import {
   PostalCodeElement,
   ReactStripeElements,
   StripeProvider,
-} from 'react-stripe-elements'
-import { Brand } from '~shared/api.network.v1'
-import Box from '~shared/components/atoms/Box'
-import CardBrandIcon from '~shared/components/atoms/CardBrandIcon'
-import CardFormField from '~shared/components/atoms/CardFormField'
-import Flex from '~shared/components/atoms/Flex'
-import Typography from '~shared/components/atoms/Typography'
-import TextField from '~shared/components/molecules/TextField'
-import TypeAheadSelectField from '~shared/components/molecules/TypeAheadSelectField'
-import countryOptions from '~shared/utils/countryOptions'
-import handleError from '~shared/utils/handleError'
+} from 'react-stripe-elements';
+import { Brand } from '~shared/api.network.v1';
+import Box from '~shared/components/atoms/Box';
+import CardBrandIcon from '~shared/components/atoms/CardBrandIcon';
+import CardFormField from '~shared/components/atoms/CardFormField';
+import Flex from '~shared/components/atoms/Flex';
+import Typography from '~shared/components/atoms/Typography';
+import TextField from '~shared/components/molecules/TextField';
+import TypeAheadSelectField from '~shared/components/molecules/TypeAheadSelectField';
+import countryOptions from '~shared/utils/countryOptions';
+import handleError from '~shared/utils/handleError';
 
 interface Props {
-  onTokenCreated: (token: stripe.Token) => Promise<void>
-  onError?: () => void
-  children: (processing: boolean) => React.ReactNode
+  onTokenCreated: (token: stripe.Token) => Promise<void>;
+  onError?: () => void;
+  children: (processing: boolean) => React.ReactNode;
 }
 
 interface State {
-  brand: Brand
-  name: string
-  country: string
-  processing: boolean
-  errors: { [key: string]: string | undefined }
+  brand: Brand;
+  name: string;
+  country: string;
+  processing: boolean;
+  errors: { [key: string]: string | undefined };
 }
 
 const brandMap = new Map<string, Brand>([
@@ -41,7 +41,7 @@ const brandMap = new Map<string, Brand>([
   ['mastercard', Brand.MasterCard],
   ['visa', Brand.Visa],
   ['paypal', Brand.Paypal],
-])
+]);
 
 const stripeFonts = [
   {
@@ -51,7 +51,7 @@ const stripeFonts = [
     src:
       "url(https://s3.amazonaws.com/assets.creativedifference/Gotham-Book.otf) format('opentype')",
   },
-]
+];
 
 const createOptions = () => ({
   style: {
@@ -61,7 +61,7 @@ const createOptions = () => ({
       fontStyle: 'normal',
     },
   },
-})
+});
 
 class CardForm extends React.Component<
   ReactStripeElements.InjectedStripeProps & Props,
@@ -78,78 +78,78 @@ class CardForm extends React.Component<
       zip: undefined,
       expiry: undefined,
     },
-  }
+  };
 
   handleChangeOfCountry = (value: string | null) => {
-    this.setState({ country: value || '' })
-  }
+    this.setState({ country: value || '' });
+  };
 
   handleChangeOfCardName = (value: string) => {
-    this.setState({ name: value })
-  }
+    this.setState({ name: value });
+  };
 
   processing = () => {
-    this.setState({ processing: true })
-  }
+    this.setState({ processing: true });
+  };
 
   processed = () => {
-    this.setState({ processing: false })
-  }
+    this.setState({ processing: false });
+  };
 
   resolveBrand = (value: string): Brand => {
-    const brand = brandMap.get(value)
+    const brand = brandMap.get(value);
     if (!brand) {
-      return Brand.Placeholder
+      return Brand.Placeholder;
     }
 
-    return brand
-  }
+    return brand;
+  };
 
   handleChangeOfCardNumber = (value: stripe.elements.ElementChangeResponse) => {
-    this.setState({ brand: this.resolveBrand(value.brand) })
-  }
+    this.setState({ brand: this.resolveBrand(value.brand) });
+  };
 
   handleApiError = (error: stripe.elements.ElementChangeResponse) => {
-    handleError(error)
-    this.props.onError && this.props.onError()
-  }
+    handleError(error);
+    this.props.onError && this.props.onError();
+  };
 
   createStripeToken = async (name: string): Promise<stripe.Token> => {
     if (!this.props.stripe) {
-      throw Error("Stripe.js hasn't loaded yet.")
+      throw Error("Stripe.js hasn't loaded yet.");
     }
 
-    const payload = await this.props.stripe.createToken({ name })
+    const payload = await this.props.stripe.createToken({ name });
 
     if (payload.token) {
-      return payload.token
+      return payload.token;
     }
 
     if (payload.error) {
-      throw Error(payload.error.message)
+      throw Error(payload.error.message);
     }
 
-    throw Error('Something went wrong, no token reveived')
-  }
+    throw Error('Something went wrong, no token reveived');
+  };
 
   handleSubmit = async (ev: React.FormEvent<HTMLFormElement>) => {
-    ev.preventDefault()
+    ev.preventDefault();
 
     if (!this.props.stripe) {
-      handleError("Stripe.js hasn't loaded yet.")
-      return
+      handleError("Stripe.js hasn't loaded yet.");
+      return;
     }
 
     try {
-      this.processing()
-      const stripeToken = await this.createStripeToken(this.state.name)
-      await this.props.onTokenCreated(stripeToken)
-      this.processed()
+      this.processing();
+      const stripeToken = await this.createStripeToken(this.state.name);
+      await this.props.onTokenCreated(stripeToken);
+      this.processed();
     } catch (e) {
-      this.processed()
-      this.handleApiError(e)
+      this.processed();
+      this.handleApiError(e);
     }
-  }
+  };
 
   onChange = (key: string, event: stripe.elements.ElementChangeResponse) => {
     this.setState({
@@ -157,11 +157,11 @@ class CardForm extends React.Component<
         ...this.state.errors,
         [key]: (event.error && event.error.message) || undefined,
       },
-    })
-  }
+    });
+  };
 
   render() {
-    const { errors } = this.state
+    const { errors } = this.state;
     return (
       <Box pt={40}>
         <form onSubmit={this.handleSubmit}>
@@ -174,8 +174,8 @@ class CardForm extends React.Component<
                     <CardNumberElement
                       placeholder=""
                       onChange={event => {
-                        this.onChange('card', event)
-                        this.handleChangeOfCardNumber(event)
+                        this.onChange('card', event);
+                        this.handleChangeOfCardNumber(event);
                       }}
                       {...createOptions()}
                     />
@@ -193,7 +193,7 @@ class CardForm extends React.Component<
                     id="name"
                     value={this.state.name}
                     onChange={event => {
-                      this.handleChangeOfCardName(event.target.value)
+                      this.handleChangeOfCardName(event.target.value);
                     }}
                   />
                 </Typography>
@@ -247,13 +247,13 @@ class CardForm extends React.Component<
           {this.props.children(this.state.processing)}
         </form>
       </Box>
-    )
+    );
   }
 }
 
-const PreparedCardForm = injectStripe(CardForm)
+const PreparedCardForm = injectStripe(CardForm);
 
-type StripeFormProps = Pick<Props, 'onTokenCreated' | 'onError' | 'children'>
+type StripeFormProps = Pick<Props, 'onTokenCreated' | 'onError' | 'children'>;
 
 class StripeForm extends React.Component<StripeFormProps> {
   render() {
@@ -268,8 +268,8 @@ class StripeForm extends React.Component<StripeFormProps> {
           </PreparedCardForm>
         </Elements>
       </StripeProvider>
-    )
+    );
   }
 }
 
-export default StripeForm
+export default StripeForm;

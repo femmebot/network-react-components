@@ -1,18 +1,18 @@
-import { Grid, Tooltip } from '@material-ui/core'
-import * as React from 'react'
-import HelpIcon from '~shared/images/icon-questionmark.svg'
-import Box from '~shared/components/atoms/Box'
-import FieldError from '~shared/components/atoms/FieldError'
-import FieldLabel from '~shared/components/atoms/FieldLabel'
-import HorizontalDivider from '~shared/components/atoms/HorizontalDivider'
-import { colors } from '~shared/styles'
-import { pxToRem } from '~shared/styles/utils'
+import { Grid, Tooltip } from '@material-ui/core';
+import * as React from 'react';
+import HelpIcon from '~shared/images/icon-questionmark.svg';
+import Box from '~shared/components/atoms/Box';
+import FieldError from '~shared/components/atoms/FieldError';
+import FieldLabel from '~shared/components/atoms/FieldLabel';
+import HorizontalDivider from '~shared/components/atoms/HorizontalDivider';
+import { colors } from '~shared/styles';
+import { pxToRem } from '~shared/styles/utils';
 
 interface Props {
-  label: string
-  hr?: boolean
-  tooltip?: string
-  error?: string
+  label: string;
+  hr?: boolean;
+  tooltip?: string;
+  error?: string;
 }
 
 const CardFormField: React.SFC<Props> = ({
@@ -49,6 +49,6 @@ const CardFormField: React.SFC<Props> = ({
     {hr && <HorizontalDivider height={pxToRem(1)} color={colors.black} />}
     {error && <FieldError>{error}</FieldError>}
   </Box>
-)
+);
 
-export default CardFormField
+export default CardFormField;

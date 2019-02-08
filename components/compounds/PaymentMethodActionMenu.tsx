@@ -1,61 +1,61 @@
-import MenuList from '@material-ui/core/MenuList'
-import * as React from 'react'
-import ArchiveIcon from '~shared/images/icon-archive.svg'
-import ActionIcon from '~shared/images/icon-dot-menu.svg'
-import { PaymentMethod } from '~shared/api.network.v1'
-import ContextMenuItem from '~shared/components/atoms/ContextMenuItem'
-import IconButton from '~shared/components/atoms/IconButton'
-import Typography from '~shared/components/atoms/Typography'
-import UpdateCardInfoModal from '~shared/components/compounds/UpdateCardInfoModal'
-import ConfirmationModal from '~shared/components/molecules/ConfirmationModal'
-import Dropdown, { RenderMenu } from '~shared/components/molecules/Dropdown'
-import * as colors from '~shared/styles/constants/colors'
+import MenuList from '@material-ui/core/MenuList';
+import * as React from 'react';
+import ArchiveIcon from '~shared/images/icon-archive.svg';
+import ActionIcon from '~shared/images/icon-dot-menu.svg';
+import { PaymentMethod } from '~shared/api.network.v1';
+import ContextMenuItem from '~shared/components/atoms/ContextMenuItem';
+import IconButton from '~shared/components/atoms/IconButton';
+import Typography from '~shared/components/atoms/Typography';
+import UpdateCardInfoModal from '~shared/components/compounds/UpdateCardInfoModal';
+import ConfirmationModal from '~shared/components/molecules/ConfirmationModal';
+import Dropdown, { RenderMenu } from '~shared/components/molecules/Dropdown';
+import * as colors from '~shared/styles/constants/colors';
 
 interface Props {
-  paymentMethod: PaymentMethod
-  updatePaymentMethod: (paymentMethod: PaymentMethod) => Promise<void>
-  makePaymentMethodDefault: (paymentMethod: PaymentMethod) => Promise<void>
-  destroyPaymentMethod: (paymentMethod: PaymentMethod) => Promise<void>
+  paymentMethod: PaymentMethod;
+  updatePaymentMethod: (paymentMethod: PaymentMethod) => Promise<void>;
+  makePaymentMethodDefault: (paymentMethod: PaymentMethod) => Promise<void>;
+  destroyPaymentMethod: (paymentMethod: PaymentMethod) => Promise<void>;
 }
 
 interface State {
-  openUpdateCardInfo: boolean
-  openRemoveCardConfirmation: boolean
+  openUpdateCardInfo: boolean;
+  openRemoveCardConfirmation: boolean;
 }
 
 class InvoiceActionMenu extends React.Component<Props, State> {
   state = {
     openUpdateCardInfo: false,
     openRemoveCardConfirmation: false,
-  }
+  };
 
   openUpdateCardInfo = (menuProps: RenderMenu) => {
-    menuProps.closeMenu()
-    this.setState({ openUpdateCardInfo: true })
-  }
+    menuProps.closeMenu();
+    this.setState({ openUpdateCardInfo: true });
+  };
 
   openRemoveCardConfirmation = (menuProps: RenderMenu) => {
-    menuProps.closeMenu()
-    this.setState({ openRemoveCardConfirmation: true })
-  }
+    menuProps.closeMenu();
+    this.setState({ openRemoveCardConfirmation: true });
+  };
 
   closeUpdateCardInfo = () => {
-    this.setState({ openUpdateCardInfo: false })
-  }
+    this.setState({ openUpdateCardInfo: false });
+  };
 
   makeDefaultCard = async (menuProps: RenderMenu) => {
-    menuProps.closeMenu()
-    await this.props.makePaymentMethodDefault(this.props.paymentMethod)
-  }
+    menuProps.closeMenu();
+    await this.props.makePaymentMethodDefault(this.props.paymentMethod);
+  };
 
   removeCardConfirmation = async () => {
-    await this.props.destroyPaymentMethod(this.props.paymentMethod)
-    this.setState({ openRemoveCardConfirmation: false })
-  }
+    await this.props.destroyPaymentMethod(this.props.paymentMethod);
+    this.setState({ openRemoveCardConfirmation: false });
+  };
 
   closeRemoveCardConfirmation = () => {
-    this.setState({ openRemoveCardConfirmation: false })
-  }
+    this.setState({ openRemoveCardConfirmation: false });
+  };
 
   getMakeDefaultMenuItem = (menuProps: RenderMenu) => (
     <ContextMenuItem
@@ -66,7 +66,7 @@ class InvoiceActionMenu extends React.Component<Props, State> {
         Make default
       </Typography>
     </ContextMenuItem>
-  )
+  );
 
   getUpdateInfoMenuItem = (menuProps: RenderMenu) => (
     <ContextMenuItem
@@ -77,7 +77,7 @@ class InvoiceActionMenu extends React.Component<Props, State> {
         Update info
       </Typography>
     </ContextMenuItem>
-  )
+  );
 
   getRemoveMenuItem = (menuProps: RenderMenu) => (
     <ContextMenuItem
@@ -88,30 +88,30 @@ class InvoiceActionMenu extends React.Component<Props, State> {
         Remove
       </Typography>
     </ContextMenuItem>
-  )
+  );
 
   getMenuItems = (menuProps: RenderMenu) => {
     if (this.props.paymentMethod.expired) {
       return [
         this.getUpdateInfoMenuItem(menuProps),
         this.getRemoveMenuItem(menuProps),
-      ]
+      ];
     }
 
     if (this.props.paymentMethod.default) {
-      return [this.getUpdateInfoMenuItem(menuProps)]
+      return [this.getUpdateInfoMenuItem(menuProps)];
     }
 
     return [
       this.getMakeDefaultMenuItem(menuProps),
       this.getUpdateInfoMenuItem(menuProps),
       this.getRemoveMenuItem(menuProps),
-    ]
-  }
+    ];
+  };
 
   getMenu = (menuProps: RenderMenu) => (
     <MenuList role="menu">{this.getMenuItems(menuProps)}</MenuList>
-  )
+  );
 
   render() {
     return (
@@ -119,7 +119,7 @@ class InvoiceActionMenu extends React.Component<Props, State> {
         {({ showMenu, targetRef }) => (
           <div
             ref={ref => {
-              targetRef(ref as HTMLElement)
+              targetRef(ref as HTMLElement);
             }}
           >
             <ConfirmationModal
@@ -145,8 +145,8 @@ class InvoiceActionMenu extends React.Component<Props, State> {
           </div>
         )}
       </Dropdown>
-    )
+    );
   }
 }
 
-export default InvoiceActionMenu
+export default InvoiceActionMenu;

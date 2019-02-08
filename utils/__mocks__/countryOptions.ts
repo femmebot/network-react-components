@@ -1,1 +1,1 @@
-export default [{ value: 'usa', label: 'United States Of America' }]
+export default [{ value: 'usa', label: 'United States Of America' }];

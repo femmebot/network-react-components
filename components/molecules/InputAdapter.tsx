@@ -1,25 +1,25 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import { FieldProps } from 'formik'
-import { isUndefined } from 'lodash'
+import { FieldProps } from 'formik';
+import { isUndefined } from 'lodash';
 
-type FieldValue = string | number
+type FieldValue = string | number;
 
 interface Options {
-  setFieldValue?: boolean
+  setFieldValue?: boolean;
 }
 
 const InputAdapter = (
   component: React.ReactType,
   options?: Options
 ): React.SFC<FieldProps> => ({ field, form, ...props }) => {
-  const Component = component
+  const Component = component;
   const formatValue = (value: FieldValue | FieldValue[]) => {
     if (typeof value === 'number') {
-      return value.toString()
+      return value.toString();
     }
-    return value
-  }
+    return value;
+  };
 
   return (
     <Component
@@ -35,7 +35,7 @@ const InputAdapter = (
       error={form.errors[field.name]}
       {...props}
     />
-  )
-}
+  );
+};
 
-export default InputAdapter
+export default InputAdapter;

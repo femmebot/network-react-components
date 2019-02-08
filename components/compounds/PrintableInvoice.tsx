@@ -1,22 +1,22 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import Grid from '@material-ui/core/Grid/Grid'
-import { partition, sortBy, sumBy } from 'lodash'
-import styled from 'styled-components'
-import { Coupon, Invoice, Subscription } from '~shared/api.network.v1'
-import { InvoiceItem } from '~shared/api.network.v1/InvoiceItem'
-import Box from '~shared/components/atoms/Box'
-import Center from '~shared/components/atoms/Center'
-import HorizontalDivider from '~shared/components/atoms/HorizontalDivider'
-import Typography from '~shared/components/atoms/Typography'
-import FieldLabel from '~shared/components/atoms/FieldLabel'
-import { colors } from '~shared/styles/index'
-import { pxToRem } from '~shared/styles/utils'
+import Grid from '@material-ui/core/Grid/Grid';
+import { partition, sortBy, sumBy } from 'lodash';
+import styled from 'styled-components';
+import { Coupon, Invoice, Subscription } from '~shared/api.network.v1';
+import { InvoiceItem } from '~shared/api.network.v1/InvoiceItem';
+import Box from '~shared/components/atoms/Box';
+import Center from '~shared/components/atoms/Center';
+import HorizontalDivider from '~shared/components/atoms/HorizontalDivider';
+import Typography from '~shared/components/atoms/Typography';
+import FieldLabel from '~shared/components/atoms/FieldLabel';
+import { colors } from '~shared/styles/index';
+import { pxToRem } from '~shared/styles/utils';
 import {
   formatAsDollarAmount,
   formatDate,
   dateParseISO,
-} from '~shared/utils/formatters'
+} from '~shared/utils/formatters';
 
 const Wrapper = styled.div`
   padding: ${pxToRem(90)} ${pxToRem(20)};
@@ -26,10 +26,10 @@ const Wrapper = styled.div`
     max-width: 100%;
     padding: 0;
   }
-`
+`;
 const AddressItem = styled.div`
   line-height: 1;
-`
+`;
 
 const LabelValue: React.SFC<{ label: string }> = ({ label, children }) => (
   <Grid item container alignItems="center">
@@ -40,7 +40,7 @@ const LabelValue: React.SFC<{ label: string }> = ({ label, children }) => (
       <Typography variant="paragraph">{children}</Typography>
     </Grid>
   </Grid>
-)
+);
 
 const Subtotal: React.SFC<{ items: InvoiceItem[] }> = ({ items }) => (
   <React.Fragment>
@@ -56,7 +56,7 @@ const Subtotal: React.SFC<{ items: InvoiceItem[] }> = ({ items }) => (
       </Grid>
     </Grid>
   </React.Fragment>
-)
+);
 
 const CouponLine: React.SFC<{ coupon: Coupon; invoice: Invoice }> = ({
   coupon,
@@ -64,7 +64,7 @@ const CouponLine: React.SFC<{ coupon: Coupon; invoice: Invoice }> = ({
 }) => {
   const discountAmount = coupon.amount_off
     ? coupon.amount_off
-    : invoice.amount * (coupon.percent_off / 100.0)
+    : invoice.amount * (coupon.percent_off / 100.0);
   return (
     <Grid container spacing={24}>
       <Grid item xs={10}>
@@ -76,13 +76,13 @@ const CouponLine: React.SFC<{ coupon: Coupon; invoice: Invoice }> = ({
         </Typography>
       </Grid>
     </Grid>
-  )
-}
+  );
+};
 
 interface AddressProps {
-  street1: string
-  street2?: string
-  cityStateZip: string
+  street1: string;
+  street2?: string;
+  cityStateZip: string;
 }
 const Address: React.SFC<AddressProps> = address => (
   <React.Fragment>
@@ -90,27 +90,27 @@ const Address: React.SFC<AddressProps> = address => (
     {address.street2 && <AddressItem>{address.street2}</AddressItem>}
     <AddressItem>{address.cityStateZip}</AddressItem>
   </React.Fragment>
-)
+);
 
 const guardedDivide = (amount: number, quantity: number) =>
-  quantity === 0 ? 0 : amount / quantity
+  quantity === 0 ? 0 : amount / quantity;
 
 interface Props {
-  invoice: Invoice
+  invoice: Invoice;
   organization: {
-    name_display: string
-  }
-  subscription: Subscription
-  logo?: string
-  brandTitle?: string
-  address?: AddressProps
+    name_display: string;
+  };
+  subscription: Subscription;
+  logo?: string;
+  brandTitle?: string;
+  address?: AddressProps;
 }
 
 const defaultAddress = {
   street1: '501 The Embarcadero',
   street2: 'Pier 28 Annex',
   cityStateZip: 'San Francisco, CA 94105',
-}
+};
 
 const PrintableInvoice: React.SFC<Props> = ({
   organization,
@@ -120,8 +120,8 @@ const PrintableInvoice: React.SFC<Props> = ({
   brandTitle,
   address = defaultAddress,
 }) => {
-  const { coupon } = subscription
-  const [proRatedItems, items] = partition(invoice.invoice_items, 'prorated')
+  const { coupon } = subscription;
+  const [proRatedItems, items] = partition(invoice.invoice_items, 'prorated');
   return (
     <Wrapper>
       <Center mb={40}>
@@ -307,7 +307,7 @@ const PrintableInvoice: React.SFC<Props> = ({
         </Typography>
       </Box>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default PrintableInvoice
+export default PrintableInvoice;

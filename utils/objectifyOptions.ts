@@ -1,14 +1,14 @@
-import { FormOption, ObjectifiableFormOption } from '~shared/data'
+import { FormOption, ObjectifiableFormOption } from '~shared/data';
 
 const objectifyOptions = (options: ObjectifiableFormOption[]): FormOption[] =>
   options.map(option => {
     if (typeof option !== 'string') {
-      return option
+      return option;
     }
     return {
       label: option,
       value: option,
-    }
-  })
+    };
+  });
 
-export default objectifyOptions
+export default objectifyOptions;
