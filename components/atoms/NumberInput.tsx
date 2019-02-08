@@ -1,7 +1,7 @@
-import * as React from 'react'
-import styled from 'styled-components'
-import { colors, typography } from '~shared/styles/index'
-import { pxToRem } from '~shared/styles/utils'
+import * as React from 'react';
+import styled from 'styled-components';
+import { colors, typography } from '~shared/styles/index';
+import { pxToRem } from '~shared/styles/utils';
 
 const StyledNumberInput = styled.input`
   width: ${pxToRem(88)};
@@ -13,10 +13,10 @@ const StyledNumberInput = styled.input`
   font-size: ${pxToRem(16)};
   line-height: 1.1;
   letter-spacing: ${pxToRem(0.6)};
-`
+`;
 
 const NumberInput: React.SFC<
   React.AllHTMLAttributes<HTMLInputElement>
-> = props => <StyledNumberInput type="number" {...props} />
+> = props => <StyledNumberInput type="number" {...props} />;
 
-export default NumberInput
+export default NumberInput;

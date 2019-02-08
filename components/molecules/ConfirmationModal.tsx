@@ -1,22 +1,22 @@
-import { Paper } from '@material-ui/core'
-import * as React from 'react'
-import styled from 'styled-components'
+import { Paper } from '@material-ui/core';
+import * as React from 'react';
+import styled from 'styled-components';
 
-import CloseIcon from '~shared/images/icon-close.svg'
-import Box from '~shared/components/atoms/Box'
-import Button from '~shared/components/atoms/Button'
-import Flex from '~shared/components/atoms/Flex'
-import IconButton from '~shared/components/atoms/IconButton'
-import Typography from '~shared/components/atoms/Typography'
-import Modal, { Props as ModalProps } from '~shared/components/molecules/Modal'
-import { colors } from '~shared/styles/index'
-import { pxToRem } from '~shared/styles/utils'
+import CloseIcon from '~shared/images/icon-close.svg';
+import Box from '~shared/components/atoms/Box';
+import Button from '~shared/components/atoms/Button';
+import Flex from '~shared/components/atoms/Flex';
+import IconButton from '~shared/components/atoms/IconButton';
+import Typography from '~shared/components/atoms/Typography';
+import Modal, { Props as ModalProps } from '~shared/components/molecules/Modal';
+import { colors } from '~shared/styles/index';
+import { pxToRem } from '~shared/styles/utils';
 
 interface Props extends Pick<ModalProps, 'trigger' | 'open' | 'onClose'> {
-  onConfirmed: (closeModal: () => void) => void
-  buttonText: React.ReactText
-  icon?: React.ReactType
-  trigger?: React.ReactNode
+  onConfirmed: (closeModal: () => void) => void;
+  buttonText: React.ReactText;
+  icon?: React.ReactType;
+  trigger?: React.ReactNode;
 }
 
 const ContentWrapper = styled(Paper)`
@@ -26,7 +26,7 @@ const ContentWrapper = styled(Paper)`
     background: ${colors.ctaPrimary};
     outline: none;
   }
-`
+`;
 
 class ConfirmationModal extends React.Component<Props> {
   render() {
@@ -36,7 +36,7 @@ class ConfirmationModal extends React.Component<Props> {
       icon: Icon,
       onConfirmed,
       ...modalProps
-    } = this.props
+    } = this.props;
     return (
       <Modal {...modalProps} container={ContentWrapper}>
         {closeModal => (
@@ -68,8 +68,8 @@ class ConfirmationModal extends React.Component<Props> {
           </React.Fragment>
         )}
       </Modal>
-    )
+    );
   }
 }
 
-export default ConfirmationModal
+export default ConfirmationModal;

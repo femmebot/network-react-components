@@ -1,11 +1,11 @@
-import * as React from 'react'
-import styled from 'styled-components'
-import { withTheme, WithTheme } from '~shared/styles/themes'
+import * as React from 'react';
+import styled from 'styled-components';
+import { withTheme, WithTheme } from '~shared/styles/themes';
 
 interface Props {
-  height?: string
-  width?: string
-  color?: string
+  height?: string;
+  width?: string;
+  color?: string;
 }
 
 const StyledVerticalDivider = withTheme(styled.div`
@@ -14,14 +14,14 @@ const StyledVerticalDivider = withTheme(styled.div`
     width ? width : theme.typography.pxToRem(1)};
   background: ${({ theme, color }: Props & WithTheme) =>
     color ? color : theme.palette.divider};
-`)
+`);
 
 const VerticalDivider: React.SFC<Props> = props => (
   <StyledVerticalDivider {...props} />
-)
+);
 
 VerticalDivider.defaultProps = {
   height: '100%',
-}
+};
 
-export default VerticalDivider
+export default VerticalDivider;

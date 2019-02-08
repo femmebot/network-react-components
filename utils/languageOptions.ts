@@ -3,4 +3,4 @@ export default window.CONFIG.supportedLanguages.map(
     value: language.handle,
     label: language.string,
   })
-)
+);

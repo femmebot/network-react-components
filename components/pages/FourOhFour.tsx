@@ -1,5 +1,5 @@
-import * as React from 'react'
+import * as React from 'react';
 
-const FourOhFour: React.SFC<{}> = () => <div>Oops page not found</div>
+const FourOhFour: React.SFC<{}> = () => <div>Oops page not found</div>;
 
-export default FourOhFour
+export default FourOhFour;

@@ -1,9 +1,9 @@
-import Input from '@material-ui/core/Input/Input'
-import styled from 'styled-components'
+import Input from '@material-ui/core/Input/Input';
+import styled from 'styled-components';
 
-import { sizeStyles, spaceStyles } from '~shared/styles/index'
-import { SizeProps } from '~shared/styles/props/size'
-import { SpaceProps } from '~shared/styles/props/space'
+import { sizeStyles, spaceStyles } from '~shared/styles/index';
+import { SizeProps } from '~shared/styles/props/size';
+import { SpaceProps } from '~shared/styles/props/space';
 
 export interface Props extends SizeProps, SpaceProps {}
 
@@ -21,6 +21,6 @@ const TextInput = styled(Input)`
     -webkit-appearance: none;
     margin: 0;
   }
-`
+`;
 
-export default TextInput
+export default TextInput;
