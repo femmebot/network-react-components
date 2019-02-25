@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import BaseFormControl, {
   FormControlProps,
 } from '@material-ui/core/FormControl';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 import FieldError from '~shared/components/atoms/FieldError';
 import FieldLabel from '~shared/components/atoms/FieldLabel';
-import TextInput from '~shared/components/atoms/TextInput';
 import {
   colors,
   sizeStyles,
@@ -23,27 +25,16 @@ interface StyleProps extends SpaceProps, SizeProps {
 
 export interface Props extends StyleProps {
   label?: string;
-  autoComplete?: string;
+  name: string;
   className?: string;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  placeholder?: string;
+  onChange?: (event: object, value: string) => void;
+  options: string[];
+  labelPlacement?: 'end' | 'start' | undefined;
   value?: string;
   id?: string;
   error?: string;
-  type?: string;
-  onPaste?: React.ClipboardEventHandler<HTMLInputElement>;
-  onKeyPress?: React.KeyboardEventHandler<HTMLInputElement>;
-  onBlur?: React.FocusEventHandler<HTMLInputElement>;
-  onFocus?: React.FocusEventHandler<HTMLInputElement>;
-  autoFocus?: boolean;
   disabled?: boolean;
-  multiline?: boolean;
-  rowsMax?: number;
   format?: (value: string) => string;
-  startAdornment?: React.ReactNode;
-  endAdornment?: React.ReactNode;
-  readOnly?: boolean;
-  required?: boolean;
 }
 
 const fontStyles = ({ inheritFont = false }: StyleProps) => {
@@ -79,37 +70,20 @@ const FormControl = styled(
   && input {
     ${fontStyles};
   }
-  && input#pill-input {
-    border-bottom: none;
-    &:focus {
-      border-bottom: 1px solid ${colors.black} !important;
-    }
-  }
 `;
 
-const TextField = ({
-  autoComplete,
+const RadioField = ({
   label,
-  placeholder,
   className,
   onChange,
-  autoFocus,
+  options,
   value,
+  name,
   id,
-  onPaste,
-  onKeyPress,
-  onBlur,
-  onFocus,
-  type = 'text',
+  labelPlacement = 'end',
   disabled,
   error,
-  multiline,
-  rowsMax,
   format,
-  startAdornment,
-  endAdornment,
-  readOnly,
-  required,
   ...styleProps
 }: Props) => (
   <FormControl
@@ -119,32 +93,27 @@ const TextField = ({
     className={className}
   >
     {label && <FieldLabel htmlFor={id}>{label}</FieldLabel>}
-    <TextInput
-      id={id}
-      error={!!error}
-      autoFocus={autoFocus}
-      disabled={disabled}
-      placeholder={placeholder}
-      multiline={multiline}
-      rowsMax={rowsMax}
-      disableUnderline
-      inputProps={{
-        readOnly,
-        onChange,
-        onPaste,
-        onKeyPress,
-        onBlur,
-        onFocus,
-        required,
-        autoComplete,
-      }}
-      startAdornment={startAdornment}
-      endAdornment={endAdornment}
-      type={type}
+    <RadioGroup
+      name={name}
+      onChange={(event: object, eventValue: string) =>
+        onChange && onChange(event, eventValue)
+      }
       value={format && value ? format(value) : value}
-    />
+      row
+    >
+      {options.map(option => (
+        <FormControlLabel
+          key={option}
+          value={option}
+          label={option}
+          control={<Radio color="primary" />}
+          labelPlacement={labelPlacement}
+          data-cy={`${name}-${option}`}
+        />
+      ))}
+    </RadioGroup>
     {error && <FieldError>{error}</FieldError>}
   </FormControl>
 );
 
-export default TextField;
+export default RadioField;

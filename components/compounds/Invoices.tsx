@@ -1,18 +1,22 @@
-import { Grid } from '@material-ui/core'
-import * as React from 'react'
-import styled from 'styled-components'
-import DownloadIcon from '~shared/images/icon-download.svg'
-import { Invoice } from '~shared/api.network.v1'
-import Typography from '~shared/components/atoms/Typography'
-import FieldLabel from '~shared/components/atoms/FieldLabel'
-import Section from '~shared/components/molecules/Section'
-import { formatAsDollarAmount, formatDate } from '~shared/utils/formatters'
-import { colors } from '~shared/styles'
+import { Grid } from '@material-ui/core';
+import * as React from 'react';
+import styled from 'styled-components';
+import DownloadIcon from '~shared/images/icon-download.svg';
+import { Invoice } from '~shared/api.network.v1';
+import Typography from '~shared/components/atoms/Typography';
+import FieldLabel from '~shared/components/atoms/FieldLabel';
+import Section from '~shared/components/molecules/Section';
+import {
+  formatAsDollarAmount,
+  formatDate,
+  dateParseISO,
+} from '~shared/utils/formatters';
+import { colors } from '~shared/styles';
 
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
-`
+`;
 
 const StyledStatus = styled.span`
   color: ${({ children }: { children: string }) =>
@@ -21,11 +25,11 @@ const StyledStatus = styled.span`
       : children === 'Failed'
         ? colors.error
         : 'inherit'};
-`
+`;
 
 interface Props {
-  invoices: Invoice[]
-  NoInvoicesComponent?: React.ComponentType
+  invoices: Invoice[];
+  NoInvoicesComponent?: React.ComponentType;
 }
 
 const Invoices: React.SFC<Props> = ({ invoices, NoInvoicesComponent }) => (
@@ -48,8 +52,8 @@ const Invoices: React.SFC<Props> = ({ invoices, NoInvoicesComponent }) => (
           <Typography variant="paragraph" key={`invoice-${invoice.id}`}>
             <Grid container spacing={40}>
               <Grid item xs={5}>
-                {formatDate(invoice.period_start, 'MM/DD/YYYY')}–
-                {formatDate(invoice.period_end, 'MM/DD/YYYY')}
+                {formatDate(dateParseISO(invoice.period_start), 'MM/dd/yyyy')}–
+                {formatDate(dateParseISO(invoice.period_end), 'MM/dd/yyyy')}
               </Grid>
               <Grid item xs={3}>
                 {formatAsDollarAmount(invoice.amount)}
@@ -76,6 +80,6 @@ const Invoices: React.SFC<Props> = ({ invoices, NoInvoicesComponent }) => (
       <NoInvoicesComponent />
     ) : null}
   </Section>
-)
+);
 
-export default Invoices
+export default Invoices;

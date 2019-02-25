@@ -22,7 +22,7 @@ export interface Props {
 }
 
 interface State {
-  open: boolean
+  open: boolean;
 }
 
 const ModalWrapper = styled(MUIModal)`
@@ -31,7 +31,7 @@ const ModalWrapper = styled(MUIModal)`
     justify-content: center;
     align-items: center;
   }
-`
+`;
 
 const DefaultContainer = styled(
   ({ maxWidth: _maxWidth, ...rest }: { maxWidth?: number }) => (
@@ -45,14 +45,14 @@ const DefaultContainer = styled(
     pxToRem(maxWidth ? maxWidth : 640)};
   color: ${colors.black};
   outline: none;
-`
+`;
 
 class Modal extends React.Component<Props, State> {
   state = {
     open: false,
-  }
+  };
 
-  mounted = false
+  mounted = false;
 
   constructor(props: Props) {
     super(props)
@@ -69,11 +69,11 @@ class Modal extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    this.mounted = true
+    this.mounted = true;
   }
 
   componentWillUnmount() {
-    this.mounted = false
+    this.mounted = false;
   }
 
   open = () => {
@@ -82,7 +82,7 @@ class Modal extends React.Component<Props, State> {
 
   close = () => {
     if (!this.mounted) {
-      return
+      return;
     }
     this.setState({ open: false })
     this.props.onClose && this.props.onClose()
@@ -99,6 +99,7 @@ class Modal extends React.Component<Props, State> {
           open={this.state.open}
           onClose={this.close}
           BackdropComponent={backdrop}
+          data-cy="modal"
         >
           {Container ? (
             <Container close={this.close}>
@@ -109,14 +110,17 @@ class Modal extends React.Component<Props, State> {
               <Grid container>
                 <Grid item xs={11}>
                   <Box mb={16}>
-                    <Typography variant="heading-2">
+                    <Typography variant="heading-2" data-cy="modal-title">
                       {this.props.title}
                     </Typography>
                   </Box>
                 </Grid>
                 <Grid item xs={1}>
                   <Typography align="right">
-                    <IconButton onClick={this.close}>
+                    <IconButton
+                      onClick={this.close}
+                      data-cy="modal-close-button"
+                    >
                       <CloseIcon width="16px" height="16px" />
                     </IconButton>
                   </Typography>
@@ -127,8 +131,8 @@ class Modal extends React.Component<Props, State> {
           )}
         </ModalWrapper>
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default Modal
+export default Modal;

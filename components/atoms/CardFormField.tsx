@@ -1,12 +1,12 @@
-import { Grid, Tooltip } from "@material-ui/core";
-import * as React from "react";
-import HelpIcon from "~shared/images/icon-questionmark.svg";
-import Box from "~shared/components/atoms/Box";
-import FieldError from "~shared/components/atoms/FieldError";
-import FieldLabel from "~shared/components/atoms/FieldLabel";
-import HorizontalDivider from "~shared/components/atoms/HorizontalDivider";
-import { colors } from "~shared/styles";
-import { pxToRem } from "~shared/styles/utils";
+import { Grid, Tooltip } from '@material-ui/core';
+import * as React from 'react';
+import HelpIcon from '~shared/images/icon-questionmark.svg';
+import Box from '~shared/components/atoms/Box';
+import FieldError from '~shared/components/atoms/FieldError';
+import FieldLabel from '~shared/components/atoms/FieldLabel';
+import HorizontalDivider from '~shared/components/atoms/HorizontalDivider';
+import { colors } from '~shared/styles';
+import { pxToRem } from '~shared/styles/utils';
 
 interface Props {
   label: string;
@@ -20,7 +20,7 @@ const CardFormField: React.SFC<Props> = ({
   hr,
   tooltip,
   error,
-  children
+  children,
 }) => (
   <Box mb={5}>
     <Box mb={10}>

@@ -1,12 +1,12 @@
-import * as React from "react";
-import * as colors from "~shared/styles/constants/color";
-import AmexIcon from "~shared/images/icon-card-amex.svg";
-import DiscoverIcon from "~shared/images/icon-card-discover.svg";
-import MastercardIcon from "~shared/images/icon-card-mastercard.svg";
-import PaypalIcon from "~shared/images/icon-card-paypal.svg";
-import PlaceholderIcon from "~shared/images/icon-card-placeholder.svg";
-import VisaIcon from "~shared/images/icon-card-visa.svg";
-import { Brand } from "~shared/api.network.v1";
+import * as React from 'react';
+import * as colors from '~shared/styles/constants/colors';
+import AmexIcon from '~shared/images/icon-card-amex.svg';
+import DiscoverIcon from '~shared/images/icon-card-discover.svg';
+import MastercardIcon from '~shared/images/icon-card-mastercard.svg';
+import PaypalIcon from '~shared/images/icon-card-paypal.svg';
+import PlaceholderIcon from '~shared/images/icon-card-placeholder.svg';
+import VisaIcon from '~shared/images/icon-card-visa.svg';
+import { Brand } from '~shared/api.network.v1';
 
 interface Props {
   brand: Brand;

@@ -1,28 +1,28 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 import {
   FormControl as BaseFormControl,
   MenuItem as MuiMenuItem,
   Select,
-  withStyles
-} from "@material-ui/core";
-import { MenuItemProps } from "@material-ui/core/MenuItem";
-import { SelectProps } from "@material-ui/core/Select/Select";
-import { find, isArray } from "lodash";
-import { FormOption, ObjectifiableFormOption } from "~shared/data";
-import FieldError from "~shared/components/atoms/FieldError";
-import FieldLabel from "~shared/components/atoms/FieldLabel";
+  withStyles,
+} from '@material-ui/core';
+import { MenuItemProps } from '@material-ui/core/MenuItem';
+import { SelectProps } from '@material-ui/core/Select/Select';
+import { find, isArray } from 'lodash';
+import { FormOption, ObjectifiableFormOption } from '~shared/data';
+import FieldError from '~shared/components/atoms/FieldError';
+import FieldLabel from '~shared/components/atoms/FieldLabel';
 import {
   colors,
   sizeStyles,
   spaceStyles,
-  typography
-} from "~shared/styles/index";
-import { SizeProps } from "~shared/styles/props/size";
-import { SpaceProps } from "~shared/styles/props/space";
-import { pxToRem, styleObjectToTemplate } from "~shared/styles/utils";
-import objectifyOptions from "~shared/utils/objectifyOptions";
+  typography,
+} from '~shared/styles/index';
+import { SizeProps } from '~shared/styles/props/size';
+import { SpaceProps } from '~shared/styles/props/space';
+import { pxToRem, styleObjectToTemplate } from '~shared/styles/utils';
+import objectifyOptions from '~shared/utils/objectifyOptions';
 
 interface BaseProps extends SpaceProps, SizeProps {
   label?: string;
@@ -57,8 +57,8 @@ const selectFontStyle = {
   fontSize: pxToRem(16),
   lineHeight: 1.1,
   letterSpacing: pxToRem(0.6),
-  textTransform: "inherit",
-  fontWeight: "normal"
+  textTransform: 'inherit',
+  fontWeight: 'normal',
 };
 
 /* need to type as any because textTransform and fontWeight arent typed
@@ -67,15 +67,15 @@ const menuItemStyles: any = {
   root: {
     ...selectFontStyle,
     color: colors.grayBoulder,
-    "&:hover": {
+    '&:hover': {
       color: colors.black,
-      background: "none"
-    }
+      background: 'none',
+    },
   },
   selected: {
     background: `${colors.white} !important`,
-    color: colors.black
-  }
+    color: colors.black,
+  },
 };
 
 const BaseMenuItem = (props: MenuItemProps) => <MuiMenuItem {...props} />;
@@ -105,10 +105,10 @@ const Checkbox = styled.div`
   border-radius: 2px;
   margin-right: ${pxToRem(8)};
   ${(props: { checked: boolean }) =>
-    props.checked ? "background: currentColor" : `background: ${colors.white}`};
+    props.checked ? 'background: currentColor' : `background: ${colors.white}`};
 `;
 
-const PLACEHOLDER_VALUE = "PLACEHOLDER";
+const PLACEHOLDER_VALUE = 'PLACEHOLDER';
 
 const selectValue = (options: FormOption[]) => (
   v: string | number | boolean
@@ -123,12 +123,12 @@ const selectValue = (options: FormOption[]) => (
 const renderSelectedValue = (
   options: FormOption[],
   placeholder?: string
-): SelectProps["renderValue"] => selected => {
+): SelectProps['renderValue'] => selected => {
   if (!selected) {
     return undefined;
   }
 
-  if (typeof selected === "string" || typeof selected === "number") {
+  if (typeof selected === 'string' || typeof selected === 'number') {
     if (selected === PLACEHOLDER_VALUE && placeholder) {
       return <PlaceholderValue>{placeholder}</PlaceholderValue>;
     }
@@ -136,12 +136,12 @@ const renderSelectedValue = (
   }
 
   if (!isArray(selected)) {
-    return "";
+    return '';
   }
 
   // selected values that are not options get thrown out
   selected = selected.filter(i =>
-    find(options, o => (typeof o === "string" ? o === i : o.value === i))
+    find(options, o => (typeof o === 'string' ? o === i : o.value === i))
   );
 
   if (selected.length === 0 && placeholder) {
@@ -151,28 +151,28 @@ const renderSelectedValue = (
   return selected
     .map(selectValue(options))
     .filter(v => v)
-    .join(", ");
+    .join(', ');
 };
 
 const setInitialValue = (value: string | string[]) => {
-  if (typeof value === "string") {
-    return value === "" ? PLACEHOLDER_VALUE : value;
+  if (typeof value === 'string') {
+    return value === '' ? PLACEHOLDER_VALUE : value;
   }
 
   return value.length === 0 ? [PLACEHOLDER_VALUE] : value;
 };
 
-const filterSinglePlaceholderOnChange = (onChange: Props["onChange"]) => (
+const filterSinglePlaceholderOnChange = (onChange: Props['onChange']) => (
   event: React.ChangeEvent<HTMLInputElement>
 ) => {
   if (event.target.value === PLACEHOLDER_VALUE) {
-    event.target.value = "";
+    event.target.value = '';
   }
 
   onChange(event);
 };
 
-const filterMultiPlaceholderOnChange = (onChange: Props["onChange"]) => (
+const filterMultiPlaceholderOnChange = (onChange: Props['onChange']) => (
   event: React.ChangeEvent<HTMLInputElement>
 ) => {
   if (isArray(event.target.value)) {
@@ -188,18 +188,18 @@ const StyledSelect = styled(
   ({
     tallLabel: _tallLabel,
     ...props
-  }: SelectProps & Pick<Props, "tallLabel">) => <Select {...props} />
+  }: SelectProps & Pick<Props, 'tallLabel'>) => <Select {...props} />
 )`
   && {
     > div > div {
       border-bottom: 1px solid ${colors.black};
     }
-    [role="button"] {
+    [role='button'] {
       text-transform: none;
     }
     label + & {
-      margin-top: ${({ tallLabel }: Pick<Props, "tallLabel">) =>
-        tallLabel ? pxToRem(36) : ""};
+      margin-top: ${({ tallLabel }: Pick<Props, 'tallLabel'>) =>
+        tallLabel ? pxToRem(36) : ''};
     }
   }
 `;
@@ -246,7 +246,7 @@ const SelectField = ({
         renderValue={renderSelectedValue(objectOptions, placeholder)}
         name={name}
         inputProps={{
-          onChange: filterPlaceholder(onChange)
+          onChange: filterPlaceholder(onChange),
         }}
         value={setInitialValue(value)}
         tallLabel={tallLabel}

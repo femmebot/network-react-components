@@ -1,15 +1,15 @@
-import MenuList from "@material-ui/core/MenuList";
-import * as React from "react";
-import ArchiveIcon from "~shared/images/icon-archive.svg";
-import ActionIcon from "~shared/images/icon-dot-menu.svg";
-import { PaymentMethod } from "~shared/api.network.v1";
-import ContextMenuItem from "~shared/components/atoms/ContextMenuItem";
-import IconButton from "~shared/components/atoms/IconButton";
-import Typography from "~shared/components/atoms/Typography";
-import UpdateCardInfoModal from "~shared/components/compounds/UpdateCardInfoModal";
-import ConfirmationModal from "~shared/components/molecules/ConfirmationModal";
-import Dropdown, { RenderMenu } from "~shared/components/molecules/Dropdown";
-import * as colors from "~shared/styles/constants/color";
+import MenuList from '@material-ui/core/MenuList';
+import * as React from 'react';
+import ArchiveIcon from '~shared/images/icon-archive.svg';
+import ActionIcon from '~shared/images/icon-dot-menu.svg';
+import { PaymentMethod } from '~shared/api.network.v1';
+import ContextMenuItem from '~shared/components/atoms/ContextMenuItem';
+import IconButton from '~shared/components/atoms/IconButton';
+import Typography from '~shared/components/atoms/Typography';
+import UpdateCardInfoModal from '~shared/components/compounds/UpdateCardInfoModal';
+import ConfirmationModal from '~shared/components/molecules/ConfirmationModal';
+import Dropdown, { RenderMenu } from '~shared/components/molecules/Dropdown';
+import * as colors from '~shared/styles/constants/colors';
 
 interface Props {
   paymentMethod: PaymentMethod;
@@ -26,7 +26,7 @@ interface State {
 class InvoiceActionMenu extends React.Component<Props, State> {
   state = {
     openUpdateCardInfo: false,
-    openRemoveCardConfirmation: false
+    openRemoveCardConfirmation: false,
   };
 
   openUpdateCardInfo = (menuProps: RenderMenu) => {
@@ -84,7 +84,7 @@ class InvoiceActionMenu extends React.Component<Props, State> {
       key="remove"
       onClick={() => this.openRemoveCardConfirmation(menuProps)}
     >
-      <Typography variant="instructional" style={{ color: colors.paleRed }}>
+      <Typography variant="instructional" style={{ color: colors.error }}>
         Remove
       </Typography>
     </ContextMenuItem>
@@ -94,7 +94,7 @@ class InvoiceActionMenu extends React.Component<Props, State> {
     if (this.props.paymentMethod.expired) {
       return [
         this.getUpdateInfoMenuItem(menuProps),
-        this.getRemoveMenuItem(menuProps)
+        this.getRemoveMenuItem(menuProps),
       ];
     }
 
@@ -105,7 +105,7 @@ class InvoiceActionMenu extends React.Component<Props, State> {
     return [
       this.getMakeDefaultMenuItem(menuProps),
       this.getUpdateInfoMenuItem(menuProps),
-      this.getRemoveMenuItem(menuProps)
+      this.getRemoveMenuItem(menuProps),
     ];
   };
 

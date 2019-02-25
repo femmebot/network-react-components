@@ -1,38 +1,38 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import Button, {ButtonProps} from '~shared/components/atoms/Button'
+import Button, { ButtonProps } from '~shared/components/atoms/Button';
 
 interface Props extends ButtonProps {
-  onClick: (event: any) => Promise<void>
+  onClick: (event: any) => Promise<void>;
 }
 
 interface State {
-  pending: boolean
+  pending: boolean;
 }
 
 class PromiseButton extends React.Component<Props, State> {
   state = {
     pending: false,
-  }
+  };
 
-  mounted = false
+  mounted = false;
 
   componentDidMount() {
-    this.mounted = true
+    this.mounted = true;
   }
 
   componentWillUnmount() {
-    this.mounted = false
+    this.mounted = false;
   }
 
   onClick = async (e: any) => {
-    this.mounted && this.setState({pending: true})
-    await this.props.onClick(e)
-    this.mounted && this.setState({pending: false})
-  }
+    this.mounted && this.setState({ pending: true });
+    await this.props.onClick(e);
+    this.mounted && this.setState({ pending: false });
+  };
 
   render() {
-    const {onClick, disabled, ...props} = this.props
+    const { onClick, disabled, ...props } = this.props;
 
     return (
       <Button
@@ -40,8 +40,8 @@ class PromiseButton extends React.Component<Props, State> {
         onClick={this.onClick}
         disabled={this.state.pending || disabled}
       />
-    )
+    );
   }
 }
 
-export default PromiseButton
+export default PromiseButton;

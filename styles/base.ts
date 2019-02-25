@@ -1,8 +1,8 @@
-import { Theme } from "@material-ui/core";
-import { FontFace } from "csstype";
-import { injectGlobal } from "styled-components";
+import { Theme } from '@material-ui/core';
+import { FontFace } from 'csstype';
+import { injectGlobal } from 'styled-components';
 
-import { styleObjectToTemplate } from "~shared/styles/utils";
+import { styleObjectToTemplate } from '~shared/styles/utils';
 
 const defineFontFace = (fontFace: FontFace) =>
   `
@@ -13,7 +13,7 @@ const defineFontFace = (fontFace: FontFace) =>
 const setBaseStyles = (theme: Theme, fontFaces: FontFace[]) => {
   // tslint:disable-next-line:no-unused-expression
   injectGlobal`
-    ${fontFaces.map(defineFontFace).join("\n")}
+    ${fontFaces.map(defineFontFace).join('\n')}
 `;
 
   // tslint:disable-next-line:no-unused-expression

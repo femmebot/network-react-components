@@ -18,7 +18,7 @@ exports[`multiselect renders disabled 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -99,7 +99,7 @@ exports[`multiselect renders unselected 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -180,7 +180,7 @@ exports[`multiselect renders with error 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -532,7 +532,7 @@ exports[`multiselect renders with label 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c2.c2 [role="button"] {
+.c2.c2 [role='button'] {
   text-transform: none;
 }
 
@@ -620,7 +620,7 @@ exports[`multiselect renders with multiple values 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -955,7 +955,7 @@ exports[`multiselect renders with single value 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -1290,7 +1290,7 @@ exports[`multiselect renders without underline 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -1371,7 +1371,7 @@ exports[`single select renders disabled 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -1458,7 +1458,7 @@ exports[`single select renders placeholder 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -1537,7 +1537,7 @@ exports[`single select renders unselected 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -1618,7 +1618,7 @@ exports[`single select renders with error 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -1970,7 +1970,7 @@ exports[`single select renders with label 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c2.c2 [role="button"] {
+.c2.c2 [role='button'] {
   text-transform: none;
 }
 
@@ -2058,7 +2058,7 @@ exports[`single select renders with tallLabel 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -2403,7 +2403,7 @@ exports[`single select renders with value 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
@@ -2738,7 +2738,7 @@ exports[`single select renders without underline 1`] = `
   border-bottom: 1px solid #000000;
 }
 
-.c1.c1 [role="button"] {
+.c1.c1 [role='button'] {
   text-transform: none;
 }
 
