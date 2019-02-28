@@ -108,6 +108,24 @@ const defaultAddress = {
   cityStateZip: 'San Francisco, CA 94105',
 }
 
+function renderDescription(invoiceItem: InvoiceItem) {
+  // 2 x new users responded 1/26/2019
+  const fakeDescription = '22 x new users became inactive 1/26/2019'
+  const amount = parseInt(fakeDescription.split('x')[0])
+  const isInactive = !!fakeDescription.match(/inactive/g)
+  const dateFormat = 'MM/DD/YYYY'
+  const formatedStartDate = formatDate(invoiceItem.period_start, dateFormat)
+  const formatedEndDate = formatDate(invoiceItem.period_end, dateFormat)
+
+  const newDesc = `
+    ${amount} became active on
+    ${formatedStartDate}. ${invoiceItem.quantity}
+    were ${isInactive ? 'inactive' : 'active'} from
+    ${formatedStartDate} to ${formatedEndDate}.
+  `
+  return newDesc
+}
+
 const PrintableInvoice: React.SFC<Props> = ({
   organization,
   invoice,
@@ -118,6 +136,7 @@ const PrintableInvoice: React.SFC<Props> = ({
 }) => {
   const { coupon } = subscription
   const [proRatedItems, items] = partition(invoice.invoice_items, 'prorated')
+  console.log('subscription', invoice.invoice_items)
   return (
     <Wrapper>
       <Center mb={40}>
@@ -188,7 +207,7 @@ const PrintableInvoice: React.SFC<Props> = ({
             <Grid key={`invoice-item-${invoiceItem.id}`} container spacing={24}>
               <Grid item xs={5}>
                 <Typography variant="paragraph">
-                  {invoiceItem.description}
+                  {renderDescription(invoiceItem)}
                 </Typography>
               </Grid>
               <Grid item xs={3} container justify="flex-end">
