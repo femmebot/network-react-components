@@ -110,9 +110,9 @@ const defaultAddress = {
 
 function renderDescription(invoiceItem: InvoiceItem) {
   // 2 x new users responded 1/26/2019
-  const fakeDescription = '22 x new users became inactive 1/26/2019'
-  const amount = parseInt(fakeDescription.split('x')[0])
-  const isInactive = !!fakeDescription.match(/inactive/g)
+  const description = invoiceItem.description
+  const amount = parseInt(description.split('x')[0])
+  const isInactive = !!description.match(/inactive/g)
   const dateFormat = 'MM/DD/YYYY'
   const formatedStartDate = formatDate(invoiceItem.period_start, dateFormat)
   const formatedEndDate = formatDate(invoiceItem.period_end, dateFormat)
