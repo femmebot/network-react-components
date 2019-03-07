@@ -136,7 +136,6 @@ const PrintableInvoice: React.SFC<Props> = ({
 }) => {
   const { coupon } = subscription
   const [proRatedItems, items] = partition(invoice.invoice_items, 'prorated')
-  console.log('subscription', invoice.invoice_items)
   return (
     <Wrapper>
       <Center mb={40}>
