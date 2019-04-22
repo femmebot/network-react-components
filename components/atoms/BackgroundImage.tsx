@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 interface Props {
-  src: string;
-  className?: string;
-  repeat?: boolean;
+  src: string
+  className?: string
+  repeat?: boolean
 }
 
 const backgroundStyles = ({ repeat, src }: Props) => `
@@ -12,13 +12,13 @@ const backgroundStyles = ({ repeat, src }: Props) => `
   background-repeat: ${repeat ? 'repeat' : 'no-repeat'};
   background-size: ${repeat ? 'auto' : 'cover'};
   background-position: center;
-`;
+`
 
 const StyledBackgroundImage = styled.div`
   width: 100%;
   height: 100%;
   ${backgroundStyles};
-`;
-const BackgroundImage = (props: Props) => <StyledBackgroundImage {...props} />;
+`
+const BackgroundImage = (props: Props) => <StyledBackgroundImage {...props} />
 
-export default BackgroundImage;
+export default BackgroundImage

@@ -1,31 +1,31 @@
-import BaseModel from '~shared/api.network.v1/BaseModel';
-import { prop } from 'datx';
-import { CouponId, DateTimeString } from '~shared/data';
-import { apiUrl } from '~shared/api.network.v1/util';
+import BaseModel from '~shared/api.network.v1/BaseModel'
+import { prop } from 'datx'
+import { CouponId, DateTimeString } from '~shared/data'
+import { apiUrl } from '~shared/api.network.v1/util'
 
 export class Coupon extends BaseModel {
-  public static type = 'coupons';
+  public static type = 'coupons'
 
-  public static endpoint = apiUrl('coupons');
+  public static endpoint = apiUrl('coupons')
 
   @prop.identifier
-  public id: CouponId;
+  public id: CouponId
 
   @prop
-  public code: string;
+  public code: string
 
   @prop
-  public name: string;
+  public name: string
 
   @prop
-  public amount_off: number;
+  public amount_off: number
 
   @prop
-  public percent_off: number;
+  public percent_off: number
 
   @prop
-  public currency: string;
+  public currency: string
 
   @prop
-  public expires_at: DateTimeString;
+  public expires_at: DateTimeString
 }

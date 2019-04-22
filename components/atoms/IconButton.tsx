@@ -1,7 +1,7 @@
-import MuiIconButton from '@material-ui/core/IconButton/IconButton';
-import * as React from 'react';
-import styled from 'styled-components';
-import { pxToRem } from '~shared/styles/utils';
+import MuiIconButton from '@material-ui/core/IconButton/IconButton'
+import * as React from 'react'
+import styled from 'styled-components'
+import { pxToRem } from '~shared/styles/utils'
 
 const IconButton = styled(MuiIconButton)`
   && {
@@ -10,6 +10,6 @@ const IconButton = styled(MuiIconButton)`
     height: auto;
     color: inherit;
   }
-`;
+`
 
-export default (props: any) => <IconButton {...props} />;
+export default (props: any) => <IconButton {...props} />

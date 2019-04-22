@@ -1,7 +1,7 @@
 import MuiTypography, {
   TypographyProps,
-} from '@material-ui/core/Typography/Typography';
-import * as React from 'react';
+} from '@material-ui/core/Typography/Typography'
+import * as React from 'react'
 /* Wraps mui Typography and overrides via the theme
  * from https://material-ui.com/api/typography/ */
 
@@ -16,12 +16,12 @@ interface Props extends TypographyProps {
     | 'label'
     | 'emphasis'
     | 'paragraph'
-    | 'button';
+    | 'button'
 }
 
 const Typography: React.SFC<Props> = ({ variant, ...props }) => {
   interface VariantMap {
-    [key: string]: TypographyProps['variant'];
+    [key: string]: TypographyProps['variant']
   }
   const variantMap = {
     'heading-1': 'headline',
@@ -33,9 +33,9 @@ const Typography: React.SFC<Props> = ({ variant, ...props }) => {
     emphasis: 'display4',
     paragraph: 'body2',
     button: 'button',
-  } as VariantMap;
-  const mappedVariant = variant ? variantMap[variant] : undefined;
-  return <MuiTypography {...props} variant={mappedVariant} />;
-};
+  } as VariantMap
+  const mappedVariant = variant ? variantMap[variant] : undefined
+  return <MuiTypography {...props} variant={mappedVariant} />
+}
 
-export default Typography;
+export default Typography

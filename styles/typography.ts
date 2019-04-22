@@ -1,12 +1,12 @@
-import { FontFace } from 'csstype';
+import { FontFace } from 'csstype'
 
-import gothamBook from '~shared/fonts/Gotham-Book.otf';
-import gothamMedium from '~shared/fonts/Gotham-Medium.otf';
-import sentinelBook from '~shared/fonts/Sentinel-Book.otf';
-import sentinelMedium from '~shared/fonts/Sentinel-Medium.otf';
-import sentinelMediumItalic from '~shared/fonts/Sentinel-MediumItal.otf';
+import gothamBook from '~shared/fonts/Gotham-Book.otf'
+import gothamMedium from '~shared/fonts/Gotham-Medium.otf'
+import sentinelBook from '~shared/fonts/Sentinel-Book.otf'
+import sentinelMedium from '~shared/fonts/Sentinel-Medium.otf'
+import sentinelMediumItalic from '~shared/fonts/Sentinel-MediumItal.otf'
 
-const fontUrl = (url: string) => `url('${url}')`;
+const fontUrl = (url: string) => `url('${url}')`
 
 export const sentinelFontFace: FontFace[] = [
   {
@@ -27,7 +27,7 @@ export const sentinelFontFace: FontFace[] = [
     fontWeight: 400,
     fontStyle: 'normal',
   },
-];
+]
 
 export const gothamFontFace: FontFace[] = [
   {
@@ -42,10 +42,10 @@ export const gothamFontFace: FontFace[] = [
     fontWeight: 'normal',
     fontStyle: 'normal',
   },
-];
+]
 
-export const sans = '"Gotham", sans-serif';
-export const serif = '"Sentinel", serif';
+export const sans = '"Gotham", sans-serif'
+export const serif = '"Sentinel", serif'
 
 // TODO: Remove me
-export const gothamBookUrl = gothamBook;
+export const gothamBookUrl = gothamBook

@@ -1,13 +1,13 @@
-import { ConsistentWith } from '@material-ui/core';
-import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
-import muiWithTheme, { WithTheme } from '@material-ui/core/styles/withTheme';
+import { ConsistentWith } from '@material-ui/core'
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
+import muiWithTheme, { WithTheme } from '@material-ui/core/styles/withTheme'
 
-import { colors, legacyColors, typography } from '~shared/styles';
-import { pxToRem } from '~shared/styles/utils';
+import { colors, legacyColors, typography } from '~shared/styles'
+import { pxToRem } from '~shared/styles/utils'
 
 export const withTheme = <P extends ConsistentWith<WithTheme, P>>(
   Component: React.ComponentType<P & WithTheme>
-): React.ComponentClass<P> => muiWithTheme()(Component);
+): React.ComponentClass<P> => muiWithTheme()(Component)
 
 // export const withTheme = <P extends ConsistentWith<P, WithTheme>>(
 //   Component: AnyComponent<P & WithTheme>
@@ -106,8 +106,8 @@ const defaultTheme = createMuiTheme({
       default: colors.white,
     },
   },
-});
+})
 
-export default defaultTheme;
+export default defaultTheme
 
-export { WithTheme };
+export { WithTheme }

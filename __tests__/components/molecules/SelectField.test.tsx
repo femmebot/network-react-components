@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import SelectField from '~shared/components/molecules/SelectField';
-import itRenders from '~shared/test-helpers/itRenders';
+import SelectField from '~shared/components/molecules/SelectField'
+import itRenders from '~shared/test-helpers/itRenders'
 
 const options = [
   { value: 'option1', label: 'Option 1' },
@@ -14,7 +14,7 @@ const options = [
     value: 'option4',
     label: 'Option 4',
   },
-];
+]
 
 describe('single select', () => {
   itRenders({
@@ -97,8 +97,8 @@ describe('single select', () => {
         tallLabel
       />
     ),
-  });
-});
+  })
+})
 
 describe('multiselect', () => {
   itRenders({
@@ -177,5 +177,5 @@ describe('multiselect', () => {
         onBlur={jest.fn()}
       />
     ),
-  });
-});
+  })
+})

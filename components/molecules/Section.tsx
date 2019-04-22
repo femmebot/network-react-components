@@ -1,11 +1,11 @@
-import { Paper } from '@material-ui/core';
-import * as React from 'react';
-import Box from '~shared/components/atoms/Box';
-import Typography from '~shared/components/atoms/Typography';
+import { Paper } from '@material-ui/core'
+import * as React from 'react'
+import Box from '~shared/components/atoms/Box'
+import Typography from '~shared/components/atoms/Typography'
 
 export interface Props {
-  title?: string;
-  header?: React.ReactType;
+  title?: string
+  header?: React.ReactType
 }
 
 const Section: React.SFC<Props> = ({ title, header: Header, children }) => (
@@ -22,6 +22,6 @@ const Section: React.SFC<Props> = ({ title, header: Header, children }) => (
       </Box>
     </Paper>
   </Box>
-);
+)
 
-export default Section;
+export default Section

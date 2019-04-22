@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const MobileMenuToggle = (props: any) => (
   <div onClick={props.onClick}>
@@ -38,6 +38,6 @@ const MobileMenuToggle = (props: any) => (
       </g>
     </svg>
   </div>
-);
+)
 
-export default MobileMenuToggle;
+export default MobileMenuToggle

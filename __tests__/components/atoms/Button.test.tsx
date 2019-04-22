@@ -1,7 +1,7 @@
-import React from 'react';
-import itRenders from '~shared/test-helpers/itRenders';
+import React from 'react'
+import itRenders from '~shared/test-helpers/itRenders'
 
-import Button from '~shared/components/atoms/Button';
+import Button from '~shared/components/atoms/Button'
 
 itRenders({
   default: () => <Button onClick={jest.fn()}>Content</Button>,
@@ -27,4 +27,4 @@ itRenders({
     </Button>
   ),
   'commit variant': () => <Button variant="commit">Commit</Button>,
-});
+})

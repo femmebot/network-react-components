@@ -1,20 +1,20 @@
-import { pxToRem } from '~shared/styles/utils';
+import { pxToRem } from '~shared/styles/utils'
 
-export const SPACING_UNIT = 8;
+export const SPACING_UNIT = 8
 
-export type SpacingFn<T> = (size: SpacingSize) => T;
+export type SpacingFn<T> = (size: SpacingSize) => T
 
 export interface SpacingObject<T> {
-  (): SpacingFn<T>;
-  top: SpacingFn<T>;
-  right: SpacingFn<T>;
-  bottom: SpacingFn<T>;
-  left: SpacingFn<T>;
-  x: SpacingFn<T>;
-  y: SpacingFn<T>;
+  (): SpacingFn<T>
+  top: SpacingFn<T>
+  right: SpacingFn<T>
+  bottom: SpacingFn<T>
+  left: SpacingFn<T>
+  x: SpacingFn<T>
+  y: SpacingFn<T>
 }
 
-export type SpacingSize = 'auto' | number;
+export type SpacingSize = 'auto' | number
 // export type SpacingSize =
 //   | 0
 //   | 1
@@ -45,7 +45,7 @@ export type SpacingSize = 'auto' | number;
 
 export default (size: SpacingSize) => {
   if (size === 'auto') {
-    return size;
+    return size
   }
-  return pxToRem(size);
-};
+  return pxToRem(size)
+}
