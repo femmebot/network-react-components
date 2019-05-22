@@ -1,22 +1,22 @@
-import { Grid } from '@material-ui/core';
-import * as React from 'react';
-import styled from 'styled-components';
-import DownloadIcon from '~shared/images/icon-download.svg';
-import { Invoice } from '~shared/api.network.v1';
-import Typography from '~shared/components/atoms/Typography';
-import FieldLabel from '~shared/components/atoms/FieldLabel';
-import Section from '~shared/components/molecules/Section';
+import { Grid } from '@material-ui/core'
+import * as React from 'react'
+import styled from 'styled-components'
+import DownloadIcon from '~shared/images/icon-download.svg'
+import { Invoice } from '~shared/api.network.v1'
+import Typography from '~shared/components/atoms/Typography'
+import FieldLabel from '~shared/components/atoms/FieldLabel'
+import Section from '~shared/components/molecules/Section'
 import {
   formatAsDollarAmount,
   formatDate,
   dateParseISO,
-} from '~shared/utils/formatters';
-import { colors } from '~shared/styles';
+} from '~shared/utils/formatters'
+import { colors } from '~shared/styles'
 
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
-`;
+`
 
 const StyledStatus = styled.span`
   color: ${({ children }: { children: string }) =>
@@ -25,11 +25,11 @@ const StyledStatus = styled.span`
       : children === 'Failed'
         ? colors.error
         : 'inherit'};
-`;
+`
 
 interface Props {
-  invoices: Invoice[];
-  NoInvoicesComponent?: React.ComponentType;
+  invoices: Invoice[]
+  NoInvoicesComponent?: React.ComponentType
 }
 
 const Invoices: React.SFC<Props> = ({ invoices, NoInvoicesComponent }) => (
@@ -63,7 +63,7 @@ const Invoices: React.SFC<Props> = ({ invoices, NoInvoicesComponent }) => (
                   {invoice.status === 'paid'
                     ? 'Paid'
                     : invoice.status === 'unpaid'
-                      ? 'Pending'
+                      ? 'In-Progress'
                       : 'Failed'}
                 </StyledStatus>
               </Grid>
@@ -80,6 +80,6 @@ const Invoices: React.SFC<Props> = ({ invoices, NoInvoicesComponent }) => (
       <NoInvoicesComponent />
     ) : null}
   </Section>
-);
+)
 
-export default Invoices;
+export default Invoices
