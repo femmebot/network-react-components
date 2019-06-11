@@ -1,7 +1,7 @@
-import * as React from "react";
-import { PaymentMethod } from "~shared/api.network.v1";
-import Typography from "~shared/components/atoms/Typography";
-import * as colors from "~shared/styles/constants/color";
+import * as React from 'react';
+import { PaymentMethod } from '~shared/api.network.v1';
+import Typography from '~shared/components/atoms/Typography';
+import * as colors from '~shared/styles/constants/colors';
 
 interface Props {
   paymentMethod: PaymentMethod;
@@ -10,21 +10,21 @@ interface Props {
 class CardState extends React.Component<Props> {
   resolveCardStatusName = (paymentMethod: PaymentMethod) => {
     if (paymentMethod.expired) {
-      return "Expired";
+      return 'Expired';
     }
     if (paymentMethod.default) {
-      return "Default";
+      return 'Default';
     }
 
-    return "Active";
+    return 'Active';
   };
 
   resolveCardStatusColor = (paymentMethod: PaymentMethod) => {
     if (paymentMethod.expired) {
-      return colors.paleRed;
+      return colors.error;
     }
     if (paymentMethod.default) {
-      return colors.greenBlue;
+      return colors.confirmation;
     }
 
     return colors.black;

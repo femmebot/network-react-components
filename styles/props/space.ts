@@ -1,30 +1,30 @@
-import { isUndefined } from "lodash";
+import { isUndefined } from 'lodash';
 import {
   SpacingFn,
   SpacingObject,
-  SpacingSize
-} from "~shared/styles/constants/spacing";
-import margin, { Margin } from "~shared/styles/margin";
-import padding, { Padding } from "~shared/styles/padding";
+  SpacingSize,
+} from '~shared/styles/constants/spacing';
+import margin, { Margin } from '~shared/styles/margin';
+import padding, { Padding } from '~shared/styles/padding';
 
 const REG = /^[mp][trblxy]?$/;
 
 const properties: { [key: string]: Margin | Padding } = {
   m: margin,
-  p: padding
+  p: padding,
 };
 
 const directions: { [key: string]: keyof SpacingObject<any> } = {
-  t: "top",
-  r: "right",
-  b: "bottom",
-  l: "left",
-  x: "x",
-  y: "y"
+  t: 'top',
+  r: 'right',
+  b: 'bottom',
+  l: 'left',
+  x: 'x',
+  y: 'y',
 };
 
 const getProperty = <T>(key: keyof SpaceProps): SpacingFn<T> => {
-  const [a, b] = key.split("");
+  const [a, b] = key.split('');
   const prop = properties[a];
   const dir = directions[b];
   const func = dir ? prop[dir] : prop;
@@ -37,8 +37,8 @@ export interface SpaceProps {
   mr?: SpacingSize;
   mb?: SpacingSize;
   ml?: SpacingSize;
-  mx?: SpacingSize | "auto";
-  my?: SpacingSize | "auto";
+  mx?: SpacingSize | 'auto';
+  my?: SpacingSize | 'auto';
   p?: SpacingSize;
   pt?: SpacingSize;
   pr?: SpacingSize;

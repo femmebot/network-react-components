@@ -1,18 +1,18 @@
-import { Paper } from "@material-ui/core";
-import * as React from "react";
-import styled from "styled-components";
+import { Paper } from '@material-ui/core';
+import * as React from 'react';
+import styled from 'styled-components';
 
-import CloseIcon from "~shared/images/icon-close.svg";
-import Box from "~shared/components/atoms/Box";
-import Button from "~shared/components/atoms/Button";
-import Flex from "~shared/components/atoms/Flex";
-import IconButton from "~shared/components/atoms/IconButton";
-import Typography from "~shared/components/atoms/Typography";
-import Modal, { Props as ModalProps } from "~shared/components/molecules/Modal";
-import { colors } from "~shared/styles/index";
-import { pxToRem } from "~shared/styles/utils";
+import CloseIcon from '~shared/images/icon-close.svg';
+import Box from '~shared/components/atoms/Box';
+import Button from '~shared/components/atoms/Button';
+import Flex from '~shared/components/atoms/Flex';
+import IconButton from '~shared/components/atoms/IconButton';
+import Typography from '~shared/components/atoms/Typography';
+import Modal, { Props as ModalProps } from '~shared/components/molecules/Modal';
+import { colors } from '~shared/styles/index';
+import { pxToRem } from '~shared/styles/utils';
 
-interface Props extends Pick<ModalProps, "trigger" | "open" | "onClose"> {
+interface Props extends Pick<ModalProps, 'trigger' | 'open' | 'onClose'> {
   onConfirmed: (closeModal: () => void) => void;
   buttonText: React.ReactText;
   icon?: React.ReactType;
@@ -57,7 +57,10 @@ class ConfirmationModal extends React.Component<Props> {
               </Box>
               <Flex justifyContent="space-between">
                 <Button onClick={closeModal}>Cancel</Button>
-                <Button onClick={() => onConfirmed(closeModal)}>
+                <Button
+                  data-cy="confirmation-modal-button"
+                  onClick={() => onConfirmed(closeModal)}
+                >
                   {buttonText}
                 </Button>
               </Flex>

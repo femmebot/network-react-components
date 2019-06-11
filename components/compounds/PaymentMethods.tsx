@@ -1,24 +1,27 @@
-import { Grid } from '@material-ui/core'
-import * as React from 'react'
-import PlusIcon from '~shared/images/icon-plus.svg'
-import CardForm from '~shared/components/compounds/CardForm'
-import { PaymentMethod } from '~shared/api.network.v1'
-import Box from '~shared/components/atoms/Box'
-import Button from '~shared/components/atoms/Button'
-import PaymentMethodList from '~shared/components/compounds/PaymentMethodList'
-import Modal from '~shared/components/molecules/Modal'
-import Section from '~shared/components/molecules/Section'
-import * as colors from '~shared/styles/constants/color'
+import { Grid } from '@material-ui/core';
+import * as React from 'react';
+import PlusIcon from '~shared/images/icon-plus.svg';
+import CardForm from '~shared/components/compounds/CardForm';
+import { PaymentMethod } from '~shared/api.network.v1';
+import Box from '~shared/components/atoms/Box';
+import Button from '~shared/components/atoms/Button';
+import PaymentMethodList from '~shared/components/compounds/PaymentMethodList';
+import Modal from '~shared/components/molecules/Modal';
+import Section from '~shared/components/molecules/Section';
+import * as colors from '~shared/styles/constants/colors';
 
 interface Props {
-  updatePaymentMethod: (paymentMethod: PaymentMethod) => Promise<void>
-  makePaymentMethodDefault: (paymentMethod: PaymentMethod) => Promise<void>
-  destroyPaymentMethod: (paymentMethod: PaymentMethod) => Promise<void>
+  updatePaymentMethod: (paymentMethod: PaymentMethod) => Promise<void>;
+  makePaymentMethodDefault: (paymentMethod: PaymentMethod) => Promise<void>;
+  destroyPaymentMethod: (paymentMethod: PaymentMethod) => Promise<void>;
   tokenCreated: (
     closeModal: () => void
   ) => (token: stripe.Token) => Promise<void>
   paymentMethods: PaymentMethod[]
   NoPaymentMethodsComponent?: React.ComponentType
+  FinePrintComponent?: React.ComponentType
+  BackdropComponent?: React.ComponentType
+  ModalContainer?: React.ComponentType
 }
 
 const PaymentMethods: React.SFC<Props> = ({
@@ -28,6 +31,9 @@ const PaymentMethods: React.SFC<Props> = ({
   makePaymentMethodDefault,
   destroyPaymentMethod,
   NoPaymentMethodsComponent,
+  FinePrintComponent,
+  BackdropComponent,
+  ModalContainer,
 }) => (
   <React.Fragment>
     <Section title="Payment Methods">
@@ -45,6 +51,8 @@ const PaymentMethods: React.SFC<Props> = ({
       </Box>
       <Modal
         title="Add new card"
+        container={ModalContainer}
+        backdrop={BackdropComponent}
         trigger={
           <Button wide href="#">
             <PlusIcon width={15} style={{ fill: colors.black }} />
@@ -56,23 +64,26 @@ const PaymentMethods: React.SFC<Props> = ({
           <div>
             <CardForm onTokenCreated={tokenCreated(closeModal)}>
               {processing => (
-                <Grid container justify="center" spacing={32}>
-                  <Grid item>
-                    <Button disabled={processing} onClick={closeModal} wide>
-                      Cancel
-                    </Button>
+                <React.Fragment>
+                  {FinePrintComponent && <FinePrintComponent />}
+                  <Grid container justify="center" spacing={32}>
+                    <Grid item>
+                      <Button disabled={processing} onClick={closeModal} wide>
+                        Cancel
+                      </Button>
+                    </Grid>
+                    <Grid item>
+                      <Button
+                        disabled={processing}
+                        variant="commit"
+                        type="submit"
+                        wide
+                      >
+                        Add card
+                      </Button>
+                    </Grid>
                   </Grid>
-                  <Grid item>
-                    <Button
-                      disabled={processing}
-                      variant="commit"
-                      type="submit"
-                      wide
-                    >
-                      Add card
-                    </Button>
-                  </Grid>
-                </Grid>
+                </React.Fragment>
               )}
             </CardForm>
           </div>
@@ -80,6 +91,6 @@ const PaymentMethods: React.SFC<Props> = ({
       </Modal>
     </Section>
   </React.Fragment>
-)
+);
 
-export default PaymentMethods
+export default PaymentMethods;

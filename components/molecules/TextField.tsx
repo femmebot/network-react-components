@@ -1,63 +1,70 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import BaseFormControl, {FormControlProps} from '@material-ui/core/FormControl'
-import FieldError from '~shared/components/atoms/FieldError'
-import FieldLabel from '~shared/components/atoms/FieldLabel'
-import TextInput from '~shared/components/atoms/TextInput'
-import {colors, sizeStyles, spaceStyles, typography} from '~shared/styles/index'
-import {SizeProps} from '~shared/styles/props/size'
-import {SpaceProps} from '~shared/styles/props/space'
-import {pxToRem} from '~shared/styles/utils'
+import BaseFormControl, {
+  FormControlProps,
+} from '@material-ui/core/FormControl';
+import FieldError from '~shared/components/atoms/FieldError';
+import FieldLabel from '~shared/components/atoms/FieldLabel';
+import TextInput from '~shared/components/atoms/TextInput';
+import {
+  colors,
+  sizeStyles,
+  spaceStyles,
+  typography,
+} from '~shared/styles/index';
+import { SizeProps } from '~shared/styles/props/size';
+import { SpaceProps } from '~shared/styles/props/space';
+import { pxToRem } from '~shared/styles/utils';
 
 interface StyleProps extends SpaceProps, SizeProps {
-  inheritFont?: boolean
+  inheritFont?: boolean;
 }
 
 export interface Props extends StyleProps {
-  label?: string
-  autocomplete?: string
-  className?: string
-  onChange?: React.ChangeEventHandler<HTMLInputElement>
-  placeholder?: string
-  value?: string
-  id?: string
-  error?: string
-  type?: string
-  onPaste?: React.ClipboardEventHandler<HTMLInputElement>
-  onKeyPress?: React.KeyboardEventHandler<HTMLInputElement>
-  onBlur?: React.FocusEventHandler<HTMLInputElement>
-  onFocus?: React.FocusEventHandler<HTMLInputElement>
-  autoFocus?: boolean
-  disabled?: boolean
-  multiline?: boolean
-  rowsMax?: number
-  format?: (value: string) => string
-  startAdornment?: React.ReactNode
-  endAdornment?: React.ReactNode
-  readOnly?: boolean
-  required?: boolean
+  label?: string;
+  autoComplete?: string;
+  className?: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  placeholder?: string;
+  value?: string;
+  id?: string;
+  error?: string;
+  type?: string;
+  onPaste?: React.ClipboardEventHandler<HTMLInputElement>;
+  onKeyPress?: React.KeyboardEventHandler<HTMLInputElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  autoFocus?: boolean;
+  disabled?: boolean;
+  multiline?: boolean;
+  rowsMax?: number;
+  format?: (value: string) => string;
+  startAdornment?: React.ReactNode;
+  endAdornment?: React.ReactNode;
+  readOnly?: boolean;
+  required?: boolean;
 }
 
-const fontStyles = ({inheritFont = false}: StyleProps) => {
+const fontStyles = ({ inheritFont = false }: StyleProps) => {
   if (inheritFont) {
     return `
       font: inherit;
       color: inherit;
       letter-spacing: inherit;
       line-height: inherit;
-    `
+    `;
   }
   return `
     font-family: ${typography.sans};
     font-size: ${pxToRem(16)};
     line-height: 1.1;
     letter-spacing: ${pxToRem(0.6)};
-  `
-}
+  `;
+};
 
 const FormControl = styled(
-  ({children, disabled, error, className}: FormControlProps) => (
+  ({ children, disabled, error, className }: FormControlProps) => (
     <BaseFormControl disabled={disabled} error={error} className={className}>
       {children}
     </BaseFormControl>
@@ -72,10 +79,16 @@ const FormControl = styled(
   && input {
     ${fontStyles};
   }
-`
+  && input#pill-input {
+    border-bottom: none;
+    &:focus {
+      border-bottom: 1px solid ${colors.black} !important;
+    }
+  }
+`;
 
 const TextField = ({
-  autocomplete,
+  autoComplete,
   label,
   placeholder,
   className,
@@ -123,7 +136,7 @@ const TextField = ({
         onBlur,
         onFocus,
         required,
-        autocomplete,
+        autoComplete,
       }}
       startAdornment={startAdornment}
       endAdornment={endAdornment}
@@ -132,6 +145,6 @@ const TextField = ({
     />
     {error && <FieldError>{error}</FieldError>}
   </FormControl>
-)
+);
 
-export default TextField
+export default TextField;

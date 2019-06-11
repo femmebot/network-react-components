@@ -1,4 +1,4 @@
-import {defaultsDeep} from 'lodash'
+import { defaultsDeep } from 'lodash';
 
 const defaultOptions = {
   credentials: 'include',
@@ -6,9 +6,9 @@ const defaultOptions = {
   headers: {
     'content-type': 'application/json',
   },
-}
+};
 
 const request = (path: string, options?: RequestInit): Promise<Response> =>
-  fetch(path, defaultsDeep({}, options || {}, defaultOptions))
+  fetch(path, defaultsDeep({}, options || {}, defaultOptions));
 
-export default request
+export default request;

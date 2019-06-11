@@ -2,6 +2,7 @@ import BaseModel from '~shared/api.network.v1/BaseModel'
 import { prop } from 'datx'
 import { DateTimeString, InvoiceItemId } from '~shared/data'
 import { apiUrl } from '~shared/api.network.v1/util'
+import { PaymentMethod } from '~shared/api.network.v1/PaymentMethod'
 
 export class InvoiceItem extends BaseModel {
   public static type = 'invoice_items'
@@ -24,4 +25,7 @@ export class InvoiceItem extends BaseModel {
   public period_end: DateTimeString
   @prop
   public prorated: boolean
+
+  @prop.toOne(PaymentMethod)
+  payment_method: PaymentMethod
 }

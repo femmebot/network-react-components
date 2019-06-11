@@ -1,7 +1,7 @@
 import spacing, {
   SpacingObject,
-  SpacingSize
-} from "~shared/styles/constants/spacing";
+  SpacingSize,
+} from '~shared/styles/constants/spacing';
 
 interface PaddingProps {
   padding?: string | number;
@@ -20,11 +20,11 @@ padding.bottom = (size: SpacingSize) => ({ paddingBottom: spacing(size) });
 padding.left = (size: SpacingSize) => ({ paddingLeft: spacing(size) });
 padding.x = (size: SpacingSize) => ({
   paddingLeft: spacing(size),
-  paddingRight: spacing(size)
+  paddingRight: spacing(size),
 });
 padding.y = (size: SpacingSize) => ({
   paddingTop: spacing(size),
-  paddingBottom: spacing(size)
+  paddingBottom: spacing(size),
 });
 
 export default padding as Padding;

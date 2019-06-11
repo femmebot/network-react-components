@@ -1,7 +1,7 @@
-import * as React from "react";
-import CopyToClipboard from "react-copy-to-clipboard";
-import LinkIcon from "~shared/images/icon-link.svg";
-import Button from "~shared/components/atoms/Button";
+import * as React from 'react';
+import CopyToClipboard from 'react-copy-to-clipboard';
+import LinkIcon from '~shared/images/icon-link.svg';
+import Button from '~shared/components/atoms/Button';
 
 interface Props {
   href: string;
@@ -16,15 +16,15 @@ interface State {
 
 class CopyableLink extends React.Component<Props, State> {
   static defaultProps = {
-    linkCopiedText: "Link Copied",
+    linkCopiedText: 'Link Copied',
     showLinkCopied: true,
-    showDuration: 8000
+    showDuration: 8000,
   };
 
   changeCopyTimeout: null | number = null;
 
   state = {
-    copied: false
+    copied: false,
   };
 
   onCopy = () => {

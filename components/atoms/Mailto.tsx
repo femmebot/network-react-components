@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as colors from "~shared/styles/constants/color";
+import * as React from 'react';
+import * as colors from '~shared/styles/constants/colors';
 
 interface Props {
   email: string;

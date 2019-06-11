@@ -1,7 +1,7 @@
 import spacing, {
   SpacingObject,
-  SpacingSize
-} from "~shared/styles/constants/spacing";
+  SpacingSize,
+} from '~shared/styles/constants/spacing';
 
 interface MarginProps {
   margin?: string | number;
@@ -18,8 +18,8 @@ margin.top = (size: SpacingSize) => ({ marginTop: spacing(size) });
 margin.right = (size: SpacingSize) => ({ marginRight: spacing(size) });
 margin.bottom = (size: SpacingSize) => ({ marginBottom: spacing(size) });
 margin.left = (size: SpacingSize) => ({ marginLeft: spacing(size) });
-margin.x = (size: SpacingSize | "auto") => {
-  if (size === "auto") {
+margin.x = (size: SpacingSize | 'auto') => {
+  if (size === 'auto') {
     return { marginLeft: size, marginRight: size };
   }
 
@@ -27,7 +27,7 @@ margin.x = (size: SpacingSize | "auto") => {
 };
 margin.y = (size: SpacingSize) => ({
   marginTop: spacing(size),
-  marginBottom: spacing(size)
+  marginBottom: spacing(size),
 });
 
 export default margin as Margin;

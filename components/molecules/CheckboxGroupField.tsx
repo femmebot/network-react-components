@@ -1,26 +1,26 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 import {
   FormControl as BaseFormControl,
   MenuItem as MuiMenuItem,
-  withStyles
-} from "@material-ui/core";
-import { MenuItemProps } from "@material-ui/core/MenuItem";
-import { ObjectifiableFormOption } from "~shared/data";
-import Box from "~shared/components/atoms/Box";
-import FieldError from "~shared/components/atoms/FieldError";
-import FieldLabel from "~shared/components/atoms/FieldLabel";
+  withStyles,
+} from '@material-ui/core';
+import { MenuItemProps } from '@material-ui/core/MenuItem';
+import { ObjectifiableFormOption } from '~shared/data';
+import Box from '~shared/components/atoms/Box';
+import FieldError from '~shared/components/atoms/FieldError';
+import FieldLabel from '~shared/components/atoms/FieldLabel';
 import {
   colors,
   sizeStyles,
   spaceStyles,
-  typography
-} from "~shared/styles/index";
-import { SizeProps } from "~shared/styles/props/size";
-import { SpaceProps } from "~shared/styles/props/space";
-import { pxToRem, styleObjectToTemplate } from "~shared/styles/utils";
-import objectifyOptions from "~shared/utils/objectifyOptions";
+  typography,
+} from '~shared/styles/index';
+import { SizeProps } from '~shared/styles/props/size';
+import { SpaceProps } from '~shared/styles/props/space';
+import { pxToRem, styleObjectToTemplate } from '~shared/styles/utils';
+import objectifyOptions from '~shared/utils/objectifyOptions';
 
 interface Props extends SpaceProps, SizeProps {
   label?: string;
@@ -43,8 +43,8 @@ const selectFontStyle = {
   fontSize: pxToRem(16),
   lineHeight: 1.1,
   letterSpacing: pxToRem(0.6),
-  textTransform: "inherit",
-  fontWeight: "normal"
+  textTransform: 'inherit',
+  fontWeight: 'normal',
 };
 
 /* need to type as any because textTransform and fontWeight arent typed
@@ -53,15 +53,15 @@ const menuItemStyles: any = {
   root: {
     ...selectFontStyle,
     color: colors.grayBoulder,
-    "&:hover": {
+    '&:hover': {
       color: colors.black,
-      background: "none"
-    }
+      background: 'none',
+    },
   },
   selected: {
     background: `${colors.white} !important`,
-    color: colors.black
-  }
+    color: colors.black,
+  },
 };
 
 const BaseMenuItem = (props: MenuItemProps) => <MuiMenuItem {...props} />;
@@ -85,7 +85,7 @@ const Checkbox = styled.div`
   border-radius: 2px;
   margin-right: ${pxToRem(8)};
   ${(props: { checked: boolean }) =>
-    props.checked ? "background: currentColor" : `background: ${colors.white}`};
+    props.checked ? 'background: currentColor' : `background: ${colors.white}`};
 `;
 
 const StyledMenuItem = styled(MenuItem)`

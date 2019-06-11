@@ -1,12 +1,12 @@
-import { InputAdornment } from "@material-ui/core";
-import * as React from "react";
-import styled from "styled-components";
-import CloseIcon from "~shared/images/icon-close.svg";
-import MagnifyingGlassIcon from "~shared/images/icon-magnifying-glass.svg";
+import { InputAdornment } from '@material-ui/core';
+import * as React from 'react';
+import styled from 'styled-components';
+import CloseIcon from '~shared/images/icon-close.svg';
+import MagnifyingGlassIcon from '~shared/images/icon-magnifying-glass.svg';
 import TextField, {
-  Props as TextFieldProps
-} from "~shared/components/molecules/TextField";
-import { colors } from "~shared/styles/index";
+  Props as TextFieldProps,
+} from '~shared/components/molecules/TextField';
+import { colors } from '~shared/styles/index';
 
 interface Props extends TextFieldProps {
   reset: () => void;

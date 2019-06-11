@@ -7,4 +7,4 @@ export default (...e: any[]) => {
   if (window.trackEror) {
     window.trackError(...e) 
   }
-}
+};

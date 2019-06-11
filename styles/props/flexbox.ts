@@ -1,4 +1,4 @@
-import {pick} from 'lodash'
+import { pick } from 'lodash';
 
 export interface FlexBoxProps {
   alignContent?:
@@ -17,7 +17,7 @@ export interface FlexBoxProps {
     | 'space-evenly'
     | 'stretch'
     | 'safe center'
-    | 'unsafe center'
+    | 'unsafe center';
   alignItems?:
     | 'normal'
     | 'center'
@@ -34,7 +34,7 @@ export interface FlexBoxProps {
     | 'last baseline'
     | 'stretch'
     | 'safe center'
-    | 'unsafe center'
+    | 'unsafe center';
   alignSelf?:
     | 'auto'
     | 'normal'
@@ -52,14 +52,14 @@ export interface FlexBoxProps {
     | 'last baseline'
     | 'stretch'
     | 'safe center'
-    | 'unsafe center'
-  display?: 'flex' | 'inline-flex'
-  flex?: string | number
-  flexBasis?: string
-  flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
-  flexGrow?: number
-  flexShrink?: number
-  flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
+    | 'unsafe center';
+  display?: 'flex' | 'inline-flex';
+  flex?: string | number;
+  flexBasis?: string;
+  flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
+  flexGrow?: number;
+  flexShrink?: number;
+  flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
   justifyContent?:
     | 'center'
     | 'start'
@@ -76,8 +76,8 @@ export interface FlexBoxProps {
     | 'space-evenly'
     | 'stretch'
     | 'safe center'
-    | 'unsafe center'
-  order?: number
+    | 'unsafe center';
+  order?: number;
 }
 
 const flexProperties = [
@@ -93,8 +93,8 @@ const flexProperties = [
   'flexWrap',
   'justifyContent',
   'order',
-]
+];
 
-const flexbox = (props: FlexBoxProps) => pick(props, flexProperties)
+const flexbox = (props: FlexBoxProps) => pick(props, flexProperties);
 
-export default flexbox
+export default flexbox;

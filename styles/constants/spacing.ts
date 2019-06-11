@@ -1,4 +1,4 @@
-import { pxToRem } from "~shared/styles/utils";
+import { pxToRem } from '~shared/styles/utils';
 
 export const SPACING_UNIT = 8;
 
@@ -14,7 +14,7 @@ export interface SpacingObject<T> {
   y: SpacingFn<T>;
 }
 
-export type SpacingSize = "auto" | number;
+export type SpacingSize = 'auto' | number;
 // export type SpacingSize =
 //   | 0
 //   | 1
@@ -44,7 +44,7 @@ export type SpacingSize = "auto" | number;
 // export const spacingRem = spacingPx.map(pxToRem)
 
 export default (size: SpacingSize) => {
-  if (size === "auto") {
+  if (size === 'auto') {
     return size;
   }
   return pxToRem(size);

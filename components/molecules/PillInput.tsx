@@ -1,16 +1,16 @@
-import { Grid } from "@material-ui/core";
-import { uniq } from "lodash";
-import * as React from "react";
-import styled from "styled-components";
+import { Grid } from '@material-ui/core';
+import { uniq } from 'lodash';
+import * as React from 'react';
+import styled from 'styled-components';
 
-import CloseIcon from "~shared/images/icon-close.svg";
-import Flex from "~shared/components/atoms/Flex";
+import CloseIcon from '~shared/images/icon-close.svg';
+import Flex from '~shared/components/atoms/Flex';
 import TextField, {
-  Props as TextFieldProps
-} from "~shared/components/molecules/TextField";
-import { colors } from "~shared/styles/index";
-import { withTheme, WithTheme } from "~shared/styles/themes";
-import { serif } from "~shared/styles/typography";
+  Props as TextFieldProps,
+} from '~shared/components/molecules/TextField';
+import { colors } from '~shared/styles/index';
+import { withTheme, WithTheme } from '~shared/styles/themes';
+import { serif } from '~shared/styles/typography';
 
 const Pills = styled.div`
   font-family: ${serif};
@@ -41,6 +41,12 @@ const PillButton = withTheme(styled.button`
   }
 `);
 
+const StyledTextField = styled(TextField)`
+  && {
+    min-width: 350px;
+  }
+`;
+
 export interface Props {
   emptyPlaceholder: string;
   nonEmptyPlaceholder: string;
@@ -57,7 +63,7 @@ interface State {
 
 class PillInput extends React.Component<Props, State> {
   state = {
-    input: ""
+    input: '',
   };
 
   addPills = (value: string[]) => {
@@ -66,7 +72,7 @@ class PillInput extends React.Component<Props, State> {
       return;
     }
     const newValue = uniq([...this.props.value, ...validValue]);
-    this.setState({ input: "" });
+    this.setState({ input: '' });
     this.props.onChange(newValue);
   };
 
@@ -79,19 +85,15 @@ class PillInput extends React.Component<Props, State> {
     this.handleInput(e.target.value);
   };
 
-  handlePaste: React.ClipboardEventHandler<HTMLInputElement> = e => {
-    this.handleInput(e.clipboardData.getData("text/plain"));
-  };
-
   maybeCommit: React.KeyboardEventHandler<HTMLInputElement> = e => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       e.preventDefault();
       this.addPills([this.state.input]);
     }
   };
 
   handleInput = (input: string) => {
-    const separator = this.props.separator || ",";
+    const separator = this.props.separator || ',';
     if (input.match(separator)) {
       this.addPills(input.split(separator).filter(x => x));
     } else {
@@ -114,10 +116,21 @@ class PillInput extends React.Component<Props, State> {
   render() {
     return (
       <Pills>
-        <Grid container spacing={8} alignItems="center">
+        <Grid
+          container
+          spacing={8}
+          alignItems="center"
+          data-cy="email-pill-container"
+        >
           {this.props.value.map(item => (
             <Grid item key={item}>
-              <Pill px={10} py={8} justifyContent="center" alignItems="center">
+              <Pill
+                px={10}
+                py={8}
+                justifyContent="center"
+                alignItems="center"
+                data-cy="email-pill"
+              >
                 {item}
                 <PillButton onClick={this.removeItem(item)}>
                   <CloseIcon width="11px" height="11px" />
@@ -126,7 +139,7 @@ class PillInput extends React.Component<Props, State> {
             </Grid>
           ))}
           <Grid item>
-            <TextField
+            <StyledTextField
               type="text"
               id="pill-input"
               placeholder={
@@ -135,7 +148,6 @@ class PillInput extends React.Component<Props, State> {
                   : this.props.nonEmptyPlaceholder
               }
               onBlur={this.commit}
-              onPaste={this.handlePaste}
               onChange={this.handleChange}
               onKeyPress={this.maybeCommit}
               value={this.state.input}
