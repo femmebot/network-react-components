@@ -4,4 +4,7 @@ export default (...e: any[]) => {
   // again" message
   // tslint:disable-next-line no-console
   console.error(...e)
+  if (window.trackEror) {
+    window.trackError(...e) 
+  }
 }
