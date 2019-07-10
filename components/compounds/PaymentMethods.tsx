@@ -22,6 +22,7 @@ interface Props {
   FinePrintComponent?: React.ComponentType
   BackdropComponent?: React.ComponentType
   ModalContainer?: React.ComponentType
+  openImmediately: boolean
 }
 
 const PaymentMethods: React.SFC<Props> = ({
@@ -34,6 +35,7 @@ const PaymentMethods: React.SFC<Props> = ({
   FinePrintComponent,
   BackdropComponent,
   ModalContainer,
+  openImmediately
 }) => (
   <React.Fragment>
     <Section title="Payment Methods">
@@ -59,6 +61,7 @@ const PaymentMethods: React.SFC<Props> = ({
             Add payment method
           </Button>
         }
+        openImmediately={openImmediately}
       >
         {closeModal => (
           <div>
