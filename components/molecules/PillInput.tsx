@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core'
-import { uniq } from 'lodash'
+import { uniq, trim } from 'lodash'
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -66,12 +66,12 @@ class PillInput extends React.Component<Props, State> {
     input: '',
   }
 
-  addPills = (value: string[]) => {
-    const validValue = value.filter(item => this.validateInput(item))
-    if (validValue.length < 1) {
+  addPills = (values: string[]) => {
+    const validValues = values.filter(item => this.validateInput(item))
+    if (validValues.length < 1) {
       return
     }
-    const newValue = uniq([...this.props.value, ...validValue])
+    const newValue = uniq([...this.props.value, ...validValues])
     this.setState({ input: '' })
     this.props.onChange(newValue)
   }
@@ -95,9 +95,9 @@ class PillInput extends React.Component<Props, State> {
   handleInput = (input: string) => {
     const separator = this.props.separator || ','
     if (input.match(separator)) {
-      this.addPills(input.split(separator).filter(x => x))
+      this.addPills(input.split(separator).map(trim))
     } else {
-      this.setState({ input })
+      this.setState({ input: trim(input) })
     }
   }
 
