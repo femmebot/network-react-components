@@ -29,7 +29,6 @@ yarn-debug.log*
 yarn-error.log*
 .yarn-integrity
 
-build/
 
 # redis dump
 dump.rdb
