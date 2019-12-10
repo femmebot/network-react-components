@@ -1,0 +1,112 @@
+{
+  "name": "ideo-products",
+  "version": "1.0.0",
+  "description": "Shared React components for IDEO products team",
+  "main": "index.ts",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint",
+    "test": "jest --watch",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ideo/network-react-components.git"
+  },
+  "author": "IDEO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ideo/network-react-components/issues"
+  },
+  "homepage": "https://github.com/ideo/network-react-components#readme",
+  "jest": {
+    "automock": false,
+    "globals": {
+      "ts-jest": {
+        "useBabelrc": true
+      }
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "components",
+      "__tests__",
+      "<rootDir>"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|svg|ttf|woff|woff2|otf)$": "identity-obj-proxy",
+      "ideo-sso": "<rootDir>/__mocks__/ideo-sso.js"
+    },
+    "modulePaths": [
+      "__js_test_config"
+    ],
+    "resetMocks": false,
+    "roots": [
+      "<rootDir>/__tests__",
+      "<rootDir>"
+    ],
+    "testPathIgnorePatterns": [],
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.5",
+    "datx": "^0.11.4",
+    "datx-jsonapi": "^0.11.4",
+    "formik": "0.11",
+    "lodash": "~4.17",
+    "react-router-dom": "^4.3",
+    "styled-components": "^4.3.2",
+    "typescript": "2.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.3",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-engine-plugin": "^0.2.1",
+    "babel-eslint": "^10.0.0",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-lodash": "^3.3.2",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-styled-components": "^1.7.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.3",
+    "eslint": "^4.18.2",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-import-resolver-babel-module": "^5.0.0",
+    "eslint-plugin-compat": "^3.1.1",
+    "eslint-plugin-cypress": "^2.0.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^21.7.0",
+    "eslint-plugin-jsx-a11y": "~6.0.3",
+    "eslint-plugin-node": "~5.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-promise": "~3.5.0",
+    "eslint-plugin-react": "~7.11.0",
+    "eslint-plugin-standard": "~3.0.1",
+    "jest": "^24.8.0",
+    "jest-enzyme": "^7.0.0",
+    "jest-styled-components": "^7.0.0-2",
+    "identity-obj-proxy": "^3.0.0",
+    "ts-jest": "^23.1.4"
+  }
+}
