@@ -4,6 +4,7 @@
   "description": "Shared React components for IDEO products team",
   "main": "index.ts",
   "scripts": {
+    "build": "tsc",
     "lint": "./node_modules/.bin/eslint",
     "test": "jest --watch",
     "test:debug": "node --inspect node_modules/.bin/jest --runInBand --watch"

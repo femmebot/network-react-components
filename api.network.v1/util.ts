@@ -1,4 +1,3 @@
-import IdeoSSO from 'ideo-sso';
 import ensureTrailingSlash from '~shared/utils/ensureTrailingSlash';
 
 export function castToArray<T>(data: T | T[] | null): T[] {
