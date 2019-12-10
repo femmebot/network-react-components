@@ -1,10 +1,11 @@
-{
+module.exports = {
   "presets": [
     "@babel/preset-env",
     "@babel/preset-react"
   ],
   "plugins": [
     "lodash",
+    '@babel/plugin-proposal-optional-chaining',
     "@babel/plugin-syntax-dynamic-import",
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
     ["@babel/plugin-proposal-class-properties", { "loose" : true }],
@@ -14,10 +15,10 @@
       {
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
         "alias": {
-          "~shared": "<rootDir>",
-          "~styles": "<rootDir>/styles",
-          "~components": "<rootDir>/component",
-          "~test-helpers": "<rootDir>/test-helpers",
+          "~shared": "./",
+          "~styles": "./styles",
+          "~components": "./component",
+          "~test-helpers": "./test-helpers",
           "#": "./__js_test_config"
         }
       }
@@ -34,6 +35,9 @@
         ]
       ]
     },
+    "test": {
+      "plugins": ["@babel/plugin-transform-runtime"]
+    },
     "production": {
       "plugins": [
         "lodash",
@@ -46,4 +50,4 @@
       ]
     }
   }
-}
+};
