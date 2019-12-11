@@ -1,1 +1,0 @@
-{"version":3,"file":"objectifyOptions.js","sourceRoot":"","sources":["../../utils/objectifyOptions.ts"],"names":[],"mappings":";;AAEA,MAAM,gBAAgB,GAAG,CAAC,OAAkC,EAAgB,EAAE,CAC5E,OAAO,CAAC,GAAG,CAAC,MAAM,CAAC,EAAE;IACnB,IAAI,OAAO,MAAM,KAAK,QAAQ,EAAE;QAC9B,OAAO,MAAM,CAAC;KACf;IACD,OAAO;QACL,KAAK,EAAE,MAAM;QACb,KAAK,EAAE,MAAM;KACd,CAAC;AACJ,CAAC,CAAC,CAAC;AAEL,kBAAe,gBAAgB,CAAC"}
