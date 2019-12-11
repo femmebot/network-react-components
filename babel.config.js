@@ -16,10 +16,7 @@ module.exports = {
       {
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
         "alias": {
-          "~shared": "./",
-          "~styles": "./styles",
-          "~components": "./component",
-          "~test-helpers": "./test-helpers",
+          "~shared": "./src",
           "#": "./__js_test_config"
         }
       }
