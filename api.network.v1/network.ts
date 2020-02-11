@@ -1,6 +1,8 @@
-import IdeoSSO from 'ideo-sso';
 import 'whatwg-fetch';
 import { config } from 'datx-jsonapi';
+
+/* global IdeoSSO */
+const  IdeoSSO = IdeoSSO || { baseApiUrl: 'localhost' }
 
 config.baseUrl = '/';
 

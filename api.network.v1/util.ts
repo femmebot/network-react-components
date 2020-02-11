@@ -1,5 +1,6 @@
-import IdeoSSO from 'ideo-sso';
 import ensureTrailingSlash from '~shared/utils/ensureTrailingSlash';
+
+const  IdeoSSO = IdeoSSO || { baseApiUrl: 'localhost' }
 
 export function castToArray<T>(data: T | T[] | null): T[] {
   if (data == null) {
