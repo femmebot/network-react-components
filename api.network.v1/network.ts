@@ -1,4 +1,5 @@
 import 'whatwg-fetch';
+import { IdeoSSO } from '~shared/api.network.v1/util';
 import { config } from 'datx-jsonapi';
 
 /* global IdeoSSO */
