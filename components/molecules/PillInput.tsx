@@ -1,20 +1,20 @@
-import { Grid } from '@material-ui/core';
-import { uniq } from 'lodash';
-import * as React from 'react';
-import styled from 'styled-components';
+import { Grid } from '@material-ui/core'
+import { uniq } from 'lodash'
+import * as React from 'react'
+import styled from 'styled-components'
 
-import CloseIcon from '~shared/images/icon-close.svg';
-import Flex from '~shared/components/atoms/Flex';
+import CloseIcon from '~shared/images/icon-close.svg'
+import Flex from '~shared/components/atoms/Flex'
 import TextField, {
   Props as TextFieldProps,
-} from '~shared/components/molecules/TextField';
-import { colors } from '~shared/styles/index';
-import { withTheme, WithTheme } from '~shared/styles/themes';
-import { serif } from '~shared/styles/typography';
+} from '~shared/components/molecules/TextField'
+import { colors } from '~shared/styles/index'
+import { withTheme, WithTheme } from '~shared/styles/themes'
+import { serif } from '~shared/styles/typography'
 
 const Pills = styled.div`
   font-family: ${serif};
-`;
+`
 
 const Pill = withTheme(styled(Flex)`
   background: ${({ theme }: WithTheme) => theme.palette.grey[300]};
@@ -24,7 +24,7 @@ const Pill = withTheme(styled(Flex)`
       display: block;
     }
   }
-`);
+`)
 
 const PillButton = withTheme(styled.button`
   position: absolute;
@@ -39,86 +39,86 @@ const PillButton = withTheme(styled.button`
   &:hover {
     color: black;
   }
-`);
+`)
 
 const StyledTextField = styled(TextField)`
   && {
     min-width: 350px;
   }
-`;
+`
 
 export interface Props {
-  emptyPlaceholder: string;
-  nonEmptyPlaceholder: string;
-  onChange: (value: string[]) => void;
-  separator?: string | RegExp;
-  validator: (input: string) => boolean;
-  value: string[];
-  textFieldProps?: Partial<TextFieldProps>;
+  emptyPlaceholder: string
+  nonEmptyPlaceholder: string
+  onChange: (value: string[]) => void
+  separator?: string | RegExp
+  validator: (input: string) => boolean
+  value: string[]
+  textFieldProps?: Partial<TextFieldProps>
 }
 
 interface State {
-  input: string;
+  input: string
 }
 
 class PillInput extends React.Component<Props, State> {
   state = {
     input: '',
-  };
+  }
 
   addPills = (value: string[]) => {
-    const validValue = value.filter(item => this.validateInput(item));
+    const validValue = value.filter(item => this.validateInput(item))
     if (validValue.length < 1) {
-      return;
+      return
     }
-    const newValue = uniq([...this.props.value, ...validValue]);
-    this.setState({ input: '' });
-    this.props.onChange(newValue);
-  };
+    const newValue = uniq([...this.props.value, ...validValue])
+    this.setState({ input: '' })
+    this.props.onChange(newValue)
+  }
 
   commit: React.ChangeEventHandler<HTMLInputElement> = e => {
-    const item = e.target.value;
-    this.addPills([item]);
-  };
+    const item = e.target.value
+    this.addPills([item])
+  }
 
   handleChange: React.ChangeEventHandler<HTMLInputElement> = e => {
-    this.handleInput(e.target.value);
-  };
+    this.handleInput(e.target.value)
+  }
 
   maybeCommit: React.KeyboardEventHandler<HTMLInputElement> = e => {
     if (e.key === 'Enter') {
-      e.preventDefault();
-      this.addPills([this.state.input]);
+      e.preventDefault()
+      this.addPills([this.state.input])
     }
-  };
+  }
 
   handleInput = (input: string) => {
-    const separator = this.props.separator || ',';
+    const separator = this.props.separator || ','
     if (input.match(separator)) {
-      this.addPills(input.split(separator).filter(x => x));
+      this.addPills(input.split(separator).filter(x => x))
     } else {
-      this.setState({ input });
+      this.setState({ input })
     }
-  };
+  }
 
   removeItem = (item: string) => () => {
-    const remainingValue = this.props.value.filter(i => item !== i);
-    this.props.onChange(remainingValue);
-  };
+    const remainingValue = this.props.value.filter(i => item !== i)
+    this.props.onChange(remainingValue)
+  }
 
   validateInput = (value: string) => {
     if (!this.props.validator) {
-      return true;
+      return true
     }
-    return this.props.validator(value);
-  };
+    return this.props.validator(value)
+  }
 
   render() {
     return (
       <Pills>
         <Grid
           container
-          spacing={8}
+          spacing={1}
           alignItems="center"
           data-cy="email-pill-container"
         >
@@ -156,8 +156,8 @@ class PillInput extends React.Component<Props, State> {
           </Grid>
         </Grid>
       </Pills>
-    );
+    )
   }
 }
 
-export default PillInput;
+export default PillInput
