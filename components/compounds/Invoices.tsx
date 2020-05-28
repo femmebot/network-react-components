@@ -23,8 +23,8 @@ const StyledStatus = styled.span`
     children === 'Pending'
       ? colors.silver
       : children === 'Failed'
-        ? colors.error
-        : 'inherit'};
+      ? colors.error
+      : 'inherit'};
 `
 
 interface Props {
@@ -36,7 +36,7 @@ const Invoices: React.SFC<Props> = ({ invoices, NoInvoicesComponent }) => (
   <Section title="Billing Statements">
     {invoices.length > 0 ? (
       <React.Fragment>
-        <Grid container spacing={40}>
+        <Grid container spacing={5}>
           <Grid item xs={5}>
             <FieldLabel>Period</FieldLabel>
           </Grid>
@@ -50,7 +50,7 @@ const Invoices: React.SFC<Props> = ({ invoices, NoInvoicesComponent }) => (
         </Grid>
         {invoices.map(invoice => (
           <Typography variant="paragraph" key={`invoice-${invoice.id}`}>
-            <Grid container spacing={40}>
+            <Grid container spacing={5}>
               <Grid item xs={5}>
                 {formatDate(dateParseISO(invoice.period_start), 'MM/dd/yyyy')}–
                 {formatDate(dateParseISO(invoice.period_end), 'MM/dd/yyyy')}
@@ -63,8 +63,8 @@ const Invoices: React.SFC<Props> = ({ invoices, NoInvoicesComponent }) => (
                   {invoice.status === 'paid'
                     ? 'Paid'
                     : invoice.status === 'unpaid'
-                      ? 'In-Progress'
-                      : 'Failed'}
+                    ? 'In-Progress'
+                    : 'Failed'}
                 </StyledStatus>
               </Grid>
               <Grid item xs={1}>

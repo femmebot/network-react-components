@@ -66,7 +66,7 @@ const CouponLine: React.SFC<{ coupon: Coupon; invoice: Invoice }> = ({
     ? coupon.amount_off
     : invoice.amount * (coupon.percent_off / 100.0)
   return (
-    <Grid container spacing={24}>
+    <Grid container spacing={3}>
       <Grid item xs={10}>
         <FieldLabel>Promo Code Applied</FieldLabel>
       </Grid>
@@ -127,7 +127,7 @@ const PrintableInvoice: React.SFC<Props> = ({
   return (
     <Wrapper>
       <Center mb={40}>
-        <Typography variant="heading-2">Billing Statement</Typography>
+        <Typography variant="h2">Billing Statement</Typography>
       </Center>
       {logo && (
         <Box mb={15}>
@@ -171,13 +171,13 @@ const PrintableInvoice: React.SFC<Props> = ({
         </Grid>
       </Grid>
       <Box mt={80} mb={20}>
-        <Typography variant="heading-2">Summary</Typography>
+        <Typography variant="h2">Summary</Typography>
         <HorizontalDivider />
       </Box>
 
       {!!items.length && (
         <React.Fragment>
-          <Grid container spacing={24}>
+          <Grid container spacing={3}>
             <Grid item xs={5}>
               <FieldLabel>Description</FieldLabel>
             </Grid>
@@ -198,7 +198,7 @@ const PrintableInvoice: React.SFC<Props> = ({
             </Grid>
           </Grid>
           {items.map(invoiceItem => (
-            <Grid key={`invoice-item-${invoiceItem.id}`} container spacing={24}>
+            <Grid key={`invoice-item-${invoiceItem.id}`} container spacing={3}>
               <Grid item xs={5}>
                 <Typography variant="paragraph">
                   {invoiceItem.description}
@@ -232,7 +232,7 @@ const PrintableInvoice: React.SFC<Props> = ({
       {!!proRatedItems.length && (
         <React.Fragment>
           <Box mt={50}>
-            <Grid container spacing={24}>
+            <Grid container spacing={3}>
               <Grid item xs={5}>
                 <FieldLabel>Description</FieldLabel>
               </Grid>
@@ -257,7 +257,7 @@ const PrintableInvoice: React.SFC<Props> = ({
               <Grid
                 key={`invoice-item-${invoiceItem.id}`}
                 container
-                spacing={24}
+                spacing={3}
               >
                 <Grid item xs={6}>
                   <Typography variant="paragraph">
@@ -287,7 +287,7 @@ const PrintableInvoice: React.SFC<Props> = ({
       )}
 
       <Box mt={50}>
-        <Grid container spacing={24}>
+        <Grid container spacing={3}>
           <Grid item xs={10}>
             <FieldLabel>Total</FieldLabel>
           </Grid>
@@ -299,9 +299,9 @@ const PrintableInvoice: React.SFC<Props> = ({
         </Grid>
         {coupon && <CouponLine coupon={coupon} invoice={invoice} />}
         <HorizontalDivider color={colors.black} />
-        <Grid container spacing={24} alignItems="flex-end">
+        <Grid container spacing={3} alignItems="flex-end">
           <Grid item xs={10} container justify="flex-end">
-            <Typography variant="heading-2">Amount Due</Typography>
+            <Typography variant="h2">Amount Due</Typography>
           </Grid>
           <Grid item xs={2} container justify="flex-end">
             <Typography variant="paragraph">

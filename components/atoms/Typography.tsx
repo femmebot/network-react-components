@@ -1,41 +1,41 @@
 import MuiTypography, {
   TypographyProps,
-} from '@material-ui/core/Typography/Typography';
-import * as React from 'react';
+} from '@material-ui/core/Typography/Typography'
+import * as React from 'react'
 /* Wraps mui Typography and overrides via the theme
  * from https://material-ui.com/api/typography/ */
 
 // @ts-ignore
 interface Props extends TypographyProps {
   variant?:
-    | 'heading-1'
-    | 'heading-2'
-    | 'heading-3'
-    | 'heading-4'
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
     | 'instructional'
     | 'label'
     | 'emphasis'
     | 'paragraph'
-    | 'button';
+    | 'button'
 }
 
 const Typography: React.SFC<Props> = ({ variant, ...props }) => {
   interface VariantMap {
-    [key: string]: TypographyProps['variant'];
+    [key: string]: TypographyProps['variant']
   }
   const variantMap = {
-    'heading-1': 'headline',
-    'heading-2': 'subheading',
-    'heading-3': 'title',
-    'heading-4': 'display1',
-    instructional: 'display2',
-    label: 'display3',
-    emphasis: 'display4',
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h3',
+    h4: 'h4',
+    instructional: 'h3',
+    label: 'h2',
+    emphasis: 'h1',
     paragraph: 'body2',
     button: 'button',
-  } as VariantMap;
-  const mappedVariant = variant ? variantMap[variant] : undefined;
-  return <MuiTypography {...props} variant={mappedVariant} />;
-};
+  } as VariantMap
+  const mappedVariant = variant ? variantMap[variant] : undefined
+  return <MuiTypography {...props} variant={mappedVariant} />
+}
 
-export default Typography;
+export default Typography

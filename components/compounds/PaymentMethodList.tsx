@@ -24,7 +24,7 @@ const PaymentMethodList: React.SFC<Props> = ({
 }) =>
   !isEmpty(paymentMethods) ? (
     <React.Fragment>
-      <Grid container spacing={40}>
+      <Grid container spacing={5}>
         <Grid item xs={3}>
           <FieldLabel>Cards on file</FieldLabel>
         </Grid>
@@ -39,7 +39,7 @@ const PaymentMethodList: React.SFC<Props> = ({
         </Grid>
       </Grid>
       {paymentMethods.map(paymentMethod => (
-        <Grid container spacing={40} key={paymentMethod.id}>
+        <Grid container spacing={5} key={paymentMethod.id}>
           <Grid item xs={3}>
             <CardNameField paymentMethod={paymentMethod} />
           </Grid>
