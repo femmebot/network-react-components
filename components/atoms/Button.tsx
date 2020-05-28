@@ -1,33 +1,33 @@
-import MuiButton from '@material-ui/core/Button/Button';
-import * as React from 'react';
-import styled from 'styled-components';
-import { colors } from '~shared/styles/index';
-import { pxToRem } from '~shared/styles/utils';
+import MuiButton from '@material-ui/core/Button/Button'
+import * as React from 'react'
+import styled from 'styled-components'
+import { colors } from '~shared/styles/index'
+import { pxToRem } from '~shared/styles/utils'
 
 interface BaseProps {
-  disabled?: boolean;
-  variant?: Variant;
-  wide?: boolean;
+  disabled?: boolean
+  variant?: Variant
+  wide?: boolean
 }
 interface LinkButtonProps extends BaseProps {
-  href: string;
-  target?: '_blank';
+  href: string
+  target?: '_blank'
 }
 
 export interface ButtonProps extends BaseProps {
-  onClick?: (event: any) => void;
-  type?: 'button' | 'submit';
-  name?: string;
+  onClick?: (event: any) => void
+  type?: 'button' | 'submit'
+  name?: string
 }
 
-export type Props = ButtonProps | LinkButtonProps;
+export type Props = ButtonProps | LinkButtonProps
 
-type Variant = 'outline' | 'commit';
+type Variant = 'outline' | 'commit'
 
 const outlineOverrides = () => `
   border: solid ${pxToRem(2)} currentColor;
   border-radius: ${pxToRem(2)};
-`;
+`
 
 const commitOverrides = () => `
   background: ${colors.ctaPrimary};
@@ -35,27 +35,27 @@ const commitOverrides = () => `
     background: ${colors.ctaSecondary};
   }
 }
-`;
+`
 
 const variantOverrides = (variant?: Variant) => {
   if (!variant) {
-    return;
+    return
   }
 
   if (variant === 'outline') {
-    return outlineOverrides();
+    return outlineOverrides()
   }
 
   if (variant === 'commit') {
-    return commitOverrides();
+    return commitOverrides()
   }
 
-  return;
-};
+  return
+}
 
 const StyledButton = styled(
   ({ variant: _variant, wide: _wide, ...props }: Props) => (
-    <MuiButton variant="flat" {...props} />
+    <MuiButton variant="text" {...props} />
   )
 )`
   && {
@@ -69,12 +69,12 @@ const StyledButton = styled(
     }
     ${(props: Props) => variantOverrides(props.variant)};
   }
-`;
+`
 
 const Button: React.SFC<Props> = ({ children, variant, ...props }) => (
   <StyledButton variant={variant} {...props}>
     {children}
   </StyledButton>
-);
+)
 
-export default Button;
+export default Button

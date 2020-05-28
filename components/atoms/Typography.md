@@ -1,15 +1,15 @@
 ```jsx
 <Box my={20}>
-  <Typography variant="heading-1">Heading 1</Typography>
+  <Typography variant="h1">Heading 1</Typography>
 </Box>
 <Box my={20}>
-  <Typography variant="heading-2">Heading 2</Typography>
+  <Typography variant="h2">Heading 2</Typography>
 </Box>
 <Box my={20}>
-  <Typography variant="heading-3">Heading 3</Typography>
+  <Typography variant="h3">Heading 3</Typography>
 </Box>
 <Box my={20}>
-  <Typography variant="heading-4">Heading 4</Typography>
+  <Typography variant="h4">Heading 4</Typography>
 </Box>
 <Box my={20}>
   <Typography variant="instructional">Instructional</Typography>
