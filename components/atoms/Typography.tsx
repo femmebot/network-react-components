@@ -28,9 +28,9 @@ const Typography: React.SFC<Props> = ({ variant, ...props }) => {
     h2: 'h2',
     h3: 'h3',
     h4: 'h4',
-    instructional: 'display2',
-    label: 'display3',
-    emphasis: 'display4',
+    instructional: 'h3',
+    label: 'h2',
+    emphasis: 'h1',
     paragraph: 'body2',
     button: 'button',
   } as VariantMap
